@@ -1,16 +1,27 @@
 /* =========================================================
    WOMB & HEART
-   HOME PAGE JAVASCRIPT
+   EDITORIAL INTERACTIONS
 ========================================================= */
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+const reducedMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
 
 
 /* =========================================================
    MOBILE MENU
 ========================================================= */
 
-const menuButton =
+const menuToggle =
   document.querySelector(
-    ".mobile-menu-button"
+    ".menu-toggle"
   );
 
 const mobileNav =
@@ -19,17 +30,17 @@ const mobileNav =
   );
 
 
-function setMenuOpen(open) {
+function setMenuState(open) {
 
   if (
-    !menuButton ||
+    !menuToggle ||
     !mobileNav
   ) {
     return;
   }
 
 
-  menuButton.classList.toggle(
+  menuToggle.classList.toggle(
     "is-open",
     open
   );
@@ -41,13 +52,13 @@ function setMenuOpen(open) {
   );
 
 
-  menuButton.setAttribute(
+  menuToggle.setAttribute(
     "aria-expanded",
     String(open)
   );
 
 
-  menuButton.setAttribute(
+  menuToggle.setAttribute(
     "aria-label",
     open
       ? "Menü schliessen"
@@ -57,31 +68,23 @@ function setMenuOpen(open) {
 }
 
 
-/* =========================================================
-   MENU BUTTON
-========================================================= */
-
-menuButton?.addEventListener(
+menuToggle?.addEventListener(
   "click",
   () => {
 
-    const currentlyOpen =
-      menuButton.getAttribute(
+    const open =
+      menuToggle.getAttribute(
         "aria-expanded"
       ) === "true";
 
 
-    setMenuOpen(
-      !currentlyOpen
+    setMenuState(
+      !open
     );
 
   }
 );
 
-
-/* =========================================================
-   CLOSE AFTER LINK
-========================================================= */
 
 mobileNav
   ?.querySelectorAll("a")
@@ -91,17 +94,13 @@ mobileNav
       "click",
       () => {
 
-        setMenuOpen(false);
+        setMenuState(false);
 
       }
     );
 
   });
 
-
-/* =========================================================
-   ESCAPE
-========================================================= */
 
 document.addEventListener(
   "keydown",
@@ -112,33 +111,48 @@ document.addEventListener(
       "Escape"
     ) {
 
-      setMenuOpen(false);
+      setMenuState(false);
 
     }
 
   }
 );
+
 
 
 /* =========================================================
-   RESET ON DESKTOP
+   HEADER SCROLL STATE
 ========================================================= */
 
+const siteHeader =
+  document.querySelector(
+    ".site-header"
+  );
+
+
+function updateHeader() {
+
+  siteHeader
+    ?.classList
+    .toggle(
+      "is-scrolled",
+      window.scrollY >
+      40
+    );
+
+}
+
+
 window.addEventListener(
-  "resize",
-  () => {
-
-    if (
-      window.innerWidth >
-      1100
-    ) {
-
-      setMenuOpen(false);
-
-    }
-
+  "scroll",
+  updateHeader,
+  {
+    passive: true
   }
 );
+
+
+updateHeader();
 
 
 
@@ -170,7 +184,7 @@ const heroDots =
     )
   );
 
-const heroPrevious =
+const heroPrev =
   document.querySelector(
     ".hero-slider-prev"
   );
@@ -184,36 +198,26 @@ const heroNext =
 let heroIndex =
   0;
 
-
-const HERO_DELAY =
-  5500;
-
-
 let heroTimer =
   null;
 
 let heroHovered =
   false;
 
-let heroTouched =
-  false;
+let heroTouchStart =
+  null;
 
 
-const reducedMotion =
-  window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  );
+const HERO_DELAY =
+  5500;
 
 
-/* =========================================================
-   HERO RENDER
-========================================================= */
-
-function renderHero() {
+function renderHeroSlider() {
 
   if (
     !heroTrack ||
-    heroSlides.length === 0
+    heroSlides.length ===
+    0
   ) {
     return;
   }
@@ -259,7 +263,8 @@ function renderHero() {
 
       dot.classList.toggle(
         "is-active",
-        index === heroIndex
+        index ===
+        heroIndex
       );
 
     }
@@ -268,11 +273,7 @@ function renderHero() {
 }
 
 
-/* =========================================================
-   SET HERO SLIDE
-========================================================= */
-
-function setHeroIndex(index) {
+function setHeroSlide(index) {
 
   if (
     heroSlides.length ===
@@ -290,19 +291,16 @@ function setHeroIndex(index) {
     heroSlides.length;
 
 
-  renderHero();
+  renderHeroSlider();
 
 }
 
 
-/* =========================================================
-   AUTOPLAY
-========================================================= */
-
 function stopHeroAutoplay() {
 
   if (
-    heroTimer !== null
+    heroTimer !==
+    null
   ) {
 
     window.clearTimeout(
@@ -325,9 +323,9 @@ function startHeroAutoplay() {
 
   if (
     !heroSlider ||
-    heroSlides.length < 2 ||
+    heroSlides.length <
+    2 ||
     heroHovered ||
-    heroTouched ||
     document.hidden ||
     reducedMotion.matches ||
     heroSlider.contains(
@@ -342,8 +340,9 @@ function startHeroAutoplay() {
     window.setTimeout(
       () => {
 
-        setHeroIndex(
-          heroIndex + 1
+        setHeroSlide(
+          heroIndex +
+          1
         );
 
 
@@ -356,16 +355,13 @@ function startHeroAutoplay() {
 }
 
 
-/* =========================================================
-   HERO BUTTONS
-========================================================= */
-
-heroPrevious?.addEventListener(
+heroPrev?.addEventListener(
   "click",
   () => {
 
-    setHeroIndex(
-      heroIndex - 1
+    setHeroSlide(
+      heroIndex -
+      1
     );
 
 
@@ -379,8 +375,9 @@ heroNext?.addEventListener(
   "click",
   () => {
 
-    setHeroIndex(
-      heroIndex + 1
+    setHeroSlide(
+      heroIndex +
+      1
     );
 
 
@@ -389,10 +386,6 @@ heroNext?.addEventListener(
   }
 );
 
-
-/* =========================================================
-   HERO HOVER
-========================================================= */
 
 heroSlider?.addEventListener(
   "mouseenter",
@@ -422,9 +415,24 @@ heroSlider?.addEventListener(
 );
 
 
-/* =========================================================
-   HERO KEYBOARD
-========================================================= */
+heroSlider?.addEventListener(
+  "focusin",
+  stopHeroAutoplay
+);
+
+
+heroSlider?.addEventListener(
+  "focusout",
+  () => {
+
+    window.setTimeout(
+      startHeroAutoplay,
+      0
+    );
+
+  }
+);
+
 
 heroSlider?.setAttribute(
   "tabindex",
@@ -444,9 +452,13 @@ heroSlider?.addEventListener(
       event.preventDefault();
 
 
-      setHeroIndex(
-        heroIndex - 1
+      setHeroSlide(
+        heroIndex -
+        1
       );
+
+
+      startHeroAutoplay();
 
     }
 
@@ -459,59 +471,25 @@ heroSlider?.addEventListener(
       event.preventDefault();
 
 
-      setHeroIndex(
-        heroIndex + 1
+      setHeroSlide(
+        heroIndex +
+        1
       );
+
+
+      startHeroAutoplay();
 
     }
 
-
-    startHeroAutoplay();
-
   }
 );
-
-
-heroSlider?.addEventListener(
-  "focusin",
-  () => {
-
-    stopHeroAutoplay();
-
-  }
-);
-
-
-heroSlider?.addEventListener(
-  "focusout",
-  () => {
-
-    window.setTimeout(
-      startHeroAutoplay,
-      0
-    );
-
-  }
-);
-
-
-/* =========================================================
-   HERO SWIPE
-========================================================= */
-
-let heroTouchStartX =
-  null;
 
 
 heroSlider?.addEventListener(
   "touchstart",
   (event) => {
 
-    heroTouched =
-      true;
-
-
-    heroTouchStartX =
+    heroTouchStart =
       event.touches[0]
         ?.clientX ??
       null;
@@ -531,77 +509,43 @@ heroSlider?.addEventListener(
   (event) => {
 
     if (
-      heroTouchStartX !==
+      heroTouchStart ===
       null
     ) {
-
-      const endX =
-        event.changedTouches[0]
-          ?.clientX ??
-        heroTouchStartX;
+      return;
+    }
 
 
-      const distance =
-        endX -
-        heroTouchStartX;
+    const end =
+      event.changedTouches[0]
+        ?.clientX ??
+      heroTouchStart;
 
 
-      if (
-        Math.abs(
-          distance
-        ) >=
-        40
-      ) {
+    const delta =
+      end -
+      heroTouchStart;
 
-        if (
-          distance <
-          0
-        ) {
 
-          setHeroIndex(
-            heroIndex + 1
-          );
+    if (
+      Math.abs(
+        delta
+      ) >
+      40
+    ) {
 
-        } else {
-
-          setHeroIndex(
-            heroIndex - 1
-          );
-
-        }
-
-      }
+      setHeroSlide(
+        delta <
+        0
+          ? heroIndex + 1
+          : heroIndex - 1
+      );
 
     }
 
 
-    heroTouchStartX =
+    heroTouchStart =
       null;
-
-
-    heroTouched =
-      false;
-
-
-    startHeroAutoplay();
-
-  },
-  {
-    passive: true
-  }
-);
-
-
-heroSlider?.addEventListener(
-  "touchcancel",
-  () => {
-
-    heroTouchStartX =
-      null;
-
-
-    heroTouched =
-      false;
 
 
     startHeroAutoplay();
@@ -620,7 +564,7 @@ heroSlider?.addEventListener(
 
 const reviewSection =
   document.querySelector(
-    ".reviews-section"
+    ".reviews-scene"
   );
 
 const reviewSlides =
@@ -630,14 +574,14 @@ const reviewSlides =
     )
   );
 
-const reviewThumbnails =
+const reviewThumbs =
   Array.from(
     document.querySelectorAll(
       ".review-thumb"
     )
   );
 
-const reviewPrevious =
+const reviewPrev =
   document.querySelector(
     ".review-prev"
   );
@@ -651,20 +595,11 @@ const reviewNext =
 let reviewIndex =
   0;
 
+let reviewTouchStart =
+  null;
 
-/* =========================================================
-   REVIEW RENDER
-========================================================= */
 
-function renderReview() {
-
-  if (
-    reviewSlides.length ===
-    0
-  ) {
-    return;
-  }
-
+function renderReviews() {
 
   reviewSlides.forEach(
     (slide, index) => {
@@ -687,21 +622,21 @@ function renderReview() {
   );
 
 
-  reviewThumbnails.forEach(
-    (thumbnail, index) => {
+  reviewThumbs.forEach(
+    (thumb, index) => {
 
       const active =
         index ===
         reviewIndex;
 
 
-      thumbnail.classList.toggle(
+      thumb.classList.toggle(
         "is-active",
         active
       );
 
 
-      thumbnail.setAttribute(
+      thumb.setAttribute(
         "aria-current",
         active
           ? "true"
@@ -714,11 +649,7 @@ function renderReview() {
 }
 
 
-/* =========================================================
-   REVIEW INDEX
-========================================================= */
-
-function setReviewIndex(index) {
+function setReview(index) {
 
   if (
     reviewSlides.length ===
@@ -736,37 +667,31 @@ function setReviewIndex(index) {
     reviewSlides.length;
 
 
-  renderReview();
+  renderReviews();
 
 }
 
 
-/* =========================================================
-   REVIEW THUMBNAILS
-========================================================= */
+reviewThumbs.forEach(
+  (thumb) => {
 
-reviewThumbnails.forEach(
-  (thumbnail) => {
-
-    thumbnail.addEventListener(
+    thumb.addEventListener(
       "click",
       () => {
 
-        const target =
+        const index =
           Number(
-            thumbnail.dataset.review
+            thumb.dataset.review
           );
 
 
         if (
           Number.isInteger(
-            target
+            index
           )
         ) {
 
-          setReviewIndex(
-            target
-          );
+          setReview(index);
 
         }
 
@@ -777,16 +702,13 @@ reviewThumbnails.forEach(
 );
 
 
-/* =========================================================
-   REVIEW ARROWS
-========================================================= */
-
-reviewPrevious?.addEventListener(
+reviewPrev?.addEventListener(
   "click",
   () => {
 
-    setReviewIndex(
-      reviewIndex - 1
+    setReview(
+      reviewIndex -
+      1
     );
 
   }
@@ -797,17 +719,14 @@ reviewNext?.addEventListener(
   "click",
   () => {
 
-    setReviewIndex(
-      reviewIndex + 1
+    setReview(
+      reviewIndex +
+      1
     );
 
   }
 );
 
-
-/* =========================================================
-   REVIEW KEYBOARD
-========================================================= */
 
 reviewSection?.setAttribute(
   "tabindex",
@@ -824,8 +743,12 @@ reviewSection?.addEventListener(
       "ArrowLeft"
     ) {
 
-      setReviewIndex(
-        reviewIndex - 1
+      event.preventDefault();
+
+
+      setReview(
+        reviewIndex -
+        1
       );
 
     }
@@ -836,8 +759,12 @@ reviewSection?.addEventListener(
       "ArrowRight"
     ) {
 
-      setReviewIndex(
-        reviewIndex + 1
+      event.preventDefault();
+
+
+      setReview(
+        reviewIndex +
+        1
       );
 
     }
@@ -846,19 +773,11 @@ reviewSection?.addEventListener(
 );
 
 
-/* =========================================================
-   REVIEW TOUCH
-========================================================= */
-
-let reviewTouchStartX =
-  null;
-
-
 reviewSection?.addEventListener(
   "touchstart",
   (event) => {
 
-    reviewTouchStartX =
+    reviewTouchStart =
       event.touches[0]
         ?.clientX ??
       null;
@@ -875,52 +794,42 @@ reviewSection?.addEventListener(
   (event) => {
 
     if (
-      reviewTouchStartX ===
+      reviewTouchStart ===
       null
     ) {
       return;
     }
 
 
-    const endX =
+    const end =
       event.changedTouches[0]
         ?.clientX ??
-      reviewTouchStartX;
+      reviewTouchStart;
 
 
-    const distance =
-      endX -
-      reviewTouchStartX;
+    const delta =
+      end -
+      reviewTouchStart;
 
 
     if (
       Math.abs(
-        distance
-      ) >=
+        delta
+      ) >
       45
     ) {
 
-      if (
-        distance <
+      setReview(
+        delta <
         0
-      ) {
-
-        setReviewIndex(
-          reviewIndex + 1
-        );
-
-      } else {
-
-        setReviewIndex(
-          reviewIndex - 1
-        );
-
-      }
+          ? reviewIndex + 1
+          : reviewIndex - 1
+      );
 
     }
 
 
-    reviewTouchStartX =
+    reviewTouchStart =
       null;
 
   },
@@ -930,8 +839,311 @@ reviewSection?.addEventListener(
 );
 
 
+
 /* =========================================================
-   VISIBILITY
+   SCROLL REVEALS
+========================================================= */
+
+const revealElements =
+  Array.from(
+    document.querySelectorAll(
+      "[data-reveal]"
+    )
+  );
+
+
+if (
+  !reducedMotion.matches &&
+  "IntersectionObserver" in
+  window
+) {
+
+  const revealObserver =
+    new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(
+          (entry) => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target
+                .classList
+                .add(
+                  "is-visible"
+                );
+
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          }
+        );
+
+      },
+      {
+        threshold:
+          0.12,
+
+        rootMargin:
+          "0px 0px -8% 0px"
+      }
+    );
+
+
+  revealElements.forEach(
+    (element, index) => {
+
+      element.style.transitionDelay =
+        `${Math.min(index % 4, 3) * 55}ms`;
+
+
+      revealObserver.observe(
+        element
+      );
+
+    }
+  );
+
+} else {
+
+  revealElements.forEach(
+    (element) => {
+
+      element.classList.add(
+        "is-visible"
+      );
+
+    }
+  );
+
+}
+
+
+
+/* =========================================================
+   VERY SUBTLE IMAGE POINTER MOVEMENT
+========================================================= */
+
+const interactiveArtwork =
+  Array.from(
+    document.querySelectorAll(
+      ".interactive-art"
+    )
+  );
+
+
+if (
+  !reducedMotion.matches
+) {
+
+  interactiveArtwork.forEach(
+    (artwork) => {
+
+      artwork.addEventListener(
+        "pointermove",
+        (event) => {
+
+          if (
+            event.pointerType ===
+            "touch"
+          ) {
+            return;
+          }
+
+
+          const rect =
+            artwork.getBoundingClientRect();
+
+
+          const x =
+            (
+              event.clientX -
+              rect.left
+            ) /
+            rect.width -
+            0.5;
+
+
+          const y =
+            (
+              event.clientY -
+              rect.top
+            ) /
+            rect.height -
+            0.5;
+
+
+          artwork.style.setProperty(
+            "--pointer-x",
+            `${x * 8}px`
+          );
+
+
+          artwork.style.setProperty(
+            "--pointer-y",
+            `${y * 8}px`
+          );
+
+        }
+      );
+
+
+      artwork.addEventListener(
+        "pointerleave",
+        () => {
+
+          artwork.style.setProperty(
+            "--pointer-x",
+            "0px"
+          );
+
+
+          artwork.style.setProperty(
+            "--pointer-y",
+            "0px"
+          );
+
+        }
+      );
+
+    }
+  );
+
+}
+
+
+
+/* =========================================================
+   VERY SUBTLE SCROLL DRIFT
+========================================================= */
+
+const driftLayers =
+  Array.from(
+    document.querySelectorAll(
+      ".drift-layer"
+    )
+  );
+
+
+let ticking =
+  false;
+
+
+function updateDrift() {
+
+  if (
+    reducedMotion.matches
+  ) {
+
+    ticking =
+      false;
+
+    return;
+
+  }
+
+
+  const viewportHeight =
+    window.innerHeight;
+
+
+  driftLayers.forEach(
+    (layer) => {
+
+      const rect =
+        layer.getBoundingClientRect();
+
+
+      const centre =
+        rect.top +
+        rect.height /
+        2;
+
+
+      const distance =
+        centre -
+        viewportHeight /
+        2;
+
+
+      const normalized =
+        Math.max(
+          -1,
+          Math.min(
+            1,
+            distance /
+            viewportHeight
+          )
+        );
+
+
+      const drift =
+        normalized *
+        -18;
+
+
+      layer.style.setProperty(
+        "--drift-y",
+        `${drift}px`
+      );
+
+    }
+  );
+
+
+  ticking =
+    false;
+
+}
+
+
+function requestDriftUpdate() {
+
+  if (
+    ticking
+  ) {
+    return;
+  }
+
+
+  ticking =
+    true;
+
+
+  window.requestAnimationFrame(
+    updateDrift
+  );
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  requestDriftUpdate,
+  {
+    passive: true
+  }
+);
+
+
+window.addEventListener(
+  "resize",
+  requestDriftUpdate
+);
+
+
+requestDriftUpdate();
+
+
+
+/* =========================================================
+   PAGE VISIBILITY
 ========================================================= */
 
 document.addEventListener(
@@ -944,8 +1156,9 @@ document.addEventListener(
 );
 
 
+
 /* =========================================================
-   REDUCED MOTION
+   REDUCED MOTION CHANGE
 ========================================================= */
 
 if (
@@ -960,31 +1173,21 @@ if (
 
       startHeroAutoplay();
 
+      requestDriftUpdate();
+
     }
   );
 
 }
 
 
+
 /* =========================================================
    INITIALISE
 ========================================================= */
 
-renderHero();
+renderHeroSlider();
 
-renderReview();
+renderReviews();
 
 startHeroAutoplay();
-/* Scroll the announcement strip away; keep the logo/menu row at the top. */
-const siteHeader = document.querySelector('.site-header');
-const brandStrip = document.querySelector('.brand-strip');
-
-function updateStickyHeader() {
-  if (!siteHeader || !brandStrip) return;
-  const offset = Math.min(Math.max(window.scrollY, 0), brandStrip.offsetHeight);
-  siteHeader.style.setProperty('--header-strip-offset', `${offset}px`);
-}
-
-window.addEventListener('scroll', updateStickyHeader, { passive: true });
-window.addEventListener('resize', updateStickyHeader);
-updateStickyHeader();
