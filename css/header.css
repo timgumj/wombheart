@@ -1,0 +1,631 @@
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  position: relative;
+
+  z-index: 1000;
+
+  width: 100%;
+  height: var(--header-h);
+
+  background: #ffffff;
+
+  color: #18191b;
+}
+
+
+/* =========================================================
+   EXACT SAME WIDTH AS HERO
+========================================================= */
+
+.header-inner {
+  position: relative;
+
+  height: var(--header-h);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+
+/* =========================================================
+   LOGO AREA
+
+   IMPORTANT:
+   NO BURGUNDY RECTANGLE.
+========================================================= */
+
+.header-brand {
+  position: relative;
+
+  width: 176px;
+  height: var(--header-h);
+
+  flex:
+    0 0
+    176px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   ACTUAL CIRCULAR BURGUNDY LOGO BACKGROUND
+
+   One circular badge with several concentric
+   burgundy/red variations.
+========================================================= */
+
+.header-logo-circle {
+  position: absolute;
+
+  z-index: 0;
+
+  left: 50%;
+  top: 50%;
+
+  width: 94px;
+  height: 94px;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+
+      #650003 0%,
+      #650003 42%,
+
+      #710004 43%,
+      #710004 52%,
+
+      #86100f 57%,
+      #9d1c1c 64%,
+
+      #d43b3c 70%,
+      #e64b4b 73%,
+
+      #a6191a 79%,
+      #6a0004 88%,
+      #560002 100%
+    );
+
+  box-shadow:
+    inset
+    0
+    0
+    10px
+    rgba(
+      255,
+      81,
+      81,
+      0.28
+    ),
+    inset
+    0
+    0
+    22px
+    rgba(
+      45,
+      0,
+      2,
+      0.3
+    ),
+    0
+    0
+    8px
+    rgba(
+      218,
+      49,
+      49,
+      0.3
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WHITE LOGO TEXT
+========================================================= */
+
+.header-logo {
+  position: relative;
+
+  z-index: 2;
+
+  width: 78px;
+  height: auto;
+
+  max-height: 62px;
+
+  object-fit: contain;
+
+  filter:
+    brightness(0)
+    invert(1);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.header-nav {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap:
+    clamp(
+      21px,
+      1.8vw,
+      31px
+    );
+}
+
+
+.header-nav > a {
+  position: relative;
+
+  min-height: 44px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  color: #18191b;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.015em;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   LINK HOVER
+========================================================= */
+
+.header-nav
+> a:not(.header-nav-cta)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 7px;
+
+  height: 1.5px;
+
+  background: currentColor;
+
+  transform: scaleX(0);
+
+  transform-origin:
+    right center;
+
+  transition:
+    transform
+    300ms
+    var(--ease);
+}
+
+
+.header-nav
+> a:not(.header-nav-cta):hover::after {
+  transform: scaleX(1);
+
+  transform-origin:
+    left center;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.header-nav-cta {
+  min-height: 46px;
+
+  padding:
+    8px
+    22px;
+
+  border:
+    1.5px
+    solid
+    #18191b;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  transition:
+    background-color
+    180ms
+    ease,
+    color
+    180ms
+    ease;
+}
+
+
+.header-nav-cta:hover {
+  background: #18191b;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
+
+.header-menu-toggle {
+  position: relative;
+
+  z-index: 1003;
+
+  width: 43px;
+  height: 43px;
+
+  display: none;
+
+  padding: 0;
+
+  border:
+    1.5px
+    solid
+    #18191b;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+
+.header-menu-toggle span {
+  position: absolute;
+
+  left: 50%;
+
+  width: 16px;
+  height: 1.5px;
+
+  background: #18191b;
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    300ms
+    var(--ease);
+}
+
+
+.header-menu-toggle
+span:first-child {
+  top: 16px;
+}
+
+
+.header-menu-toggle
+span:last-child {
+  top: 24px;
+}
+
+
+.header-menu-toggle.is-open
+span:first-child,
+.header-menu-toggle.is-open
+span:last-child {
+  top: 20px;
+}
+
+
+.header-menu-toggle.is-open
+span:first-child {
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+}
+
+
+.header-menu-toggle.is-open
+span:last-child {
+  transform:
+    translateX(-50%)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.header-mobile-nav {
+  position: fixed;
+
+  z-index: 1001;
+
+  inset: 0;
+
+  padding-top:
+    var(--header-h);
+
+  background: #ffffff;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translateY(-8px);
+
+  transition:
+    opacity
+    280ms
+    ease,
+    transform
+    420ms
+    var(--ease),
+    visibility
+    280ms
+    ease;
+}
+
+
+.header-mobile-nav.is-open {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform: none;
+}
+
+
+.header-mobile-inner {
+  height:
+    calc(
+      100dvh -
+      var(--header-h)
+    );
+
+  padding:
+    22px
+    0
+    24px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.header-mobile-meta {
+  margin-bottom: 23px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #6e6d69;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.header-mobile-links {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.header-mobile-links a {
+  min-height: 68px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  border-top:
+    1px
+    solid
+    rgba(
+      24,
+      25,
+      27,
+      0.2
+    );
+}
+
+
+.header-mobile-links
+a:last-child {
+  border-bottom:
+    1px
+    solid
+    rgba(
+      24,
+      25,
+      27,
+      0.2
+    );
+}
+
+
+.header-mobile-links span {
+  font-size:
+    clamp(
+      32px,
+      8vw,
+      46px
+    );
+
+  font-weight: 600;
+
+  letter-spacing: -0.04em;
+}
+
+
+.header-mobile-links svg {
+  width: 38px;
+  height: 38px;
+
+  padding: 9px;
+
+  border:
+    1px
+    solid
+    #18191b;
+
+  border-radius: 50%;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+.header-mobile-footer {
+  margin-top: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: #6e6d69;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.header-mobile-cta {
+  min-height: 43px;
+
+  padding:
+    8px
+    16px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border:
+    1.5px
+    solid
+    #18191b;
+
+  border-radius: 999px;
+
+  color: #18191b;
+
+  font-weight: 700;
+}
+
+
+.header-mobile-cta svg {
+  width: 17px;
+  height: 17px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .header-nav {
+    display: none;
+  }
+
+
+  .header-menu-toggle {
+    display: block;
+  }
+
+}
+
+
+@media (max-width: 720px) {
+
+  .header-brand {
+    width: 130px;
+
+    flex-basis: 130px;
+  }
+
+
+  .header-logo-circle {
+    width: 68px;
+    height: 68px;
+  }
+
+
+  .header-logo {
+    width: 57px;
+
+    max-height: 47px;
+  }
+
+
+  .header-mobile-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+}

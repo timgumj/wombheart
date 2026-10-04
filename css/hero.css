@@ -1,0 +1,1014 @@
+/* =========================================================
+   WOMB & HEART
+   HERO
+========================================================= */
+
+
+/* =========================================================
+   HERO + HEADER = FULL VIEWPORT
+========================================================= */
+
+.hero {
+  width: 100%;
+
+  height:
+    calc(
+      100svh -
+      var(--header-h)
+    );
+
+  min-height: 620px;
+
+  padding:
+    4px
+    0
+    14px;
+
+  background: #ffffff;
+}
+
+
+.hero-shell {
+  height: 100%;
+}
+
+
+/* =========================================================
+   HERO STAGE
+========================================================= */
+
+.hero-stage {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #dddddd;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-photo {
+  position: absolute;
+
+  z-index: 1;
+
+  inset: 0;
+}
+
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position:
+    50%
+    48%;
+
+  filter: none;
+
+  transform: scale(1.001);
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   SUBTLE SHADE
+========================================================= */
+
+.hero-shade {
+  position: absolute;
+
+  z-index: 2;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(
+        0,
+        0,
+        0,
+        0.14
+      )
+      0%,
+      rgba(
+        0,
+        0,
+        0,
+        0
+      )
+      34%
+    );
+}
+
+
+/* =========================================================
+   SHARED NOTCH DESIGN
+
+   There are exactly TWO:
+   top-left and bottom-right.
+========================================================= */
+
+.hero-notch {
+  position: absolute;
+
+  background: #ffffff;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   TOP LEFT NOTCH
+========================================================= */
+
+.hero-notch--top-left {
+  z-index: 100;
+
+  top: 0;
+  left: 0;
+
+  width: 224px;
+  height: 64px;
+
+  padding:
+    7px
+    15px
+    10px
+    0;
+
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  border-right:
+    2px
+    solid
+    #18191b;
+
+  border-bottom:
+    2px
+    solid
+    #18191b;
+
+  border-bottom-right-radius: 30px;
+}
+
+
+/* =========================================================
+   BOTTOM RIGHT NOTCH
+
+   EXACT MIRROR OF TOP-LEFT.
+========================================================= */
+
+.hero-notch--bottom-right {
+  z-index: 999;
+
+  right: 0;
+  bottom: 0;
+
+  width: 224px;
+  height: 64px;
+
+  padding:
+    10px
+    0
+    7px
+    15px;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  border-left:
+    2px
+    solid
+    #18191b;
+
+  border-top:
+    2px
+    solid
+    #18191b;
+
+  border-top-left-radius: 30px;
+}
+
+
+/* =========================================================
+   BOTH NOTCH BUTTONS
+
+   ANGEBOTE + YOGA MAMA
+   ARE VISUALLY IDENTICAL.
+========================================================= */
+
+.hero-notch-button {
+  width: 193px;
+  height: 43px;
+
+  padding:
+    0
+    14px
+    0
+    18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  border:
+    1.5px
+    solid
+    #18191b;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  color: #18191b;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.01em;
+
+  white-space: nowrap;
+
+  transition:
+    background-color
+    180ms
+    ease,
+    color
+    180ms
+    ease;
+}
+
+
+.hero-notch-button svg {
+  width: 18px;
+  height: 18px;
+
+  flex:
+    0
+    0
+    18px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition:
+    transform
+    250ms
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.hero-notch-button:hover {
+  background: #18191b;
+
+  color: #ffffff;
+}
+
+
+.hero-notch-button:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   NADJA INFORMATION
+========================================================= */
+
+.hero-nadja {
+  position: absolute;
+
+  z-index: 20;
+
+  top: 27px;
+  right: 27px;
+
+  display: flex;
+
+  align-items: stretch;
+
+  gap: 13px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0
+    2px
+    14px
+    rgba(
+      0,
+      0,
+      0,
+      0.38
+    );
+}
+
+
+.hero-nadja-rule {
+  width: 2px;
+
+  align-self: stretch;
+
+  background: #ffffff;
+
+  border-radius: 999px;
+
+  transform-origin: top;
+}
+
+
+.hero-nadja-copy {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.hero-nadja-copy strong {
+  font-size:
+    clamp(
+      21px,
+      1.6vw,
+      26px
+    );
+
+  font-weight: 700;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.025em;
+}
+
+
+.hero-nadja-copy > span {
+  margin-top: 7px;
+
+  font-size:
+    clamp(
+      15px,
+      1.05vw,
+      18px
+    );
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   SMALL SLIDER
+========================================================= */
+
+.hero-slider {
+  position: absolute;
+
+  z-index: 30;
+
+  left: 20px;
+  bottom: 20px;
+
+  width:
+    clamp(
+      330px,
+      28vw,
+      390px
+    );
+
+  outline: none;
+}
+
+
+/* =========================================================
+   SLIDER WINDOW
+========================================================= */
+
+.hero-slider-window {
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+}
+
+
+.hero-slider-track {
+  display: flex;
+
+  width: 100%;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.hero-slide {
+  flex:
+    0
+    0
+    100%;
+
+  width: 100%;
+
+  min-height: 126px;
+
+  padding: 8px;
+
+  display: grid;
+
+  grid-template-columns:
+    110px
+    minmax(
+      0,
+      1fr
+    );
+
+  gap: 15px;
+
+  border:
+    1.5px
+    solid
+    rgba(
+      24,
+      25,
+      27,
+      0.78
+    );
+
+  border-radius: 15px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.96
+    );
+
+  color: #18191b;
+
+  box-shadow:
+    0
+    10px
+    30px
+    rgba(
+      0,
+      0,
+      0,
+      0.08
+    );
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+}
+
+
+/* =========================================================
+   SLIDER IMAGE
+========================================================= */
+
+.hero-slide-image {
+  width: 110px;
+  height: 110px;
+
+  overflow: hidden;
+
+  border-radius: 11px;
+
+  background: #ececec;
+}
+
+
+.hero-slide-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  filter: none;
+}
+
+
+/* =========================================================
+   SLIDER CONTENT
+========================================================= */
+
+.hero-slide-content {
+  min-width: 0;
+
+  padding:
+    4px
+    4px
+    3px
+    0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.hero-slide-meta {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  color: #777772;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.075em;
+}
+
+
+.hero-slide h2 {
+  margin:
+    9px
+    0
+    0;
+
+  color: #18191b;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.025em;
+}
+
+
+.hero-slide p {
+  max-width: 24ch;
+
+  margin-top: 7px;
+
+  color: #62625e;
+
+  font-size: 14px;
+  line-height: 1.22;
+}
+
+
+.hero-slide-link {
+  margin-top: auto;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #18191b;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.055em;
+}
+
+
+.hero-slide-link svg {
+  width: 15px;
+  height: 15px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition:
+    transform
+    220ms
+    ease;
+}
+
+
+.hero-slide-link:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   SLIDER NAVIGATION
+========================================================= */
+
+.hero-slider-navigation {
+  margin-top: 9px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+}
+
+
+.hero-slider-arrows {
+  display: flex;
+
+  gap: 7px;
+}
+
+
+.hero-slider-arrows button {
+  width: 37px;
+  height: 37px;
+
+  padding: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1.5px
+    solid
+    #18191b;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #18191b;
+
+  transition:
+    background-color
+    180ms
+    ease,
+    color
+    180ms
+    ease;
+}
+
+
+.hero-slider-arrows button:hover {
+  background: #18191b;
+
+  color: #ffffff;
+}
+
+
+.hero-slider-arrows svg {
+  width: 17px;
+  height: 17px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+.hero-slider-counter {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-shadow:
+    0
+    1px
+    8px
+    rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
+}
+
+
+.hero-slider-progress {
+  width: 72px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      1fr
+    );
+
+  gap: 4px;
+}
+
+
+.hero-slider-progress i {
+  height: 2px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.42
+    );
+}
+
+
+.hero-slider-progress
+i.is-active {
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+  .hero {
+    height:
+      calc(
+        100svh -
+        var(--header-h)
+      );
+
+    min-height: 590px;
+
+    padding:
+      3px
+      0
+      9px;
+  }
+
+
+  .hero-stage {
+    border-radius: 15px;
+  }
+
+
+  .hero-photo img {
+    object-position:
+      center
+      center;
+  }
+
+
+  /* SAME TWO NOTCHES */
+
+  .hero-notch--top-left,
+  .hero-notch--bottom-right {
+    width: 182px;
+    height: 55px;
+  }
+
+
+  .hero-notch--top-left {
+    padding:
+      6px
+      11px
+      8px
+      0;
+
+    border-bottom-right-radius: 24px;
+  }
+
+
+  .hero-notch--bottom-right {
+    padding:
+      8px
+      0
+      6px
+      11px;
+
+    border-top-left-radius: 24px;
+  }
+
+
+  .hero-notch-button {
+    width: 158px;
+    height: 39px;
+
+    padding:
+      0
+      11px
+      0
+      14px;
+
+    font-size: 13px;
+  }
+
+
+  .hero-notch-button svg {
+    width: 16px;
+    height: 16px;
+
+    flex-basis: 16px;
+  }
+
+
+  /* NADJA */
+
+  .hero-nadja {
+    top: 14px;
+    right: 13px;
+
+    gap: 8px;
+  }
+
+
+  .hero-nadja-rule {
+    width: 1.5px;
+  }
+
+
+  .hero-nadja-copy strong {
+    font-size: 16px;
+  }
+
+
+  .hero-nadja-copy > span {
+    margin-top: 4px;
+
+    font-size: 11px;
+  }
+
+
+  /* SLIDER */
+
+  .hero-slider {
+    left: 10px;
+
+    /*
+      kept above permanent Yoga Mama notch
+    */
+    bottom: 68px;
+
+    width: 255px;
+  }
+
+
+  .hero-slide {
+    min-height: 96px;
+
+    padding: 6px;
+
+    grid-template-columns:
+      80px
+      1fr;
+
+    gap: 10px;
+  }
+
+
+  .hero-slide-image {
+    width: 80px;
+    height: 80px;
+  }
+
+
+  .hero-slide-meta {
+    font-size: 9px;
+  }
+
+
+  .hero-slide h2 {
+    margin-top: 5px;
+
+    font-size: 18px;
+  }
+
+
+  .hero-slide p {
+    display: none;
+  }
+
+
+  .hero-slide-link {
+    font-size: 10px;
+  }
+
+
+  .hero-slider-arrows button {
+    width: 31px;
+    height: 31px;
+  }
+
+
+  .hero-slider-counter {
+    font-size: 10px;
+  }
+
+
+  .hero-slider-progress {
+    width: 48px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 440px) {
+
+  .hero-slider {
+    width: 220px;
+  }
+
+
+  .hero-slide {
+    min-height: 86px;
+
+    grid-template-columns:
+      70px
+      1fr;
+  }
+
+
+  .hero-slide-image {
+    width: 70px;
+    height: 70px;
+  }
+
+
+  .hero-slide-meta
+  span:last-child {
+    display: none;
+  }
+
+
+  .hero-slide h2 {
+    font-size: 16px;
+  }
+
+}
