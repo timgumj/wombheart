@@ -21,9 +21,19 @@
 .program-switcher {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: flex-end;
   width: 100%;
+}
+
+.program-switcher-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(49, 0, 1, 0.14);
 }
 
 .program-switcher-label {
@@ -530,15 +540,14 @@
 .program-switcher-label {
   box-sizing: border-box;
   display: inline-flex;
-  width: 312px;
-  height: 56px;
-  flex: 0 0 312px;
+  width: auto;
+  height: 44px;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
-  border: 1px solid rgba(86, 0, 2, 0.16);
+  padding: 0 16px;
+  border: 0;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
   color: #560002;
   font-size: 12px;
   font-weight: 700;
@@ -548,9 +557,9 @@
 }
 
 .program-switcher-tabs {
-  border-color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 8px 24px rgba(49, 0, 1, 0.14);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .program-experience #yoga-mama-detail .yoga-mama-layout,
@@ -640,11 +649,11 @@
 
   .program-experience .program-switcher-label {
     width: max-content;
-    height: 46px;
+    height: 38px;
     flex: 0 0 auto;
     max-width: none;
-    padding: 8px 7px;
-    font-size: 6px;
+    padding: 0 7px;
+    font-size: 7px;
     letter-spacing: 0.12em;
     white-space: nowrap;
   }
@@ -672,6 +681,12 @@
   .program-experience .program-switcher-tabs {
     width: auto;
     gap: 3px;
+    padding: 3px;
+  }
+
+  .program-experience .program-switcher-control {
+    max-width: 100%;
+    gap: 2px;
     padding: 3px;
   }
 
