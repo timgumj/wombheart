@@ -1351,10 +1351,15 @@
     --intro-column-height: clamp(500px, 40vw, 570px);
   }
 
+  .intro-editorial .intro-panel {
+    padding-top: 68px;
+    padding-bottom: 54px;
+  }
+
   .intro-editorial .intro-content {
     grid-template-rows: auto auto auto auto;
-    align-content: center;
-    row-gap: 16px;
+    align-content: start;
+    row-gap: 0;
   }
 
   .intro-editorial .intro-heading-group {
@@ -1363,11 +1368,11 @@
 
   .intro-editorial .intro-body {
     align-self: start;
-    padding-block: 0;
+    padding-block: 22px;
   }
 
   .intro-editorial .intro-body p + p {
-    margin-top: 10px;
+    margin-top: 22px;
   }
 
   .intro-editorial .intro-read-more {
@@ -1386,12 +1391,13 @@
     min-height: var(--intro-column-height);
     grid-template-columns: minmax(430px, 0.92fr) minmax(500px, 1.08fr);
     column-gap: calc(clamp(55px, 6.5vw, 95px) + 40px);
+    align-items: start;
+    align-content: center;
   }
 
   .intro-editorial .intro-image-area {
     height: calc(var(--intro-column-height) * 0.7);
     max-width: 602px;
-    align-self: center;
     left: 20px;
     padding-right: 68px;
   }
@@ -1405,14 +1411,17 @@
   .intro-editorial .intro-content {
     position: relative;
     left: 100px;
-    height: calc(var(--intro-column-height) * 0.7);
+    height: auto;
     padding-left: 36px;
-    align-self: center;
-    align-content: start;
   }
 }
 
 @media (min-width: 1001px) and (max-width: 1100px) {
+  .intro-editorial .intro-panel {
+    padding-top: 44px;
+    padding-bottom: 42px;
+  }
+
   .intro-editorial .intro-main {
     --intro-column-height: 520px;
     grid-template-columns: minmax(360px, 0.92fr) minmax(440px, 1.08fr);
