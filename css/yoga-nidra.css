@@ -1,0 +1,1543 @@
+/* =========================================================
+   WOMB & HEART
+   YOGA NIDRA
+
+   DESKTOP:
+   LEFT  = CONTENT
+   RIGHT = IMAGE
+
+   IMPORTANT:
+   - Section stays exactly inside .home-shell
+   - Right edge stays aligned with other sections
+   - Large image expands ONLY toward the LEFT
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.yoga-nidra-feature {
+  --nidra-image-grow: clamp(55px, 6vw, 95px);
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(45px, 5vw, 70px)
+    0
+    clamp(105px, 9vw, 150px);
+
+  background: #ffffff;
+
+  color: #18191b;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SHELL
+
+   IMPORTANT:
+   No width increase here.
+   Same .home-shell width as the rest of the website.
+========================================================= */
+
+.yoga-nidra-feature .yoga-mama-shell {
+  position: relative;
+
+  width:
+    min(
+      calc(100% - var(--page-x) * 2),
+      var(--max-width)
+    );
+
+  margin-inline: auto;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   MAIN GRID
+
+   Entire grid remains inside normal site width.
+
+   LEFT  = CONTENT
+   RIGHT = IMAGE
+
+   The right image column gets more visual weight,
+   but does NOT make the section wider.
+========================================================= */
+
+.yoga-nidra-feature .yoga-mama-layout {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(390px, 0.92fr)
+    minmax(0, 1.3fr);
+
+  gap:
+    clamp(
+      70px,
+      7vw,
+      105px
+    );
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   LEFT CONTENT COLUMN
+========================================================= */
+
+.yoga-nidra-feature .yoga-mama-content {
+  position: relative;
+
+  z-index: 4;
+
+  grid-column: 1;
+
+  grid-row: 1;
+
+  width: 100%;
+
+  max-width: 570px;
+
+  min-width: 0;
+
+  justify-self: start;
+
+  align-self: start;
+
+  /*
+    Space between DEEP REST and all text content.
+  */
+  padding:
+    0
+    0
+    0
+    clamp(
+      58px,
+      5vw,
+      82px
+    );
+}
+
+
+/* =========================================================
+   RIGHT IMAGE COLUMN
+
+   IMPORTANT:
+   Column itself stays at 100%.
+
+   We DO NOT make this container wider.
+   We DO NOT use a negative right margin.
+
+   Therefore the right edge remains exactly aligned with
+   the other site sections.
+========================================================= */
+
+.yoga-nidra-feature .yoga-mama-visual {
+  position: relative;
+
+  z-index: 3;
+
+  grid-column: 2;
+
+  grid-row: 1;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+/* =========================================================
+   LARGE IMAGE
+
+   THIS IS WHERE THE EXTRA WIDTH IS CREATED.
+
+   The image becomes wider, BUT:
+   - right edge stays where it already was
+   - extra width grows toward LEFT
+   - overall site width does not change
+========================================================= */
+
+.yoga-nidra-feature .yoga-mama-main-image {
+  position: relative;
+
+  z-index: 1;
+
+  width:
+    calc(
+      100% +
+      var(--nidra-image-grow)
+    );
+
+  height:
+    clamp(
+      620px,
+      54vw,
+      760px
+    );
+
+  margin:
+    0
+    0
+    0
+    calc(
+      0px -
+      var(--nidra-image-grow)
+    );
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #ddd8cf;
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-main-image img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  max-width: none;
+
+  object-fit: cover;
+
+  object-position: center center;
+}
+
+
+/* =========================================================
+   SMALL OVERLAPPING IMAGE
+
+   Position it relative to the NEW left edge of the
+   expanded main image.
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-detail-image {
+  position: absolute;
+
+  z-index: 5;
+
+  left:
+    calc(
+      22px -
+      var(--nidra-image-grow)
+    );
+
+  right: auto;
+
+  bottom: 42px;
+}
+
+
+/* =========================================================
+   DETAIL IMAGE
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-detail-image img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center center;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   DETAIL IMAGE LABEL
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-detail-label {
+  left: 12px;
+
+  right: auto;
+
+  bottom: 17px;
+
+  color: #18191b;
+}
+
+
+/* =========================================================
+   TOP KICKER
+
+   YOGA NIDRA ───── RUHE · REGULATION · TIEFE
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-kicker {
+  width: 100%;
+
+  margin: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #18191b;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+.yoga-nidra-feature
+.yoga-mama-kicker > span:first-child {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+}
+
+
+.yoga-nidra-feature
+.yoga-mama-kicker > span:last-child {
+  color: #67625e;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   KICKER LINE
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-kicker-line {
+  width:
+    clamp(
+      55px,
+      5vw,
+      90px
+    );
+
+  height: 1px;
+
+  flex:
+    0
+    0
+    auto;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-content h2 {
+  margin:
+    25px
+    0
+    0;
+
+  color: #18191b;
+
+  font-size:
+    clamp(
+      24px,
+      2vw,
+      30px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.015em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TITLE RULE
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-title-line {
+  display: block;
+
+  width: 72px;
+
+  height: 1px;
+
+  margin-top: 10px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-intro {
+  width: 100%;
+
+  max-width: 540px;
+
+  margin:
+    32px
+    0
+    0;
+
+  color: #3e3b38;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.48;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-benefits {
+  width: 100%;
+
+  margin-top: 38px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   BENEFIT ROW
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-benefit {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    62px
+    minmax(0, 1fr);
+
+  gap: 20px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   BENEFIT ICON
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-benefit-icon {
+  width: 58px;
+
+  height: 58px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px
+    solid
+    rgba(
+      24,
+      25,
+      27,
+      0.11
+    );
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #18191b;
+}
+
+
+.yoga-nidra-feature
+.yoga-mama-benefit-icon svg {
+  width: 28px;
+
+  height: 28px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.4;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   BENEFIT TITLE
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-benefit-copy h3 {
+  margin: 0;
+
+  color: #18191b;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BENEFIT TEXT
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-benefit-copy p {
+  max-width: 450px;
+
+  margin:
+    7px
+    0
+    0;
+
+  color: #4a4643;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.42;
+
+  letter-spacing: -0.005em;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-button {
+  width:
+    min(
+      100%,
+      390px
+    );
+
+  min-height: 56px;
+
+  margin-top: 40px;
+
+  padding:
+    0
+    28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-radius: 999px;
+
+  background: #671422;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   CTA ICON
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-button svg {
+  width: 19px;
+
+  height: 19px;
+
+  flex:
+    0
+    0
+    19px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   NO HOVER MOVEMENT
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-button:hover {
+  background: #671422;
+
+  transform: none;
+}
+
+
+.yoga-nidra-feature
+.yoga-mama-button:hover svg {
+  transform: none;
+}
+
+
+/* =========================================================
+   DEEP REST
+
+   DEEP REST occupies the far-left editorial edge.
+
+   Actual text content has padding-left so there is
+   a clear margin between both.
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-side-meta {
+  position: absolute;
+
+  z-index: 6;
+
+  top: 0;
+
+  left: 0;
+
+  right: auto;
+
+  transform: none;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 11px;
+
+  color: #18191b;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LINE ABOVE DEEP REST
+
+   Starts at same top position as Yoga Nidra kicker.
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-side-line {
+  display: block;
+
+  width: 1px;
+
+  height:
+    clamp(
+      68px,
+      7vw,
+      100px
+    );
+
+  margin: 0;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   DEEP REST TEXT
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-side-word {
+  color: #18191b;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.17em;
+
+  writing-mode: vertical-rl;
+
+  text-orientation: mixed;
+}
+
+
+/* =========================================================
+   01 / 02 / 03 IMAGE INDEX
+
+   The image right edge is exactly aligned with shell right.
+   Therefore this can remain positioned from shell right.
+
+   It visually sits INSIDE the image.
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-index {
+  position: absolute;
+
+  z-index: 8;
+
+  top: 50%;
+
+  right:
+    clamp(
+      18px,
+      2vw,
+      30px
+    );
+
+  bottom: auto;
+
+  left: auto;
+
+  transform:
+    translateY(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 14px;
+
+  color: #ffffff;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WHITE NUMBERS
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-index span {
+  color: #ffffff;
+}
+
+
+.yoga-nidra-feature
+.yoga-mama-index span:not(.yoga-mama-index-line) {
+  color: #ffffff;
+
+  text-shadow:
+    0
+    1px
+    8px
+    rgba(
+      0,
+      0,
+      0,
+      0.22
+    );
+}
+
+
+/* =========================================================
+   WHITE INDEX LINE
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-index-line {
+  width: 1px;
+
+  height:
+    clamp(
+      58px,
+      6vw,
+      82px
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    );
+}
+
+
+/* =========================================================
+   LARGE PALE NIDRA WORD
+
+   Stays behind LEFT / TEXT column.
+========================================================= */
+
+.yoga-nidra-feature
+.yoga-mama-background-word {
+  position: absolute;
+
+  z-index: 0;
+
+  top:
+    clamp(
+      120px,
+      12vw,
+      175px
+    );
+
+  left:
+    clamp(
+      8px,
+      1.5vw,
+      22px
+    );
+
+  right: auto;
+
+  color:
+    rgba(
+      24,
+      25,
+      27,
+      0.035
+    );
+
+  font-size:
+    clamp(
+      130px,
+      15vw,
+      225px
+    );
+
+  font-weight: 700;
+
+  line-height: 0.75;
+
+  letter-spacing: -0.07em;
+
+  writing-mode: vertical-rl;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1450px) {
+
+  .yoga-nidra-feature {
+    --nidra-image-grow: 100px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-layout {
+    grid-template-columns:
+      minmax(430px, 0.92fr)
+      minmax(0, 1.3fr);
+
+    gap: 110px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-content {
+    max-width: 590px;
+
+    padding-left: 82px;
+  }
+
+
+  /*
+    NO width expansion on .yoga-mama-visual.
+
+    Only the image itself expands to the LEFT.
+  */
+  .yoga-nidra-feature
+  .yoga-mama-visual {
+    width: 100%;
+
+    margin: 0;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-index {
+    right: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .yoga-nidra-feature {
+    --nidra-image-grow: 50px;
+
+    padding:
+      45px
+      0
+      115px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-layout {
+    grid-template-columns:
+      minmax(360px, 0.95fr)
+      minmax(0, 1.2fr);
+
+    gap: 62px;
+  }
+
+
+  /* =====================================================
+     CONTENT
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-content {
+    max-width: 530px;
+
+    padding-left: 62px;
+  }
+
+
+  /* =====================================================
+     IMAGE COLUMN STAYS NORMAL WIDTH
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-visual {
+    width: 100%;
+
+    margin: 0;
+  }
+
+
+  /* =====================================================
+     IMAGE GROWS LEFT ONLY
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-main-image {
+    width:
+      calc(
+        100% +
+        var(--nidra-image-grow)
+      );
+
+    margin-left:
+      calc(
+        0px -
+        var(--nidra-image-grow)
+      );
+
+    height: 650px;
+  }
+
+
+  /* =====================================================
+     DETAIL IMAGE
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-detail-image {
+    left:
+      calc(
+        18px -
+        var(--nidra-image-grow)
+      );
+
+    right: auto;
+
+    bottom: 36px;
+  }
+
+
+  /* =====================================================
+     BENEFITS
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-benefits {
+    gap: 20px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-benefit {
+    grid-template-columns:
+      56px
+      minmax(0, 1fr);
+
+    gap: 17px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-benefit-icon {
+    width: 54px;
+
+    height: 54px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-benefit-icon svg {
+    width: 26px;
+
+    height: 26px;
+  }
+
+
+  /* =====================================================
+     IMAGE INDEX
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-index {
+    right: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .yoga-nidra-feature {
+    --nidra-image-grow: 0px;
+
+    padding:
+      40px
+      0
+      105px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-layout {
+    grid-template-columns: 1fr;
+
+    gap: 58px;
+  }
+
+
+  /* =====================================================
+     CONTENT FIRST
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-content {
+    grid-column: 1;
+
+    grid-row: 1;
+
+    width: 100%;
+
+    max-width: 640px;
+
+    padding:
+      0
+      0
+      0
+      58px;
+
+    justify-self: start;
+  }
+
+
+  /* =====================================================
+     IMAGE SECOND
+
+     Normal shell width on tablet.
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-visual {
+    grid-column: 1;
+
+    grid-row: 2;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-main-image {
+    width: 100%;
+
+    height: 600px;
+
+    margin-left: 0;
+  }
+
+
+  /* =====================================================
+     DETAIL IMAGE
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-detail-image {
+    left: 18px;
+
+    right: auto;
+
+    bottom: 35px;
+
+    width: 190px;
+
+    height: 260px;
+  }
+
+
+  /* =====================================================
+     DEEP REST
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-side-meta {
+    top: 0;
+
+    left: 8px;
+
+    transform: none;
+  }
+
+
+  /* =====================================================
+     INDEX STILL INSIDE IMAGE
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-index {
+    top: auto;
+
+    right: 20px;
+
+    bottom: 55px;
+
+    left: auto;
+
+    transform: none;
+
+    display: flex;
+  }
+
+
+  /* =====================================================
+     BACKGROUND NIDRA
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-background-word {
+    top: 1%;
+
+    left: 4px;
+
+    right: auto;
+
+    font-size: 145px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 620px) {
+
+  .yoga-nidra-feature {
+    --nidra-image-grow: 0px;
+
+    padding:
+      25px
+      0
+      85px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-layout {
+    gap: 48px;
+  }
+
+
+  /* =====================================================
+     SIDE META
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-side-meta {
+    display: none;
+  }
+
+
+  /* =====================================================
+     CONTENT
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-content {
+    grid-column: 1;
+
+    grid-row: 1;
+
+    width: 100%;
+
+    max-width: none;
+
+    padding: 0;
+  }
+
+
+  /* =====================================================
+     KICKER
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-kicker {
+    gap: 7px;
+
+    white-space: normal;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-kicker > span:first-child {
+    font-size: 7px;
+
+    letter-spacing: 0.13em;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-kicker > span:last-child {
+    font-size: 7px;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.1em;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-kicker-line {
+    width: 30px;
+  }
+
+
+  /* =====================================================
+     TITLE
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-content h2 {
+    margin-top: 20px;
+
+    font-size:
+      clamp(
+        21px,
+        6vw,
+        26px
+      );
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-title-line {
+    width: 55px;
+
+    margin-top: 8px;
+  }
+
+
+  /* =====================================================
+     INTRO
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-intro {
+    margin-top: 25px;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+  }
+
+
+  /* =====================================================
+     BENEFITS
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-benefits {
+    margin-top: 32px;
+
+    gap: 22px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-benefit {
+    grid-template-columns:
+      50px
+      minmax(0, 1fr);
+
+    gap: 14px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-benefit-icon {
+    width: 48px;
+
+    height: 48px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-benefit-icon svg {
+    width: 24px;
+
+    height: 24px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-benefit-copy h3 {
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-benefit-copy p {
+    margin-top: 6px;
+
+    font-size: 15px;
+
+    line-height: 1.42;
+  }
+
+
+  /* =====================================================
+     CTA
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-button {
+    width: 100%;
+
+    min-height: 54px;
+
+    margin-top: 34px;
+
+    padding:
+      0
+      22px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.14em;
+  }
+
+
+  /* =====================================================
+     IMAGE
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-visual {
+    grid-column: 1;
+
+    grid-row: 2;
+
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-main-image {
+    width: 100%;
+
+    height: 500px;
+
+    margin-left: 0;
+
+    border-radius: 18px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-main-image img {
+    object-position:
+      center
+      42%;
+  }
+
+
+  /* =====================================================
+     DETAIL IMAGE
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-detail-image {
+    left: 12px;
+
+    right: auto;
+
+    bottom: -28px;
+
+    width: 142px;
+
+    height: 190px;
+
+    border-width: 3px;
+
+    border-radius: 14px;
+  }
+
+
+  .yoga-nidra-feature
+  .yoga-mama-detail-label {
+    left: 10px;
+
+    right: auto;
+  }
+
+
+  /* =====================================================
+     IMAGE INDEX
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-index {
+    display: none;
+  }
+
+
+  /* =====================================================
+     BACKGROUND WORD
+  ====================================================== */
+
+  .yoga-nidra-feature
+  .yoga-mama-background-word {
+    display: none;
+  }
+
+}

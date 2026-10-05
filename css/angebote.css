@@ -1,0 +1,1845 @@
+/* =========================================================
+   WOMB & HEART
+   ANGEBOTE
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.angebote {
+  width:
+    100%;
+
+  padding:
+    0
+    0
+    clamp(
+      90px,
+      8vw,
+      130px
+    );
+
+  background:
+    #ffffff;
+
+  color:
+    #18191b;
+}
+
+
+.angebote-shell {
+  position:
+    relative;
+}
+
+
+/* =========================================================
+   COMPLETE PANEL
+
+   Matches the visual language of the Intro section.
+========================================================= */
+
+.angebote-panel {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  overflow:
+    hidden;
+
+  padding:
+    clamp(
+      44px,
+      5vw,
+      68px
+    )
+    clamp(
+      42px,
+      5vw,
+      72px
+    )
+    clamp(
+      42px,
+      4vw,
+      58px
+    );
+
+  background:
+    #f3f2ef;
+
+  border-radius:
+    34px;
+}
+
+
+/* =========================================================
+   TOP META
+
+   ANGEBOTE ───────── KÖRPER · ZYKLUS · VERBINDUNG
+
+   ONLY ONE SEPARATOR.
+========================================================= */
+
+.angebote-top-meta {
+  width:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  color:
+    #18191b;
+
+  line-height:
+    1;
+
+  white-space:
+    nowrap;
+}
+
+
+.angebote-top-meta strong {
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.19em;
+}
+
+
+.angebote-top-separator {
+  width:
+    clamp(
+      60px,
+      7vw,
+      105px
+    );
+
+  height:
+    1px;
+
+  flex:
+    0
+    0
+    auto;
+
+  background:
+    #9c565a;
+}
+
+
+.angebote-top-meta > span:last-child {
+  color:
+    #67625e;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.17em;
+}
+
+
+/* =========================================================
+   HEADING ROW
+========================================================= */
+
+.angebote-heading-row {
+  width:
+    100%;
+
+  margin-top:
+    25px;
+
+  margin-bottom:
+    44px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      330px,
+      0.86fr
+    )
+    minmax(
+      420px,
+      1.14fr
+    );
+
+  gap:
+    clamp(
+      58px,
+      7vw,
+      105px
+    );
+
+  align-items:
+    start;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+
+   SAME SCALE AS INTRO TITLE.
+========================================================= */
+
+.angebote-heading-row h2 {
+  margin:
+    0;
+
+  color:
+    #18191b;
+
+  font-size:
+    clamp(
+      24px,
+      2vw,
+      30px
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1.05;
+
+  letter-spacing:
+    -0.015em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   HEADER PARAGRAPH
+========================================================= */
+
+.angebote-heading-row p {
+  width:
+    100%;
+
+  max-width:
+    510px;
+
+  margin:
+    0;
+
+  color:
+    #3e3b38;
+
+  font-size:
+    18px;
+
+  font-weight:
+    400;
+
+  line-height:
+    1.48;
+
+  letter-spacing:
+    -0.01em;
+}
+
+
+/* =========================================================
+   BENTO GRID
+
+   More breathing room between every box.
+
+   DESKTOP:
+
+   ┌─────────────┬─────────────────────────┐
+   │             │       YOGA NIDRA        │
+   │             ├────────────┬────────────┤
+   │ YOGA MAMA   │ EDUCATION  │ THE BOOK   │
+   │             │            │            │
+   └─────────────┴────────────┴────────────┘
+========================================================= */
+
+.angebote-grid {
+  width:
+    100%;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      360px,
+      0.88fr
+    )
+    minmax(
+      0,
+      0.56fr
+    )
+    minmax(
+      0,
+      0.56fr
+    );
+
+  grid-template-rows:
+    290px
+    320px;
+
+  gap:
+    16px;
+}
+
+
+/* =========================================================
+   SHARED CARD
+========================================================= */
+
+.angebot-card {
+  position:
+    relative;
+
+  min-width:
+    0;
+
+  overflow:
+    hidden;
+
+  display:
+    grid;
+
+  background:
+    #ffffff;
+
+  border:
+    1px
+    solid
+    rgba(
+      24,
+      25,
+      27,
+      0.08
+    );
+
+  border-radius:
+    20px;
+
+  isolation:
+    isolate;
+}
+
+
+/* =========================================================
+   COPY
+========================================================= */
+
+.angebot-card-copy {
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  min-width:
+    0;
+
+  min-height:
+    0;
+
+  padding:
+    26px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    flex-start;
+}
+
+
+/* =========================================================
+   PREMIUM ICON
+========================================================= */
+
+.angebot-icon {
+  width:
+    46px;
+
+  height:
+    46px;
+
+  flex:
+    0
+    0
+    46px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.72
+    );
+
+  border-radius:
+    15px
+    15px
+    15px
+    5px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.58
+    );
+
+  color:
+    #7e3f43;
+}
+
+
+.angebot-icon svg {
+  width:
+    27px;
+
+  height:
+    27px;
+
+  fill:
+    none;
+
+  stroke:
+    currentColor;
+
+  stroke-width:
+    1.35;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+
+/* =========================================================
+   COPY GROUP
+========================================================= */
+
+.angebot-copy-main {
+  width:
+    100%;
+
+  margin-top:
+    22px;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.angebot-category {
+  display:
+    block;
+
+  margin-bottom:
+    8px;
+
+  color:
+    #925056;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.15;
+
+  letter-spacing:
+    0.14em;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.angebot-card h3 {
+  margin:
+    0;
+
+  color:
+    #18191b;
+
+  font-size:
+    clamp(
+      25px,
+      2vw,
+      31px
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -0.025em;
+}
+
+
+/* =========================================================
+   1PX RULE
+========================================================= */
+
+.angebot-copy-rule {
+  display:
+    block;
+
+  width:
+    54px;
+
+  height:
+    1px;
+
+  margin-top:
+    10px;
+
+  background:
+    #9c565a;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.angebot-card-copy p {
+  max-width:
+    225px;
+
+  margin:
+    16px
+    0
+    0;
+
+  color:
+    #4a4642;
+
+  font-size:
+    16px;
+
+  font-weight:
+    400;
+
+  line-height:
+    1.45;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.angebot-link {
+  width:
+    fit-content;
+
+  margin-top:
+    auto;
+
+  padding-bottom:
+    4px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  border-bottom:
+    1px
+    solid
+    currentColor;
+
+  color:
+    #18191b;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.13em;
+
+  transition:
+    opacity
+    180ms
+    ease;
+}
+
+
+.angebot-link:hover {
+  opacity:
+    0.55;
+}
+
+
+.angebot-link svg {
+  width:
+    15px;
+
+  height:
+    15px;
+
+  fill:
+    none;
+
+  stroke:
+    currentColor;
+
+  stroke-width:
+    1.8;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+
+  transition:
+    transform
+    220ms
+    ease;
+}
+
+
+.angebot-link:hover svg {
+  transform:
+    translateX(
+      3px
+    );
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.angebot-card-media {
+  position:
+    relative;
+
+  min-width:
+    0;
+
+  min-height:
+    0;
+
+  margin:
+    0;
+
+  overflow:
+    hidden;
+
+  background:
+    #ddd9d2;
+}
+
+
+.angebot-card-media img {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  max-width:
+    none;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform
+    700ms
+    var(
+      --ease,
+      cubic-bezier(
+        .22,
+        1,
+        .36,
+        1
+      )
+    );
+}
+
+
+.angebot-card:hover
+.angebot-card-media img {
+  transform:
+    scale(
+      1.018
+    );
+}
+
+
+/* =========================================================
+   YOGA MAMA
+========================================================= */
+
+.angebot-card--mama {
+  grid-column:
+    1;
+
+  grid-row:
+    1 / 3;
+
+  grid-template-columns:
+    minmax(
+      205px,
+      0.74fr
+    )
+    minmax(
+      0,
+      1.26fr
+    );
+}
+
+
+.angebot-card--mama
+.angebot-card-copy {
+  padding:
+    30px
+    25px
+    28px;
+}
+
+
+/* =========================================================
+   YOGA MAMA IMAGE
+
+   Keep important LEFT part of source image visible.
+========================================================= */
+
+.angebot-card--mama
+.angebot-card-media img {
+  object-position:
+    left
+    center;
+}
+
+
+/* =========================================================
+   YOGA MAMA FLIPPED META
+
+   Moved UP away from ENTDECKEN.
+
+   Font increased from 6px → 8px.
+========================================================= */
+
+.angebot-side-meta {
+  position:
+    absolute;
+
+  z-index:
+    6;
+
+  left:
+    18px;
+
+  bottom:
+    105px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  color:
+    #18191b;
+
+  pointer-events:
+    none;
+}
+
+
+.angebot-side-meta > span:not(
+  .angebot-side-rule
+) {
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.16em;
+
+  writing-mode:
+    vertical-rl;
+
+  text-orientation:
+    mixed;
+}
+
+
+.angebot-side-rule {
+  width:
+    1px;
+
+  height:
+    22px;
+
+  background:
+    #9c565a;
+}
+
+
+/* =========================================================
+   YOGA NIDRA
+========================================================= */
+
+.angebot-card--nidra {
+  grid-column:
+    2 / 4;
+
+  grid-row:
+    1;
+
+  grid-template-columns:
+    minmax(
+      225px,
+      0.7fr
+    )
+    minmax(
+      0,
+      1.3fr
+    );
+}
+
+
+.angebot-card--nidra
+.angebot-card-media img {
+  object-position:
+    center
+    42%;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.angebot-card--education {
+  grid-column:
+    2;
+
+  grid-row:
+    2;
+
+  grid-template-rows:
+    minmax(
+      0,
+      1fr
+    )
+    92px;
+}
+
+
+/*
+   Extra bottom padding means ENTDECKEN has its own space
+   and can no longer touch the image.
+*/
+
+.angebot-card--education
+.angebot-card-copy {
+  padding:
+    22px
+    22px
+    28px;
+}
+
+
+.angebot-card--education
+.angebot-card-media {
+  grid-row:
+    2;
+}
+
+
+.angebot-card--education
+.angebot-card-media img {
+  object-position:
+    center;
+}
+
+
+/* =========================================================
+   THE BOOK
+========================================================= */
+
+.angebot-card--book {
+  grid-column:
+    3;
+
+  grid-row:
+    2;
+
+  grid-template-rows:
+    minmax(
+      0,
+      1fr
+    )
+    92px;
+}
+
+
+/*
+   Same spacing treatment as Education.
+*/
+
+.angebot-card--book
+.angebot-card-copy {
+  padding:
+    22px
+    22px
+    28px;
+}
+
+
+.angebot-card--book
+.angebot-card-media {
+  grid-row:
+    2;
+}
+
+
+.angebot-card--book
+.angebot-card-media img {
+  object-position:
+    center;
+}
+
+
+/* =========================================================
+   SMALL CARD ICONS
+========================================================= */
+
+.angebot-card--education
+.angebot-icon,
+.angebot-card--book
+.angebot-icon {
+  width:
+    36px;
+
+  height:
+    36px;
+
+  flex-basis:
+    36px;
+
+  border-radius:
+    11px
+    11px
+    11px
+    4px;
+}
+
+
+.angebot-card--education
+.angebot-icon svg,
+.angebot-card--book
+.angebot-icon svg {
+  width:
+    21px;
+
+  height:
+    21px;
+}
+
+
+/* =========================================================
+   EDUCATION COPY
+========================================================= */
+
+.angebot-card--education
+.angebot-copy-main {
+  margin-top:
+    13px;
+}
+
+
+.angebot-card--education h3 {
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      25px
+    );
+}
+
+
+.angebot-card--education
+.angebot-card-copy p {
+  margin-top:
+    10px;
+
+  font-size:
+    14px;
+}
+
+
+.angebot-card--education
+.angebot-link {
+  margin-top:
+    auto;
+
+  font-size:
+    8px;
+}
+
+
+/* =========================================================
+   BOOK HEADING ROW
+
+   THE BOOK  +  LESEN & VERTIEFEN
+   now sit beside one another.
+========================================================= */
+
+.angebot-copy-main--book {
+  margin-top:
+    13px;
+}
+
+
+.angebot-book-heading {
+  width:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    baseline;
+
+  justify-content:
+    space-between;
+
+  gap:
+    12px;
+}
+
+
+.angebot-card--book h3 {
+  flex:
+    0
+    0
+    auto;
+
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      25px
+    );
+}
+
+
+.angebot-category--book {
+  margin:
+    0;
+
+  max-width:
+    110px;
+
+  text-align:
+    right;
+
+  font-size:
+    7px;
+
+  line-height:
+    1.25;
+}
+
+
+.angebot-card--book
+.angebot-card-copy p {
+  margin-top:
+    10px;
+
+  font-size:
+    14px;
+}
+
+
+.angebot-card--book
+.angebot-link {
+  margin-top:
+    auto;
+
+  font-size:
+    8px;
+}
+
+
+/* =========================================================
+   BOTTOM META
+
+   More distance from Bento grid.
+========================================================= */
+
+.angebote-bottom-meta {
+  width:
+    100%;
+
+  margin-top:
+    40px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    15px;
+
+  color:
+    #18191b;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.18em;
+}
+
+
+.angebote-bottom-line {
+  height:
+    1px;
+
+  flex:
+    1;
+
+  background:
+    rgba(
+      156,
+      86,
+      90,
+      0.68
+    );
+}
+
+
+/* =========================================================
+   CURVED DETAIL
+========================================================= */
+
+.angebote-panel-curve {
+  position:
+    absolute;
+
+  z-index:
+    1;
+
+  right:
+    20px;
+
+  bottom:
+    20px;
+
+  width:
+    64px;
+
+  height:
+    64px;
+
+  border-right:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.35
+    );
+
+  border-bottom:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.35
+    );
+
+  border-bottom-right-radius:
+    28px;
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .angebote-panel {
+    padding:
+      44px
+      38px
+      44px;
+
+    border-radius:
+      28px;
+  }
+
+
+  .angebote-heading-row {
+    grid-template-columns:
+      minmax(
+        280px,
+        0.9fr
+      )
+      minmax(
+        360px,
+        1.1fr
+      );
+
+    gap:
+      42px;
+  }
+
+
+  .angebote-grid {
+    grid-template-columns:
+      minmax(
+        320px,
+        0.9fr
+      )
+      minmax(
+        0,
+        0.55fr
+      )
+      minmax(
+        0,
+        0.55fr
+      );
+
+    grid-template-rows:
+      280px
+      310px;
+
+    gap:
+      14px;
+  }
+
+
+  .angebot-card--mama {
+    grid-template-columns:
+      minmax(
+        180px,
+        0.75fr
+      )
+      minmax(
+        0,
+        1.25fr
+      );
+  }
+
+
+  .angebot-card--nidra {
+    grid-template-columns:
+      minmax(
+        190px,
+        0.78fr
+      )
+      minmax(
+        0,
+        1.22fr
+      );
+  }
+
+
+  .angebot-side-meta {
+    bottom:
+      98px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .angebote {
+    padding-bottom:
+      90px;
+  }
+
+
+  .angebote-panel {
+    padding:
+      38px
+      28px
+      38px;
+
+    border-radius:
+      26px;
+  }
+
+
+  /* =====================================================
+     HEADING
+  ====================================================== */
+
+  .angebote-heading-row {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      18px;
+
+    margin-bottom:
+      36px;
+  }
+
+
+  .angebote-heading-row p {
+    max-width:
+      600px;
+  }
+
+
+  /* =====================================================
+     GRID
+  ====================================================== */
+
+  .angebote-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    grid-template-rows:
+      430px
+      290px
+      325px;
+
+    gap:
+      14px;
+  }
+
+
+  .angebot-card--mama {
+    grid-column:
+      1 / -1;
+
+    grid-row:
+      1;
+
+    grid-template-columns:
+      minmax(
+        220px,
+        0.72fr
+      )
+      minmax(
+        0,
+        1.28fr
+      );
+  }
+
+
+  .angebot-card--nidra {
+    grid-column:
+      1 / -1;
+
+    grid-row:
+      2;
+
+    grid-template-columns:
+      minmax(
+        220px,
+        0.75fr
+      )
+      minmax(
+        0,
+        1.25fr
+      );
+  }
+
+
+  .angebot-card--education {
+    grid-column:
+      1;
+
+    grid-row:
+      3;
+  }
+
+
+  .angebot-card--book {
+    grid-column:
+      2;
+
+    grid-row:
+      3;
+  }
+
+
+  .angebot-side-meta {
+    bottom:
+      92px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 620px) {
+
+  .angebote-panel {
+    padding:
+      29px
+      16px
+      32px;
+
+    border-radius:
+      22px;
+  }
+
+
+  /* =====================================================
+     TOP META
+  ====================================================== */
+
+  .angebote-top-meta {
+    gap:
+      7px;
+
+    white-space:
+      normal;
+  }
+
+
+  .angebote-top-meta strong {
+    font-size:
+      7px;
+
+    letter-spacing:
+      0.14em;
+  }
+
+
+  .angebote-top-separator {
+    width:
+      32px;
+  }
+
+
+  .angebote-top-meta > span:last-child {
+    font-size:
+      6px;
+
+    line-height:
+      1.2;
+
+    letter-spacing:
+      0.1em;
+  }
+
+
+  /* =====================================================
+     HEADING
+  ====================================================== */
+
+  .angebote-heading-row {
+    margin-top:
+      20px;
+
+    margin-bottom:
+      30px;
+
+    gap:
+      15px;
+  }
+
+
+  .angebote-heading-row h2 {
+    font-size:
+      clamp(
+        21px,
+        6vw,
+        26px
+      );
+  }
+
+
+  .angebote-heading-row p {
+    font-size:
+      17px;
+
+    line-height:
+      1.5;
+  }
+
+
+  /* =====================================================
+     SINGLE COLUMN GRID
+  ====================================================== */
+
+  .angebote-grid {
+    grid-template-columns:
+      1fr;
+
+    grid-template-rows:
+      500px
+      385px
+      365px
+      365px;
+
+    gap:
+      12px;
+  }
+
+
+  .angebot-card--mama,
+  .angebot-card--nidra,
+  .angebot-card--education,
+  .angebot-card--book {
+    grid-column:
+      1;
+
+    width:
+      100%;
+  }
+
+
+  /* =====================================================
+     YOGA MAMA
+  ====================================================== */
+
+  .angebot-card--mama {
+    grid-row:
+      1;
+
+    grid-template-columns:
+      1fr;
+
+    grid-template-rows:
+      220px
+      1fr;
+  }
+
+
+  .angebot-card--mama
+  .angebot-card-media {
+    grid-column:
+      1;
+
+    grid-row:
+      1;
+  }
+
+
+  .angebot-card--mama
+  .angebot-card-copy {
+    grid-column:
+      1;
+
+    grid-row:
+      2;
+
+    padding:
+      22px;
+  }
+
+
+  .angebot-card--mama
+  .angebot-card-media img {
+    object-position:
+      left
+      42%;
+  }
+
+
+  .angebot-side-meta {
+    display:
+      none;
+  }
+
+
+  /* =====================================================
+     NIDRA
+  ====================================================== */
+
+  .angebot-card--nidra {
+    grid-row:
+      2;
+
+    grid-template-columns:
+      1fr;
+
+    grid-template-rows:
+      160px
+      1fr;
+  }
+
+
+  .angebot-card--nidra
+  .angebot-card-media {
+    grid-column:
+      1;
+
+    grid-row:
+      1;
+  }
+
+
+  .angebot-card--nidra
+  .angebot-card-copy {
+    grid-column:
+      1;
+
+    grid-row:
+      2;
+
+    padding:
+      22px;
+  }
+
+
+  /* =====================================================
+     EDUCATION
+  ====================================================== */
+
+  .angebot-card--education {
+    grid-row:
+      3;
+
+    grid-template-rows:
+      155px
+      1fr;
+  }
+
+
+  .angebot-card--education
+  .angebot-card-media {
+    grid-row:
+      1;
+  }
+
+
+  .angebot-card--education
+  .angebot-card-copy {
+    grid-row:
+      2;
+
+    padding:
+      22px;
+  }
+
+
+  /* =====================================================
+     BOOK
+  ====================================================== */
+
+  .angebot-card--book {
+    grid-row:
+      4;
+
+    grid-template-rows:
+      155px
+      1fr;
+  }
+
+
+  .angebot-card--book
+  .angebot-card-media {
+    grid-row:
+      1;
+  }
+
+
+  .angebot-card--book
+  .angebot-card-copy {
+    grid-row:
+      2;
+
+    padding:
+      22px;
+  }
+
+
+  /* =====================================================
+     TITLES
+  ====================================================== */
+
+  .angebot-card h3,
+  .angebot-card--education h3,
+  .angebot-card--book h3 {
+    font-size:
+      25px;
+  }
+
+
+  .angebot-card-copy p,
+  .angebot-card--education
+  .angebot-card-copy p,
+  .angebot-card--book
+  .angebot-card-copy p {
+    font-size:
+      15px;
+  }
+
+
+  .angebot-category {
+    font-size:
+      7px;
+  }
+
+
+  /* =====================================================
+     BOOK ROW
+  ====================================================== */
+
+  .angebot-book-heading {
+    justify-content:
+      flex-start;
+
+    flex-wrap:
+      wrap;
+
+    gap:
+      8px
+      14px;
+  }
+
+
+  .angebot-category--book {
+    max-width:
+      none;
+
+    text-align:
+      left;
+  }
+
+
+  /* =====================================================
+     BOTTOM META
+  ====================================================== */
+
+  .angebote-bottom-meta {
+    margin-top:
+      32px;
+
+    gap:
+      8px;
+
+    font-size:
+      6px;
+
+    letter-spacing:
+      0.13em;
+  }
+
+}
+/* Give Yoga Mama 10px from the right-hand bento area without widening the grid. */
+@media (min-width: 1001px) {
+  #angebote .angebote-grid {
+    grid-template-columns: max(370px, calc(44% - 4.08px)) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  /* The card gains 10px; its image loses 10px, so the copy gains 20px total. */
+  #angebote .angebot-card--mama {
+    grid-template-columns: max(225px, calc(37% + 16.3px)) minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1100px) {
+  #angebote .angebote-grid {
+    grid-template-columns: max(330px, calc(45% - 2.6px)) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  #angebote .angebot-card--mama {
+    grid-template-columns: max(200px, calc(37.5% + 16.25px)) minmax(0, 1fr);
+  }
+}

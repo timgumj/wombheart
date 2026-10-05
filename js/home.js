@@ -1,17 +1,35 @@
-import {
-  initHeader
-} from "./header.js";
+/* =========================================================
+   WOMB & HEART
+   HOME INITIALISATION
+========================================================= */
+
+const VERSION =
+  "20261004-premium-hero";
 
 
-import {
-  initHero
-} from "./hero.js";
+export async function initHome() {
+
+  const [
+    headerModule,
+    heroModule
+  ] =
+    await Promise.all(
+      [
+
+        import(
+          `./header.js?v=${VERSION}`
+        ),
+
+        import(
+          `./hero.js?v=${VERSION}`
+        )
+
+      ]
+    );
 
 
-export function initHome() {
+  headerModule.initHeader();
 
-  initHeader();
-
-  initHero();
+  heroModule.initHero();
 
 }

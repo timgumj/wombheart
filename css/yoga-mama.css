@@ -1,0 +1,1187 @@
+/* =========================================================
+   WOMB & HEART
+   YOGA MAMA FEATURE
+
+   TYPOGRAPHY SYSTEM MATCHES:
+   - INTRO
+   - ANGEBOTE
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.yoga-mama-feature {
+  width: 100%;
+
+  padding:
+    clamp(95px, 9vw, 145px)
+    0
+    clamp(100px, 9vw, 150px);
+
+  background: #ffffff;
+
+  color: #18191b;
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.yoga-mama-shell {
+  position: relative;
+
+  min-height: 720px;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.yoga-mama-layout {
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(470px, 0.95fr)
+    minmax(500px, 1.05fr);
+
+  gap:
+    clamp(
+      70px,
+      8vw,
+      125px
+    );
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT VISUAL
+========================================================= */
+
+.yoga-mama-visual {
+  position: relative;
+
+  width: 100%;
+
+  padding-left: 50px;
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.yoga-mama-main-image {
+  position: relative;
+
+  width: 100%;
+
+  height:
+    clamp(
+      620px,
+      55vw,
+      760px
+    );
+
+  margin: 0;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #ddd8cf;
+}
+
+
+.yoga-mama-main-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+
+  object-fit: cover;
+
+  object-position:
+    center
+    center;
+}
+
+
+/* =========================================================
+   SMALL DETAIL IMAGE
+========================================================= */
+
+.yoga-mama-detail-image {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 0;
+  bottom: 42px;
+
+  width:
+    clamp(
+      170px,
+      18vw,
+      230px
+    );
+
+  height:
+    clamp(
+      245px,
+      25vw,
+      320px
+    );
+
+  margin: 0;
+
+  overflow: hidden;
+
+  border:
+    4px
+    solid
+    #ffffff;
+
+  border-radius: 18px;
+
+  background: #ddd8cf;
+
+  box-shadow:
+    0
+    18px
+    40px
+    rgba(
+      0,
+      0,
+      0,
+      0.08
+    );
+}
+
+
+.yoga-mama-detail-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+
+  object-fit: cover;
+
+  object-position:
+    30%
+    65%;
+
+  transform:
+    scale(1.5);
+}
+
+
+/* =========================================================
+   DETAIL IMAGE LABEL
+========================================================= */
+
+.yoga-mama-detail-label {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 12px;
+  bottom: 17px;
+
+  color: #18191b;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+
+  writing-mode: vertical-rl;
+
+  text-orientation: mixed;
+}
+
+
+/* =========================================================
+   LEFT VERTICAL META
+
+   SAME VISUAL LANGUAGE AS INTRO VERTICAL TEXT
+========================================================= */
+
+.yoga-mama-side-meta {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 0;
+  left: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+.yoga-mama-side-line {
+  width: 1px;
+
+  height: 78px;
+
+  background: #9c565a;
+}
+
+
+.yoga-mama-side-word {
+  color: #18191b;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+
+  writing-mode: vertical-rl;
+
+  text-orientation: mixed;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.yoga-mama-content {
+  position: relative;
+
+  z-index: 4;
+
+  width: 100%;
+
+  max-width: 620px;
+}
+
+
+/* =========================================================
+   TOP META
+
+   SAME SCALE AS:
+   - INTRO TOP META
+   - ANGEBOTE TOP META
+========================================================= */
+
+.yoga-mama-kicker {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 11px;
+
+  color: #18191b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+}
+
+
+.yoga-mama-kicker-line {
+  width: 58px;
+
+  height: 1px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+
+   EXACT SAME TYPOGRAPHIC SCALE AS:
+   SCHÖN, DASS DU DA BIST.
+   DER RAUM, DER DICH JETZT TRÄGT.
+========================================================= */
+
+.yoga-mama-content h2 {
+  margin:
+    25px
+    0
+    0;
+
+  color: #18191b;
+
+  font-size:
+    clamp(
+      24px,
+      2vw,
+      30px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.015em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TITLE RULE
+
+   MATCHES OTHER SECTIONS
+========================================================= */
+
+.yoga-mama-title-line {
+  display: block;
+
+  width: 72px;
+
+  height: 1px;
+
+  margin-top: 10px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   INTRO PARAGRAPH
+
+   SAME BODY TYPOGRAPHY AS INTRO + ANGEBOTE
+========================================================= */
+
+.yoga-mama-intro {
+  width: 100%;
+
+  max-width: 560px;
+
+  margin:
+    28px
+    0
+    0;
+
+  color: #3e3b38;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.48;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.yoga-mama-benefits {
+  width: 100%;
+
+  margin-top: 38px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   BENEFIT ROW
+========================================================= */
+
+.yoga-mama-benefit {
+  display: grid;
+
+  grid-template-columns:
+    62px
+    minmax(
+      0,
+      1fr
+    );
+
+  gap: 20px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   BENEFIT ICON
+========================================================= */
+
+.yoga-mama-benefit-icon {
+  width: 58px;
+
+  height: 58px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px
+    solid
+    rgba(
+      24,
+      25,
+      27,
+      0.11
+    );
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #18191b;
+}
+
+
+.yoga-mama-benefit-icon svg {
+  width: 28px;
+
+  height: 28px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.4;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   BENEFIT TITLE
+
+   SMALL EDITORIAL UPPERCASE TEXT
+========================================================= */
+
+.yoga-mama-benefit-copy h3 {
+  margin: 0;
+
+  color: #18191b;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BENEFIT BODY
+========================================================= */
+
+.yoga-mama-benefit-copy p {
+  max-width: 470px;
+
+  margin:
+    7px
+    0
+    0;
+
+  color: #4a4643;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.42;
+
+  letter-spacing: -0.005em;
+}
+
+
+/* =========================================================
+   CTA
+
+   BURGUNDY REMAINS ONLY AS AN ACCENT/BUTTON,
+   NOT AS HEADLINE TYPOGRAPHY.
+========================================================= */
+
+.yoga-mama-button {
+  width:
+    min(
+      100%,
+      390px
+    );
+
+  min-height: 56px;
+
+  margin-top: 40px;
+
+  padding:
+    0
+    28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-radius: 999px;
+
+  background: #671422;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+
+  transition:
+    background-color
+    180ms
+    ease,
+    transform
+    220ms
+    ease;
+}
+
+
+.yoga-mama-button:hover {
+  background: #18191b;
+
+  transform:
+    translateY(-2px);
+}
+
+
+.yoga-mama-button svg {
+  width: 19px;
+
+  height: 19px;
+
+  flex:
+    0
+    0
+    19px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  transition:
+    transform
+    220ms
+    ease;
+}
+
+
+.yoga-mama-button:hover svg {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   RIGHT EDITORIAL INDEX
+========================================================= */
+
+.yoga-mama-index {
+  position: absolute;
+
+  z-index: 4;
+
+  right: 4px;
+
+  bottom: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 16px;
+
+  color: #18191b;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+.yoga-mama-index-line {
+  width: 1px;
+
+  height: 155px;
+
+  margin-bottom: 5px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   LARGE BACKGROUND WORD
+
+   NOW NEUTRAL — NOT BURGUNDY
+========================================================= */
+
+.yoga-mama-background-word {
+  position: absolute;
+
+  z-index: 0;
+
+  top: 4%;
+  right: -28px;
+
+  color:
+    rgba(
+      24,
+      25,
+      27,
+      0.035
+    );
+
+  font-size:
+    clamp(
+      120px,
+      17vw,
+      250px
+    );
+
+  font-weight: 700;
+
+  line-height: 0.75;
+
+  letter-spacing: -0.07em;
+
+  writing-mode: vertical-rl;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .yoga-mama-layout {
+    grid-template-columns:
+      minmax(
+        400px,
+        0.95fr
+      )
+      minmax(
+        430px,
+        1.05fr
+      );
+
+    gap: 65px;
+  }
+
+
+  .yoga-mama-main-image {
+    height: 650px;
+  }
+
+
+  /*
+     KEEP TITLE ON SAME SCALE SYSTEM.
+     DO NOT ENLARGE IT HERE.
+  */
+
+  .yoga-mama-content h2 {
+    font-size:
+      clamp(
+        23px,
+        2.4vw,
+        29px
+      );
+  }
+
+
+  .yoga-mama-benefits {
+    gap: 20px;
+  }
+
+
+  .yoga-mama-benefit {
+    grid-template-columns:
+      56px
+      1fr;
+
+    gap: 17px;
+  }
+
+
+  .yoga-mama-benefit-icon {
+    width: 54px;
+
+    height: 54px;
+  }
+
+
+  .yoga-mama-benefit-icon svg {
+    width: 26px;
+
+    height: 26px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .yoga-mama-feature {
+    padding:
+      85px
+      0
+      105px;
+  }
+
+
+  .yoga-mama-shell {
+    min-height: 0;
+  }
+
+
+  .yoga-mama-layout {
+    grid-template-columns:
+      1fr;
+
+    gap: 65px;
+  }
+
+
+  /* =====================================================
+     VISUAL
+  ====================================================== */
+
+  .yoga-mama-visual {
+    width:
+      calc(
+        100% -
+        35px
+      );
+
+    max-width: 650px;
+
+    padding-left: 40px;
+  }
+
+
+  .yoga-mama-main-image {
+    height: 620px;
+  }
+
+
+  .yoga-mama-detail-image {
+    width: 190px;
+
+    height: 260px;
+
+    bottom: 35px;
+  }
+
+
+  /* =====================================================
+     CONTENT
+  ====================================================== */
+
+  .yoga-mama-content {
+    max-width: 650px;
+
+    padding-left: 40px;
+  }
+
+
+  .yoga-mama-side-meta {
+    left: 8px;
+  }
+
+
+  .yoga-mama-index {
+    display: none;
+  }
+
+
+  .yoga-mama-background-word {
+    top: auto;
+
+    right: -10px;
+
+    bottom: 2%;
+
+    font-size: 150px;
+  }
+
+
+  .yoga-mama-content h2 {
+    font-size:
+      clamp(
+        24px,
+        4vw,
+        30px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 620px) {
+
+  .yoga-mama-feature {
+    padding:
+      70px
+      0
+      85px;
+  }
+
+
+  /* =====================================================
+     SIDE META
+  ====================================================== */
+
+  .yoga-mama-side-meta {
+    display: none;
+  }
+
+
+  /* =====================================================
+     IMAGE
+  ====================================================== */
+
+  .yoga-mama-visual {
+    width: 100%;
+
+    padding-left: 0;
+  }
+
+
+  .yoga-mama-main-image {
+    height: 500px;
+
+    border-radius: 18px;
+  }
+
+
+  .yoga-mama-main-image img {
+    object-position:
+      center
+      42%;
+  }
+
+
+  .yoga-mama-detail-image {
+    left: 12px;
+
+    bottom: -28px;
+
+    width: 142px;
+
+    height: 190px;
+
+    border-width: 3px;
+
+    border-radius: 14px;
+  }
+
+
+  /* =====================================================
+     CONTENT
+  ====================================================== */
+
+  .yoga-mama-content {
+    max-width: none;
+
+    padding:
+      20px
+      0
+      0;
+  }
+
+
+  /* =====================================================
+     KICKER
+  ====================================================== */
+
+  .yoga-mama-kicker {
+    gap: 7px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.13em;
+  }
+
+
+  .yoga-mama-kicker-line {
+    width: 30px;
+  }
+
+
+  /* =====================================================
+     TITLE
+
+     STILL MATCHES MOBILE TITLE SCALE OF THE
+     PREVIOUS SECTIONS.
+  ====================================================== */
+
+  .yoga-mama-content h2 {
+    margin-top: 20px;
+
+    font-size:
+      clamp(
+        21px,
+        6vw,
+        26px
+      );
+
+    line-height: 1.05;
+
+    color: #18191b;
+  }
+
+
+  .yoga-mama-title-line {
+    width: 55px;
+
+    height: 1px;
+
+    margin-top: 8px;
+  }
+
+
+  /* =====================================================
+     INTRO
+  ====================================================== */
+
+  .yoga-mama-intro {
+    margin-top: 25px;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+  }
+
+
+  /* =====================================================
+     BENEFITS
+  ====================================================== */
+
+  .yoga-mama-benefits {
+    margin-top: 32px;
+
+    gap: 22px;
+  }
+
+
+  .yoga-mama-benefit {
+    grid-template-columns:
+      50px
+      1fr;
+
+    gap: 14px;
+  }
+
+
+  .yoga-mama-benefit-icon {
+    width: 48px;
+
+    height: 48px;
+  }
+
+
+  .yoga-mama-benefit-icon svg {
+    width: 24px;
+
+    height: 24px;
+  }
+
+
+  .yoga-mama-benefit-copy h3 {
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+  }
+
+
+  .yoga-mama-benefit-copy p {
+    margin-top: 6px;
+
+    font-size: 15px;
+
+    line-height: 1.42;
+  }
+
+
+  /* =====================================================
+     CTA
+  ====================================================== */
+
+  .yoga-mama-button {
+    width: 100%;
+
+    min-height: 54px;
+
+    margin-top: 34px;
+
+    padding:
+      0
+      22px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.14em;
+  }
+
+
+  /* =====================================================
+     BACKGROUND WORD
+  ====================================================== */
+
+  .yoga-mama-background-word {
+    display: none;
+  }
+
+}
+/* Match the desktop birth image width to the mirrored Yoga Nidra image. */
+@media (min-width: 1001px) {
+  #yoga-mama-detail {
+    --birth-image-grow: clamp(55px, 6vw, 95px);
+  }
+
+  #yoga-mama-detail .yoga-mama-layout {
+    grid-template-columns: minmax(0, 1.3fr) minmax(390px, 0.92fr);
+    gap: clamp(70px, 7vw, 105px);
+  }
+
+  #yoga-mama-detail .yoga-mama-visual {
+    min-width: 0;
+    padding-left: 0;
+  }
+
+  #yoga-mama-detail .yoga-mama-main-image {
+    width: calc(100% + var(--birth-image-grow));
+  }
+
+  #yoga-mama-detail .yoga-mama-content {
+    min-width: 0;
+    padding-left: var(--birth-image-grow);
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1100px) {
+  #yoga-mama-detail {
+    --birth-image-grow: 50px;
+  }
+
+  #yoga-mama-detail .yoga-mama-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.95fr);
+    gap: 62px;
+  }
+}
+
+@media (min-width: 1450px) {
+  #yoga-mama-detail {
+    --birth-image-grow: 100px;
+  }
+
+  #yoga-mama-detail .yoga-mama-layout {
+    grid-template-columns: minmax(0, 1.3fr) minmax(430px, 0.92fr);
+    gap: 110px;
+  }
+}
+
+/* Reserve a clear gutter for the birth section's right-hand index. */
+@media (min-width: 1001px) {
+  #yoga-mama-detail .yoga-mama-content {
+    padding-right: 44px;
+  }
+
+  #yoga-mama-detail .yoga-mama-index {
+    right: 0;
+    width: 12px;
+  }
+}
+
+/* Match the detail photo's inset from the main image on desktop. */
+@media (min-width: 1001px) {
+  #yoga-mama-detail .yoga-mama-detail-image {
+    left: 22px;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1100px) {
+  #yoga-mama-detail .yoga-mama-detail-image {
+    left: 18px;
+  }
+}
+
+/* Inset the birth section's vertical label and line together. */
+@media (min-width: 1001px) {
+  #yoga-mama-detail .yoga-mama-side-meta {
+    left: 12px;
+    top: 12px;
+  }
+}

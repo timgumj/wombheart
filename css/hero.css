@@ -5,7 +5,7 @@
 
 
 /* =========================================================
-   HERO + HEADER = FULL VIEWPORT
+   HERO
 ========================================================= */
 
 .hero {
@@ -14,7 +14,7 @@
   height:
     calc(
       100svh -
-      var(--header-h)
+      var(--header-h, 104px)
     );
 
   min-height: 620px;
@@ -24,7 +24,8 @@
     0
     14px;
 
-  background: #ffffff;
+  background:
+    #ffffff;
 }
 
 
@@ -45,11 +46,14 @@
 
   overflow: hidden;
 
-  border-radius: 20px;
+  border-radius:
+    20px;
 
-  background: #dddddd;
+  background:
+    #dddddd;
 
-  isolation: isolate;
+  isolation:
+    isolate;
 }
 
 
@@ -63,29 +67,30 @@
   z-index: 1;
 
   inset: 0;
+
+  margin: 0;
 }
 
 
 .hero-photo img {
+  display: block;
+
   width: 100%;
   height: 100%;
 
   object-fit: cover;
 
   object-position:
-    50%
+    center
     48%;
 
-  filter: none;
-
-  transform: scale(1.001);
-
-  will-change: transform;
+  transform:
+    scale(1.001);
 }
 
 
 /* =========================================================
-   SUBTLE SHADE
+   SHADE
 ========================================================= */
 
 .hero-shade {
@@ -100,52 +105,66 @@
   background:
     linear-gradient(
       180deg,
-      rgba(
-        0,
-        0,
-        0,
-        0.14
-      )
-      0%,
-      rgba(
-        0,
-        0,
-        0,
-        0
-      )
-      34%
+      rgba(0, 0, 0, 0.12) 0%,
+      rgba(0, 0, 0, 0) 36%
     );
 }
 
 
 /* =========================================================
-   SHARED NOTCH DESIGN
+   CORNER CUTOUTS
 
-   There are exactly TWO:
-   top-left and bottom-right.
+   IMPORTANT:
+
+   The main cutouts stay exactly as before.
+
+   The pseudo-elements below create the SMALL CONCAVE
+   transition curves where each white cutout rejoins the
+   hero edge.
+
+   They do NOT create extra white blocks.
+   They do NOT change the large 30px corner.
 ========================================================= */
 
-.hero-notch {
+.hero-corner {
   position: absolute;
 
-  background: #ffffff;
+  z-index: 1000;
 
-  pointer-events: auto;
+  width: 224px;
+  height: 64px;
+
+  box-sizing:
+    border-box;
+
+  display: flex;
+
+  background:
+    #ffffff;
+
+  color:
+    #18191b;
+
+  opacity: 1;
+  visibility: visible;
+
+  text-decoration: none;
+
+  pointer-events:
+    auto;
+
+  overflow:
+    visible;
 }
 
 
 /* =========================================================
-   TOP LEFT NOTCH
+   TOP LEFT CUTOUT
 ========================================================= */
 
-.hero-notch--top-left {
-  z-index: 100;
-
+.hero-corner--top {
   top: 0;
   left: 0;
-
-  width: 224px;
-  height: 64px;
 
   padding:
     7px
@@ -153,10 +172,11 @@
     10px
     0;
 
-  display: flex;
+  align-items:
+    flex-start;
 
-  align-items: flex-start;
-  justify-content: flex-start;
+  justify-content:
+    flex-start;
 
   border-right:
     2px
@@ -168,24 +188,117 @@
     solid
     #18191b;
 
-  border-bottom-right-radius: 30px;
+  border-bottom-right-radius:
+    30px;
 }
 
 
 /* =========================================================
-   BOTTOM RIGHT NOTCH
+   TOP LEFT — TOP JOIN
 
-   EXACT MIRROR OF TOP-LEFT.
+   This replaces the sharp meeting point where the vertical
+   cutout edge reaches the TOP edge of the hero.
+
+                 hero top
+   --------------------╮
+                       │
+                       │
+                 cutout│
+
+   White is OUTSIDE the curve.
+   Hero image is INSIDE the curve.
 ========================================================= */
 
-.hero-notch--bottom-right {
-  z-index: 999;
+.hero-corner--top::before {
+  content: "";
 
+  position: absolute;
+
+  z-index: 2;
+
+  top: 0;
+
+  right: -24px;
+
+  width: 24px;
+  height: 24px;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 100% 100%,
+
+      transparent
+      0
+      22px,
+
+      #18191b
+      22px
+      24px,
+
+      #ffffff
+      24px
+      100%
+    );
+}
+
+
+/* =========================================================
+   TOP LEFT — LEFT JOIN
+
+   This replaces the sharp meeting point where the
+   horizontal shelf reaches the LEFT edge of the hero.
+
+   cutout shelf
+   ----------------╮
+                   │
+                   │ hero left continues down
+
+========================================================= */
+
+.hero-corner--top::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 2;
+
+  left: 0;
+
+  bottom: -24px;
+
+  width: 24px;
+  height: 24px;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 100% 100%,
+
+      transparent
+      0
+      22px,
+
+      #18191b
+      22px
+      24px,
+
+      #ffffff
+      24px
+      100%
+    );
+}
+
+
+/* =========================================================
+   BOTTOM RIGHT CUTOUT
+========================================================= */
+
+.hero-corner--bottom {
   right: 0;
   bottom: 0;
-
-  width: 224px;
-  height: 64px;
 
   padding:
     10px
@@ -193,35 +306,132 @@
     7px
     15px;
 
-  display: flex;
+  align-items:
+    flex-end;
 
-  align-items: flex-end;
-  justify-content: flex-end;
-
-  border-left:
-    2px
-    solid
-    #18191b;
+  justify-content:
+    flex-end;
 
   border-top:
     2px
     solid
     #18191b;
 
-  border-top-left-radius: 30px;
+  border-left:
+    2px
+    solid
+    #18191b;
+
+  border-top-left-radius:
+    30px;
 }
 
 
 /* =========================================================
-   BOTH NOTCH BUTTONS
+   BOTTOM RIGHT — RIGHT JOIN
 
-   ANGEBOTE + YOGA MAMA
-   ARE VISUALLY IDENTICAL.
+   Mirror of the top-left transition.
+
+   Hero right edge comes down and CURVES into the
+   horizontal top edge of the white Yoga Mama cutout.
+
 ========================================================= */
 
-.hero-notch-button {
+.hero-corner--bottom::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 2;
+
+  top: -24px;
+
+  right: 0;
+
+  width: 24px;
+  height: 24px;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 0 0,
+
+      transparent
+      0
+      22px,
+
+      #18191b
+      22px
+      24px,
+
+      #ffffff
+      24px
+      100%
+    );
+}
+
+
+/* =========================================================
+   BOTTOM RIGHT — BOTTOM JOIN
+
+   The left edge of the Yoga Mama cutout curves smoothly
+   into the BOTTOM edge of the hero.
+
+========================================================= */
+
+.hero-corner--bottom::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 2;
+
+  left: -24px;
+
+  bottom: 0;
+
+  width: 24px;
+  height: 24px;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 0 0,
+
+      transparent
+      0
+      22px,
+
+      #18191b
+      22px
+      24px,
+
+      #ffffff
+      24px
+      100%
+    );
+}
+
+
+/* =========================================================
+   BOTH CORNER BUTTONS
+   2PX BORDER
+========================================================= */
+
+.hero-corner-pill {
+  position: relative;
+
+  z-index: 5;
+
   width: 193px;
   height: 43px;
+
+  flex:
+    0
+    0
+    193px;
 
   padding:
     0
@@ -229,32 +439,48 @@
     0
     18px;
 
+  box-sizing:
+    border-box;
+
   display: flex;
 
-  align-items: center;
-  justify-content: space-between;
+  align-items:
+    center;
 
-  gap: 14px;
+  justify-content:
+    space-between;
+
+  gap:
+    14px;
 
   border:
-    1.5px
+    2px
     solid
     #18191b;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
-  background: #ffffff;
+  background:
+    #ffffff;
 
-  color: #18191b;
+  color:
+    #18191b;
 
-  font-size: 15px;
-  font-weight: 700;
+  font-size:
+    15px;
 
-  line-height: 1;
+  font-weight:
+    700;
 
-  letter-spacing: 0.01em;
+  line-height:
+    1;
 
-  white-space: nowrap;
+  letter-spacing:
+    0.015em;
+
+  white-space:
+    nowrap;
 
   transition:
     background-color
@@ -266,380 +492,32 @@
 }
 
 
-.hero-notch-button svg {
-  width: 18px;
-  height: 18px;
+.hero-corner-pill svg {
+  width:
+    18px;
+
+  height:
+    18px;
 
   flex:
     0
     0
     18px;
 
-  fill: none;
+  fill:
+    none;
 
-  stroke: currentColor;
+  stroke:
+    currentColor;
 
-  stroke-width: 1.8;
+  stroke-width:
+    1.9;
 
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  stroke-linecap:
+    round;
 
-  transition:
-    transform
-    250ms
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-}
-
-
-.hero-notch-button:hover {
-  background: #18191b;
-
-  color: #ffffff;
-}
-
-
-.hero-notch-button:hover svg {
-  transform: translateX(3px);
-}
-
-
-/* =========================================================
-   NADJA INFORMATION
-========================================================= */
-
-.hero-nadja {
-  position: absolute;
-
-  z-index: 20;
-
-  top: 27px;
-  right: 27px;
-
-  display: flex;
-
-  align-items: stretch;
-
-  gap: 13px;
-
-  color: #ffffff;
-
-  text-shadow:
-    0
-    2px
-    14px
-    rgba(
-      0,
-      0,
-      0,
-      0.38
-    );
-}
-
-
-.hero-nadja-rule {
-  width: 2px;
-
-  align-self: stretch;
-
-  background: #ffffff;
-
-  border-radius: 999px;
-
-  transform-origin: top;
-}
-
-
-.hero-nadja-copy {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-}
-
-
-.hero-nadja-copy strong {
-  font-size:
-    clamp(
-      21px,
-      1.6vw,
-      26px
-    );
-
-  font-weight: 700;
-
-  line-height: 0.95;
-
-  letter-spacing: -0.025em;
-}
-
-
-.hero-nadja-copy > span {
-  margin-top: 7px;
-
-  font-size:
-    clamp(
-      15px,
-      1.05vw,
-      18px
-    );
-
-  font-weight: 700;
-
-  line-height: 1;
-
-  letter-spacing: 0.08em;
-}
-
-
-/* =========================================================
-   SMALL SLIDER
-========================================================= */
-
-.hero-slider {
-  position: absolute;
-
-  z-index: 30;
-
-  left: 20px;
-  bottom: 20px;
-
-  width:
-    clamp(
-      330px,
-      28vw,
-      390px
-    );
-
-  outline: none;
-}
-
-
-/* =========================================================
-   SLIDER WINDOW
-========================================================= */
-
-.hero-slider-window {
-  width: 100%;
-
-  overflow: hidden;
-
-  border-radius: 15px;
-}
-
-
-.hero-slider-track {
-  display: flex;
-
-  width: 100%;
-
-  will-change: transform;
-}
-
-
-/* =========================================================
-   CARD
-========================================================= */
-
-.hero-slide {
-  flex:
-    0
-    0
-    100%;
-
-  width: 100%;
-
-  min-height: 126px;
-
-  padding: 8px;
-
-  display: grid;
-
-  grid-template-columns:
-    110px
-    minmax(
-      0,
-      1fr
-    );
-
-  gap: 15px;
-
-  border:
-    1.5px
-    solid
-    rgba(
-      24,
-      25,
-      27,
-      0.78
-    );
-
-  border-radius: 15px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.96
-    );
-
-  color: #18191b;
-
-  box-shadow:
-    0
-    10px
-    30px
-    rgba(
-      0,
-      0,
-      0,
-      0.08
-    );
-
-  backdrop-filter: blur(12px);
-
-  -webkit-backdrop-filter:
-    blur(12px);
-}
-
-
-/* =========================================================
-   SLIDER IMAGE
-========================================================= */
-
-.hero-slide-image {
-  width: 110px;
-  height: 110px;
-
-  overflow: hidden;
-
-  border-radius: 11px;
-
-  background: #ececec;
-}
-
-
-.hero-slide-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  filter: none;
-}
-
-
-/* =========================================================
-   SLIDER CONTENT
-========================================================= */
-
-.hero-slide-content {
-  min-width: 0;
-
-  padding:
-    4px
-    4px
-    3px
-    0;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-}
-
-
-.hero-slide-meta {
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 10px;
-
-  color: #777772;
-
-  font-size: 11px;
-  font-weight: 700;
-
-  line-height: 1;
-
-  letter-spacing: 0.075em;
-}
-
-
-.hero-slide h2 {
-  margin:
-    9px
-    0
-    0;
-
-  color: #18191b;
-
-  font-size: 22px;
-  font-weight: 700;
-
-  line-height: 0.94;
-
-  letter-spacing: -0.025em;
-}
-
-
-.hero-slide p {
-  max-width: 24ch;
-
-  margin-top: 7px;
-
-  color: #62625e;
-
-  font-size: 14px;
-  line-height: 1.22;
-}
-
-
-.hero-slide-link {
-  margin-top: auto;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 7px;
-
-  color: #18191b;
-
-  font-size: 12px;
-  font-weight: 700;
-
-  line-height: 1;
-
-  letter-spacing: 0.055em;
-}
-
-
-.hero-slide-link svg {
-  width: 15px;
-  height: 15px;
-
-  fill: none;
-
-  stroke: currentColor;
-
-  stroke-width: 1.8;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  stroke-linejoin:
+    round;
 
   transition:
     transform
@@ -648,54 +526,514 @@
 }
 
 
-.hero-slide-link:hover svg {
-  transform: translateX(3px);
+.hero-corner:hover
+.hero-corner-pill {
+  background:
+    #18191b;
+
+  color:
+    #ffffff;
+}
+
+
+.hero-corner:hover
+.hero-corner-pill svg {
+  transform:
+    translateX(3px);
 }
 
 
 /* =========================================================
-   SLIDER NAVIGATION
+   NADJA PREMIUM INFO
 ========================================================= */
 
-.hero-slider-navigation {
-  margin-top: 9px;
+.hero-nadja {
+  position: absolute;
+
+  z-index: 30;
+
+  top: 26px;
+  right: 30px;
 
   display: flex;
 
-  align-items: center;
-  justify-content: space-between;
+  align-items:
+    stretch;
 
-  gap: 16px;
+  gap:
+    14px;
+
+  color:
+    #ffffff;
+
+  text-shadow:
+    0
+    2px
+    14px
+    rgba(0, 0, 0, 0.28);
 }
 
 
-.hero-slider-arrows {
+.hero-nadja-rule {
+  width:
+    2px;
+
+  min-height:
+    67px;
+
+  align-self:
+    stretch;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.95
+    );
+
+  border-radius:
+    999px;
+}
+
+
+.hero-nadja-content {
   display: flex;
 
-  gap: 7px;
+  flex-direction:
+    column;
+
+  align-items:
+    flex-start;
+
+  justify-content:
+    center;
 }
 
 
-.hero-slider-arrows button {
-  width: 37px;
-  height: 37px;
+.hero-nadja-label {
+  margin-bottom:
+    7px;
 
-  padding: 0;
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
 
-  display: grid;
+  font-size:
+    10px;
 
-  place-items: center;
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.16em;
+}
+
+
+.hero-nadja-content strong {
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(
+      20px,
+      1.45vw,
+      25px
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    0.95;
+
+  letter-spacing:
+    -0.025em;
+}
+
+
+.hero-nadja-brand {
+  margin-top:
+    6px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.92
+    );
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.14em;
+}
+
+
+/* =========================================================
+   COMPACT PREMIUM SLIDER
+========================================================= */
+
+.hero-slider {
+  position: absolute;
+
+  z-index: 40;
+
+  left: 20px;
+  bottom: 20px;
+
+  width:
+    300px;
+
+  outline:
+    none;
+}
+
+
+/* =========================================================
+   SLIDER CARD WINDOW
+========================================================= */
+
+.hero-slider-window {
+  width:
+    100%;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    15px;
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.hero-slider-track {
+  display:
+    flex;
+
+  width:
+    100%;
+
+  will-change:
+    transform;
+}
+
+
+/* =========================================================
+   SLIDE
+========================================================= */
+
+.hero-slide {
+  width:
+    100%;
+
+  flex:
+    0
+    0
+    100%;
+
+  min-height:
+    112px;
+
+  padding:
+    9px;
+
+  box-sizing:
+    border-box;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    92px
+    minmax(
+      0,
+      1fr
+    );
+
+  gap:
+    12px;
+
+  border:
+    1px
+    solid
+    rgba(
+      24,
+      25,
+      27,
+      0.18
+    );
+
+  border-radius:
+    15px;
+
+  background:
+    rgba(
+      244,
+      241,
+      234,
+      0.94
+    );
+
+  color:
+    #18191b;
+
+  box-shadow:
+    0
+    14px
+    34px
+    rgba(
+      0,
+      0,
+      0,
+      0.13
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+}
+
+
+/* =========================================================
+   SLIDE IMAGE
+========================================================= */
+
+.hero-slide-image {
+  width:
+    92px;
+
+  height:
+    92px;
+
+  margin:
+    0;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    11px;
+
+  background:
+    #dedbd2;
+}
+
+
+.hero-slide-image img {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+}
+
+
+/* =========================================================
+   SLIDE COPY
+========================================================= */
+
+.hero-slide-copy {
+  position:
+    relative;
+
+  min-width:
+    0;
+
+  padding:
+    3px
+    3px
+    2px
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    flex-start;
+}
+
+
+/* NUMBER TOP RIGHT */
+
+.hero-slide-number {
+  position:
+    absolute;
+
+  top:
+    1px;
+
+  right:
+    2px;
+
+  color:
+    rgba(
+      24,
+      25,
+      27,
+      0.5
+    );
+
+  font-size:
+    12px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+}
+
+
+/* COPY GROUP */
+
+.hero-slide-text {
+  padding-right:
+    29px;
+}
+
+
+/* CATEGORY */
+
+.hero-slide-category {
+  display:
+    block;
+
+  margin-bottom:
+    5px;
+
+  color:
+    rgba(
+      24,
+      25,
+      27,
+      0.5
+    );
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.11em;
+}
+
+
+/* TITLE */
+
+.hero-slide h2 {
+  margin:
+    0;
+
+  color:
+    #18191b;
+
+  font-size:
+    20px;
+
+  font-weight:
+    700;
+
+  line-height:
+    0.94;
+
+  letter-spacing:
+    -0.025em;
+}
+
+
+/* =========================================================
+   SLIDE CTA
+========================================================= */
+
+.hero-slide-button {
+  min-width:
+    92px;
+
+  height:
+    29px;
+
+  margin-top:
+    auto;
+
+  padding:
+    0
+    12px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  box-sizing:
+    border-box;
 
   border:
     1.5px
     solid
     #18191b;
 
-  border-radius: 50%;
+  border-radius:
+    4px;
 
-  background: #ffffff;
+  background:
+    transparent;
 
-  color: #18191b;
+  color:
+    #18191b;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.06em;
 
   transition:
     background-color
@@ -707,84 +1045,207 @@
 }
 
 
-.hero-slider-arrows button:hover {
-  background: #18191b;
+.hero-slide-button:hover {
+  background:
+    #18191b;
 
-  color: #ffffff;
+  color:
+    #ffffff;
 }
 
 
-.hero-slider-arrows svg {
-  width: 17px;
-  height: 17px;
+/* =========================================================
+   NAVIGATION BELOW CARD
+========================================================= */
 
-  fill: none;
+.hero-slider-navigation {
+  margin-top:
+    10px;
 
-  stroke: currentColor;
+  display:
+    flex;
 
-  stroke-width: 1.8;
+  align-items:
+    center;
 
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  justify-content:
+    center;
+
+  gap:
+    11px;
+
+  width:
+    100%;
 }
 
 
-.hero-slider-counter {
-  display: flex;
+/* =========================================================
+   ROUND ARROW BUTTONS
+========================================================= */
 
-  align-items: center;
+.hero-slider-arrow {
+  width:
+    34px;
 
-  gap: 9px;
+  height:
+    34px;
 
-  color: #ffffff;
-
-  font-size: 11px;
-  font-weight: 700;
-
-  text-shadow:
+  flex:
     0
-    1px
-    8px
+    0
+    34px;
+
+  padding:
+    0;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    0;
+
+  border-radius:
+    50%;
+
+  background:
+    #f3f0e6;
+
+  color:
+    #18191b;
+
+  box-shadow:
+    0
+    4px
+    14px
     rgba(
       0,
       0,
       0,
-      0.35
+      0.08
     );
+
+  transition:
+    transform
+    180ms
+    ease,
+    background-color
+    180ms
+    ease;
 }
 
 
-.hero-slider-progress {
-  width: 72px;
+.hero-slider-arrow:hover {
+  transform:
+    translateY(-1px);
 
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      4,
-      1fr
-    );
-
-  gap: 4px;
+  background:
+    #ffffff;
 }
 
 
-.hero-slider-progress i {
-  height: 2px;
+.hero-slider-arrow svg {
+  width:
+    15px;
+
+  height:
+    15px;
+
+  fill:
+    none;
+
+  stroke:
+    currentColor;
+
+  stroke-width:
+    1.8;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.hero-slider-dots {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    4px;
+}
+
+
+.hero-slider-dots span {
+  width:
+    4px;
+
+  height:
+    4px;
+
+  border-radius:
+    50%;
 
   background:
     rgba(
       255,
       255,
       255,
-      0.42
+      0.48
     );
+
+  transition:
+    transform
+    180ms
+    ease,
+    background-color
+    180ms
+    ease;
 }
 
 
-.hero-slider-progress
-i.is-active {
-  background: #ffffff;
+.hero-slider-dots span.is-active {
+  background:
+    #ffffff;
+
+  transform:
+    scale(1.35);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero-slider {
+    width:
+      290px;
+  }
+
+
+  .hero-nadja {
+    top:
+      20px;
+
+    right:
+      20px;
+  }
+
 }
 
 
@@ -795,13 +1256,8 @@ i.is-active {
 @media (max-width: 720px) {
 
   .hero {
-    height:
-      calc(
-        100svh -
-        var(--header-h)
-      );
-
-    min-height: 590px;
+    min-height:
+      590px;
 
     padding:
       3px
@@ -811,7 +1267,8 @@ i.is-active {
 
 
   .hero-stage {
-    border-radius: 15px;
+    border-radius:
+      15px;
   }
 
 
@@ -822,40 +1279,173 @@ i.is-active {
   }
 
 
-  /* SAME TWO NOTCHES */
+  /* =====================================================
+     MOBILE CORNERS
+  ====================================================== */
 
-  .hero-notch--top-left,
-  .hero-notch--bottom-right {
-    width: 182px;
-    height: 55px;
+  .hero-corner {
+    width:
+      182px;
+
+    height:
+      55px;
   }
 
 
-  .hero-notch--top-left {
+  .hero-corner--top {
     padding:
       6px
       11px
       8px
       0;
 
-    border-bottom-right-radius: 24px;
+    border-bottom-right-radius:
+      24px;
   }
 
 
-  .hero-notch--bottom-right {
+  .hero-corner--bottom {
     padding:
       8px
       0
       6px
       11px;
 
-    border-top-left-radius: 24px;
+    border-top-left-radius:
+      24px;
   }
 
 
-  .hero-notch-button {
-    width: 158px;
-    height: 39px;
+  /*
+     Smaller transition radius on mobile.
+     Same direction — just reduced from 24px to 18px.
+  */
+
+  .hero-corner--top::before {
+    right:
+      -18px;
+
+    width:
+      18px;
+
+    height:
+      18px;
+
+    background:
+      radial-gradient(
+        circle at 100% 100%,
+
+        transparent
+        0
+        16px,
+
+        #18191b
+        16px
+        18px,
+
+        #ffffff
+        18px
+        100%
+      );
+  }
+
+
+  .hero-corner--top::after {
+    bottom:
+      -18px;
+
+    width:
+      18px;
+
+    height:
+      18px;
+
+    background:
+      radial-gradient(
+        circle at 100% 100%,
+
+        transparent
+        0
+        16px,
+
+        #18191b
+        16px
+        18px,
+
+        #ffffff
+        18px
+        100%
+      );
+  }
+
+
+  .hero-corner--bottom::before {
+    top:
+      -18px;
+
+    width:
+      18px;
+
+    height:
+      18px;
+
+    background:
+      radial-gradient(
+        circle at 0 0,
+
+        transparent
+        0
+        16px,
+
+        #18191b
+        16px
+        18px,
+
+        #ffffff
+        18px
+        100%
+      );
+  }
+
+
+  .hero-corner--bottom::after {
+    left:
+      -18px;
+
+    width:
+      18px;
+
+    height:
+      18px;
+
+    background:
+      radial-gradient(
+        circle at 0 0,
+
+        transparent
+        0
+        16px,
+
+        #18191b
+        16px
+        18px,
+
+        #ffffff
+        18px
+        100%
+      );
+  }
+
+
+  .hero-corner-pill {
+    width:
+      158px;
+
+    height:
+      39px;
+
+    flex-basis:
+      158px;
 
     padding:
       0
@@ -863,152 +1453,215 @@ i.is-active {
       0
       14px;
 
-    font-size: 13px;
+    font-size:
+      13px;
+
+    border-width:
+      2px;
   }
 
 
-  .hero-notch-button svg {
-    width: 16px;
-    height: 16px;
+  .hero-corner-pill svg {
+    width:
+      16px;
 
-    flex-basis: 16px;
+    height:
+      16px;
+
+    flex-basis:
+      16px;
   }
 
 
-  /* NADJA */
+  /* =====================================================
+     NADJA
+  ====================================================== */
 
   .hero-nadja {
-    top: 14px;
-    right: 13px;
+    top:
+      14px;
 
-    gap: 8px;
+    right:
+      13px;
+
+    gap:
+      9px;
   }
 
 
   .hero-nadja-rule {
-    width: 1.5px;
+    min-height:
+      54px;
+
+    width:
+      1.5px;
   }
 
 
-  .hero-nadja-copy strong {
-    font-size: 16px;
+  .hero-nadja-label {
+    margin-bottom:
+      5px;
+
+    font-size:
+      7px;
   }
 
 
-  .hero-nadja-copy > span {
-    margin-top: 4px;
-
-    font-size: 11px;
+  .hero-nadja-content strong {
+    font-size:
+      16px;
   }
 
 
-  /* SLIDER */
+  .hero-nadja-brand {
+    margin-top:
+      5px;
+
+    font-size:
+      10px;
+  }
+
+
+  /* =====================================================
+     SLIDER
+  ====================================================== */
 
   .hero-slider {
-    left: 10px;
+    left:
+      10px;
 
-    /*
-      kept above permanent Yoga Mama notch
-    */
-    bottom: 68px;
+    bottom:
+      68px;
 
-    width: 255px;
+    width:
+      264px;
   }
 
 
   .hero-slide {
-    min-height: 96px;
+    min-height:
+      101px;
 
-    padding: 6px;
+    padding:
+      7px;
 
     grid-template-columns:
-      80px
+      82px
       1fr;
 
-    gap: 10px;
+    gap:
+      10px;
+
+    border-radius:
+      13px;
   }
 
 
   .hero-slide-image {
-    width: 80px;
-    height: 80px;
+    width:
+      82px;
+
+    height:
+      82px;
+
+    border-radius:
+      9px;
   }
 
 
-  .hero-slide-meta {
-    font-size: 9px;
+  .hero-slide-number {
+    font-size:
+      10px;
+  }
+
+
+  .hero-slide-category {
+    font-size:
+      7px;
   }
 
 
   .hero-slide h2 {
-    margin-top: 5px;
-
-    font-size: 18px;
+    font-size:
+      17px;
   }
 
 
-  .hero-slide p {
-    display: none;
+  .hero-slide-button {
+    min-width:
+      82px;
+
+    height:
+      26px;
+
+    font-size:
+      9px;
   }
 
 
-  .hero-slide-link {
-    font-size: 10px;
+  .hero-slider-navigation {
+    margin-top:
+      8px;
+
+    gap:
+      9px;
   }
 
 
-  .hero-slider-arrows button {
-    width: 31px;
-    height: 31px;
+  .hero-slider-arrow {
+    width:
+      30px;
+
+    height:
+      30px;
+
+    flex-basis:
+      30px;
   }
 
 
-  .hero-slider-counter {
-    font-size: 10px;
-  }
+  .hero-slider-arrow svg {
+    width:
+      14px;
 
-
-  .hero-slider-progress {
-    width: 48px;
+    height:
+      14px;
   }
 
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   VERY SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 440px) {
+@media (max-width: 420px) {
 
   .hero-slider {
-    width: 220px;
+    width:
+      245px;
   }
 
 
   .hero-slide {
-    min-height: 86px;
-
     grid-template-columns:
-      70px
+      76px
       1fr;
   }
 
 
   .hero-slide-image {
-    width: 70px;
-    height: 70px;
-  }
+    width:
+      76px;
 
-
-  .hero-slide-meta
-  span:last-child {
-    display: none;
+    height:
+      76px;
   }
 
 
   .hero-slide h2 {
-    font-size: 16px;
+    font-size:
+      16px;
   }
 
 }

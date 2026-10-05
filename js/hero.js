@@ -1,6 +1,10 @@
 /* =========================================================
    WOMB & HEART
-   HERO
+   HERO SLIDER
+
+   IMPORTANT:
+   THIS FILE ONLY CONTROLS THE SMALL SLIDER.
+   IT DOES NOT TOUCH THE HERO CORNER BUTTONS.
 ========================================================= */
 
 export function initHero() {
@@ -48,23 +52,11 @@ export function initHero() {
     );
 
 
-  const currentNumber =
-    hero.querySelector(
-      "[data-hero-current]"
-    );
-
-
-  const progressItems =
+  const dots =
     Array.from(
       hero.querySelectorAll(
-        ".hero-slider-progress i"
+        ".hero-slider-dots span"
       )
-    );
-
-
-  const heroImage =
-    hero.querySelector(
-      "[data-hero-image]"
     );
 
 
@@ -77,41 +69,20 @@ export function initHero() {
   }
 
 
-  const reducedMotion =
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
+  let currentIndex =
+    0;
 
 
-  const hasGSAP =
-    typeof window.gsap !==
-    "undefined";
+  let autoplayTimer =
+    null;
 
 
-  const hasScrollTrigger =
-    typeof window.ScrollTrigger !==
-    "undefined";
+  let autoplayPaused =
+    false;
 
 
-  if (
-    hasGSAP &&
-    hasScrollTrigger
-  ) {
-
-    gsap.registerPlugin(
-      ScrollTrigger
-    );
-
-  }
-
-
-  let currentIndex = 0;
-
-  let autoplayTimer = null;
-
-  let autoplayPaused = false;
-
-  let touchStartX = null;
+  let touchStartX =
+    null;
 
 
   const autoplayDelay =
@@ -134,6 +105,21 @@ export function initHero() {
       slides.length;
 
 
+    dots.forEach(
+      (
+        dot,
+        index
+      ) => {
+
+        dot.classList.toggle(
+          "is-active",
+          index === currentIndex
+        );
+
+      }
+    );
+
+
     slides.forEach(
       (
         slide,
@@ -141,8 +127,7 @@ export function initHero() {
       ) => {
 
         const active =
-          index ===
-          currentIndex;
+          index === currentIndex;
 
 
         slide.setAttribute(
@@ -170,54 +155,25 @@ export function initHero() {
     );
 
 
-    if (
-      currentNumber
-    ) {
-
-      currentNumber.textContent =
-        String(
-          currentIndex + 1
-        ).padStart(
-          2,
-          "0"
-        );
-
-    }
-
-
-    progressItems.forEach(
-      (
-        item,
-        index
-      ) => {
-
-        item.classList.toggle(
-          "is-active",
-          index ===
-            currentIndex
-        );
-
-      }
-    );
-
-
     const xPercent =
       -100 *
       currentIndex;
 
 
     if (
-      hasGSAP &&
       animate &&
-      !reducedMotion.matches
+      typeof window.gsap !==
+        "undefined"
     ) {
 
-      gsap.to(
+      window.gsap.to(
         track,
         {
-          xPercent,
+          xPercent:
+            xPercent,
 
-          duration: 0.62,
+          duration:
+            0.55,
 
           ease:
             "power3.inOut",
@@ -226,68 +182,6 @@ export function initHero() {
             true
         }
       );
-
-
-      const activeSlide =
-        slides[currentIndex];
-
-
-      const activeImage =
-        activeSlide.querySelector(
-          ".hero-slide-image img"
-        );
-
-
-      const content =
-        activeSlide.querySelector(
-          ".hero-slide-content"
-        );
-
-
-      if (activeImage) {
-
-        gsap.fromTo(
-          activeImage,
-          {
-            scale: 1.04
-          },
-          {
-            scale: 1,
-
-            duration: 0.7,
-
-            ease:
-              "power3.out"
-          }
-        );
-
-      }
-
-
-      if (content) {
-
-        gsap.fromTo(
-          content.children,
-          {
-            y: 4,
-
-            autoAlpha: 0.55
-          },
-          {
-            y: 0,
-
-            autoAlpha: 1,
-
-            stagger: 0.04,
-
-            duration: 0.36,
-
-            ease:
-              "power3.out"
-          }
-        );
-
-      }
 
     } else {
 
@@ -300,25 +194,35 @@ export function initHero() {
 
 
   /* =====================================================
-     SLIDER CONTROLS ONLY
+     PREVIOUS
   ====================================================== */
 
-  function showPrevious() {
+  function previousSlide() {
 
-    currentIndex -= 1;
+    currentIndex -=
+      1;
+
 
     render();
+
 
     restartAutoplay();
 
   }
 
 
-  function showNext() {
+  /* =====================================================
+     NEXT
+  ====================================================== */
 
-    currentIndex += 1;
+  function nextSlide() {
+
+    currentIndex +=
+      1;
+
 
     render();
+
 
     restartAutoplay();
 
@@ -328,14 +232,14 @@ export function initHero() {
   previousButton
     ?.addEventListener(
       "click",
-      showPrevious
+      previousSlide
     );
 
 
   nextButton
     ?.addEventListener(
       "click",
-      showNext
+      nextSlide
     );
 
 
@@ -345,17 +249,19 @@ export function initHero() {
 
   function stopAutoplay() {
 
-    if (!autoplayTimer) {
-      return;
-    }
-
-
-    window.clearTimeout(
+    if (
       autoplayTimer
-    );
+    ) {
+
+      window.clearTimeout(
+        autoplayTimer
+      );
 
 
-    autoplayTimer = null;
+      autoplayTimer =
+        null;
+
+    }
 
   }
 
@@ -368,10 +274,11 @@ export function initHero() {
     if (
       autoplayPaused ||
       document.hidden ||
-      reducedMotion.matches ||
       slides.length < 2
     ) {
+
       return;
+
     }
 
 
@@ -379,9 +286,12 @@ export function initHero() {
       window.setTimeout(
         () => {
 
-          currentIndex += 1;
+          currentIndex +=
+            1;
+
 
           render();
+
 
           startAutoplay();
 
@@ -402,14 +312,16 @@ export function initHero() {
 
 
   /* =====================================================
-     PAUSE
+     HOVER
   ====================================================== */
 
   slider.addEventListener(
     "mouseenter",
     () => {
 
-      autoplayPaused = true;
+      autoplayPaused =
+        true;
+
 
       stopAutoplay();
 
@@ -421,7 +333,9 @@ export function initHero() {
     "mouseleave",
     () => {
 
-      autoplayPaused = false;
+      autoplayPaused =
+        false;
+
 
       startAutoplay();
 
@@ -429,11 +343,17 @@ export function initHero() {
   );
 
 
+  /* =====================================================
+     FOCUS
+  ====================================================== */
+
   slider.addEventListener(
     "focusin",
     () => {
 
-      autoplayPaused = true;
+      autoplayPaused =
+        true;
+
 
       stopAutoplay();
 
@@ -445,7 +365,9 @@ export function initHero() {
     "focusout",
     () => {
 
-      autoplayPaused = false;
+      autoplayPaused =
+        false;
+
 
       startAutoplay();
 
@@ -468,7 +390,7 @@ export function initHero() {
 
         event.preventDefault();
 
-        showPrevious();
+        previousSlide();
 
       }
 
@@ -480,7 +402,7 @@ export function initHero() {
 
         event.preventDefault();
 
-        showNext();
+        nextSlide();
 
       }
 
@@ -506,7 +428,8 @@ export function initHero() {
 
     },
     {
-      passive: true
+      passive:
+        true
     }
   );
 
@@ -516,9 +439,12 @@ export function initHero() {
     event => {
 
       if (
-        touchStartX === null
+        touchStartX ===
+        null
       ) {
+
         return;
+
       }
 
 
@@ -536,211 +462,43 @@ export function initHero() {
       if (
         Math.abs(
           distance
-        ) > 40
+        ) >
+        40
       ) {
 
         if (
-          distance < 0
+          distance <
+          0
         ) {
 
-          showNext();
+          nextSlide();
 
         } else {
 
-          showPrevious();
+          previousSlide();
 
         }
 
       }
 
 
-      touchStartX = null;
+      touchStartX =
+        null;
 
 
       startAutoplay();
 
     },
     {
-      passive: true
+      passive:
+        true
     }
   );
 
 
   /* =====================================================
-     LOAD ANIMATION
+     PAGE VISIBILITY
   ====================================================== */
-
-  function animateHeroIn() {
-
-    if (
-      !hasGSAP ||
-      reducedMotion.matches
-    ) {
-      return;
-    }
-
-
-    const tl =
-      gsap.timeline(
-        {
-          defaults:
-            {
-              ease:
-                "power3.out"
-            }
-        }
-      );
-
-
-    tl.from(
-      ".hero-stage",
-      {
-        autoAlpha: 0,
-
-        y: 7,
-
-        duration: 0.7
-      }
-    );
-
-
-    if (heroImage) {
-
-      tl.fromTo(
-        heroImage,
-        {
-          scale: 1.025
-        },
-        {
-          scale: 1.001,
-
-          duration: 1.15
-        },
-        0
-      );
-
-    }
-
-
-    tl.from(
-      ".hero-notch--top-left",
-      {
-        x: -8,
-
-        autoAlpha: 0,
-
-        duration: 0.46
-      },
-      0.13
-    );
-
-
-    tl.from(
-      ".hero-nadja-rule",
-      {
-        scaleY: 0,
-
-        duration: 0.45
-      },
-      0.18
-    );
-
-
-    tl.from(
-      ".hero-nadja-copy",
-      {
-        x: 6,
-
-        autoAlpha: 0,
-
-        duration: 0.46
-      },
-      0.21
-    );
-
-
-    tl.from(
-      ".hero-slider-window",
-      {
-        y: 9,
-
-        autoAlpha: 0,
-
-        duration: 0.52
-      },
-      0.25
-    );
-
-
-    tl.from(
-      ".hero-slider-navigation",
-      {
-        y: 5,
-
-        autoAlpha: 0,
-
-        duration: 0.42
-      },
-      0.34
-    );
-
-
-    /*
-      PERMANENT BOTTOM-RIGHT NOTCH
-    */
-
-    tl.from(
-      ".hero-notch--bottom-right",
-      {
-        x: 8,
-
-        autoAlpha: 0,
-
-        duration: 0.46
-      },
-      0.28
-    );
-
-  }
-
-
-  /* =====================================================
-     SUBTLE PARALLAX
-  ====================================================== */
-
-  if (
-    hasGSAP &&
-    hasScrollTrigger &&
-    heroImage &&
-    !reducedMotion.matches
-  ) {
-
-    gsap.to(
-      heroImage,
-      {
-        yPercent: 1.5,
-
-        scale: 1.007,
-
-        ease: "none",
-
-        scrollTrigger:
-          {
-            trigger: hero,
-
-            start:
-              "top top",
-
-            end:
-              "bottom top",
-
-            scrub: 1.5
-          }
-      }
-    );
-
-  }
-
 
   document.addEventListener(
     "visibilitychange",
@@ -762,9 +520,14 @@ export function initHero() {
   );
 
 
-  render(false);
+  /* =====================================================
+     START
+  ====================================================== */
 
-  animateHeroIn();
+  render(
+    false
+  );
+
 
   startAutoplay();
 

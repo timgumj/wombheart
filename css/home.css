@@ -196,3 +196,22 @@ button:focus-visible {
   }
 
 }
+/* Match desktop section gaps to the hero-to-intro gap, including hero bottom padding. */
+@media (min-width: 1001px) {
+  main > .intro-editorial,
+  main > .angebote,
+  main > .yoga-mama-feature,
+  main > .nadja-feature,
+  main > .reviews,
+  main > .newsletter {
+    padding-bottom: calc(clamp(48px, 5vw, 76px) + 14px);
+  }
+
+  main > .angebote,
+  main > .yoga-mama-feature,
+  main > .nadja-feature,
+  main > .reviews,
+  main > .newsletter {
+    padding-top: 0;
+  }
+}

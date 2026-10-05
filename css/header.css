@@ -629,3 +629,9 @@ a:last-child {
   }
 
 }
+/* Desktop header offset. */
+@media (min-width: 1001px) {
+  .header-inner {
+    top: 4px;
+  }
+}

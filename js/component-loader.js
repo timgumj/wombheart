@@ -1,8 +1,19 @@
 /* =========================================================
+   WOMB & HEART
    COMPONENT LOADER
+
+   IMPORTANT:
+   THE HERO IS NOW DIRECTLY IN index.html.
+   THIS LOADER LOADS THE HEADER ONLY.
 ========================================================= */
 
-async function loadComponent(element) {
+const VERSION =
+  "20261004-premium-hero";
+
+
+async function loadComponent(
+  element
+) {
 
   const componentName =
     element.dataset.component;
@@ -17,12 +28,17 @@ async function loadComponent(element) {
 
     const response =
       await fetch(
-        `./components/${componentName}.html?v=20261004-restored-cutout`,
-        { cache: "no-cache" }
+        `./components/${componentName}.html?v=${VERSION}`,
+        {
+          cache:
+            "no-store"
+        }
       );
 
 
-    if (!response.ok) {
+    if (
+      !response.ok
+    ) {
 
       throw new Error(
         `Could not load ${componentName}.html`
@@ -35,14 +51,22 @@ async function loadComponent(element) {
       await response.text();
 
 
-  } catch (error) {
+  } catch (
+    error
+  ) {
 
-    console.error(error);
+    console.error(
+      error
+    );
 
   }
 
 }
 
+
+/* =========================================================
+   INITIALISE
+========================================================= */
 
 async function initialise() {
 
@@ -63,11 +87,11 @@ async function initialise() {
 
   const home =
     await import(
-      "./home.js"
+      `./home.js?v=${VERSION}`
     );
 
 
-  home.initHome();
+  await home.initHome();
 
 }
 

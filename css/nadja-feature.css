@@ -1,0 +1,1100 @@
+/* =========================================================
+   WOMB & HEART
+   NADJA FEATURE / MEIN WEG
+
+   BASED DIRECTLY ON INTRO SECTION DESIGN LANGUAGE
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.nadja-feature {
+  width: 100%;
+
+  padding:
+    0
+    0
+    clamp(90px, 8vw, 130px);
+
+  background: #ffffff;
+
+  color: #18191b;
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.nadja-feature-shell {
+  position: relative;
+}
+
+
+/* =========================================================
+   COMPLETE GRAY PANEL
+========================================================= */
+
+.nadja-feature-panel {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding:
+    clamp(44px, 5vw, 68px)
+    clamp(42px, 5vw, 72px)
+    clamp(38px, 4vw, 54px);
+
+  background: #f3f2ef;
+
+  border-radius: 34px;
+}
+
+
+/* =========================================================
+   MAIN TWO-COLUMN AREA
+
+   SAME HEIGHT PHILOSOPHY AS INTRO
+========================================================= */
+
+.nadja-feature-main {
+  --nadja-feature-height:
+    clamp(
+      500px,
+      40vw,
+      570px
+    );
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(430px, 0.92fr)
+    minmax(500px, 1.08fr);
+
+  gap:
+    clamp(
+      55px,
+      6.5vw,
+      95px
+    );
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.nadja-feature-content {
+  min-width: 0;
+
+  height:
+    var(--nadja-feature-height);
+
+  display: grid;
+
+  grid-template-rows:
+    auto
+    auto
+    1fr
+    auto;
+
+  align-items: start;
+
+  padding-left: 36px;
+}
+
+
+/* =========================================================
+   TOP META
+
+   SAME SCALE AS INTRO
+========================================================= */
+
+.nadja-feature-top-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #18191b;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+}
+
+
+.nadja-feature-top-separator {
+  width: 72px;
+
+  height: 1px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   HEADING GROUP
+========================================================= */
+
+.nadja-feature-heading-group {
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+
+   EXACT SAME SYSTEM AS:
+   SCHÖN, DASS DU DA BIST.
+   DER RAUM, DER DICH JETZT TRÄGT.
+   FÜR DEINE GEBURT.
+   DIE NÄCHSTEN TERMINE.
+========================================================= */
+
+.nadja-feature-heading-group h2 {
+  margin: 0;
+
+  color: #18191b;
+
+  font-size:
+    clamp(
+      24px,
+      2vw,
+      30px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.015em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SMALL LINE BELOW TITLE
+========================================================= */
+
+.nadja-feature-content-rule {
+  display: block;
+
+  width: 72px;
+
+  height: 1px;
+
+  margin-top: 10px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   MAIN BODY
+========================================================= */
+
+.nadja-feature-body {
+  align-self: center;
+
+  width: 100%;
+
+  max-width: 540px;
+
+  padding:
+    22px
+    0;
+
+  color: #18191b;
+}
+
+
+.nadja-feature-body > p {
+  margin: 0;
+
+  color: #3e3b38;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.48;
+
+  letter-spacing: -0.01em;
+}
+
+
+.nadja-feature-body > p + p {
+  margin-top: 22px;
+}
+
+
+/* =========================================================
+   EXPERIENCE BLOCK
+========================================================= */
+
+.nadja-feature-experience {
+  margin-top: 34px;
+}
+
+
+/* =========================================================
+   EXPERIENCE HEADING
+========================================================= */
+
+.nadja-feature-experience-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.nadja-feature-experience-heading > span:first-child {
+  flex:
+    0
+    0
+    auto;
+
+  color: #18191b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.17em;
+}
+
+
+/* =========================================================
+   EXPERIENCE RULE
+========================================================= */
+
+.nadja-feature-experience-line {
+  width:
+    clamp(
+      60px,
+      9vw,
+      145px
+    );
+
+  height: 1px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   EXPERIENCE TEXT
+========================================================= */
+
+.nadja-feature-experience p {
+  max-width: 500px;
+
+  margin:
+    16px
+    0
+    0;
+
+  color: #3e3b38;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.48;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.nadja-feature-read-more {
+  width: fit-content;
+
+  padding-bottom: 4px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  border-bottom:
+    1px
+    solid
+    #18191b;
+
+  color: #18191b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   CTA ICON
+========================================================= */
+
+.nadja-feature-read-more svg {
+  width: 16px;
+
+  height: 16px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   LEFT VERTICAL META
+========================================================= */
+
+.nadja-feature-vertical-meta {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 17px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #18191b;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   VERTICAL WORDS
+========================================================= */
+
+.nadja-feature-vertical-word {
+  font-size: 7px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.17em;
+
+  writing-mode: vertical-rl;
+
+  text-orientation: mixed;
+}
+
+
+/* =========================================================
+   VERTICAL SEPARATORS
+========================================================= */
+
+.nadja-feature-vertical-separator {
+  width: 1px;
+
+  height: 38px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.nadja-feature-image-area {
+  position: relative;
+
+  min-width: 0;
+
+  height:
+    var(--nadja-feature-height);
+
+  padding-right: 68px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.nadja-feature-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  border-radius:
+    18px
+    18px
+    18px
+    18px;
+
+  background: #ddd8d1;
+}
+
+
+/* =========================================================
+   IMAGE ITSELF
+========================================================= */
+
+.nadja-feature-image img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  max-width: none;
+
+  object-fit: cover;
+
+  object-position: center center;
+}
+
+
+/* =========================================================
+   IMAGE VERTICAL DIVIDERS
+
+   REPEATS INTRO SECTION
+========================================================= */
+
+.nadja-feature-image-divider {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 0;
+
+  bottom: 0;
+
+  width: 6px;
+
+  background: #f3f2ef;
+
+  pointer-events: none;
+}
+
+
+.nadja-feature-image-divider--1 {
+  left: 25%;
+}
+
+
+.nadja-feature-image-divider--2 {
+  left: 50%;
+}
+
+
+.nadja-feature-image-divider--3 {
+  left: 75%;
+}
+
+
+/* =========================================================
+   IMAGE INDEX
+========================================================= */
+
+.nadja-feature-image-index {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 22%;
+
+  right: 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 14px;
+
+  color: #18191b;
+}
+
+
+/* =========================================================
+   MAIN INDEX
+========================================================= */
+
+.nadja-feature-image-index strong {
+  font-size: 23px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   INDEX LINE
+========================================================= */
+
+.nadja-feature-index-line {
+  width: 1px;
+
+  height: 70px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   SMALL INDEX NUMBERS
+========================================================= */
+
+.nadja-feature-image-index small {
+  font-size: 7px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   DIAMOND ABOVE IMAGE
+========================================================= */
+
+.nadja-feature-image-diamond {
+  position: absolute;
+
+  z-index: 2;
+
+  top: -20px;
+
+  left: 50%;
+
+  width: 46px;
+
+  height: 46px;
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+
+  border:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.5
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DIAMOND ON RIGHT SIDE
+========================================================= */
+
+.nadja-feature-image-diamond-side {
+  position: absolute;
+
+  z-index: 2;
+
+  right: 52px;
+
+  top: 50%;
+
+  width: 30px;
+
+  height: 30px;
+
+  transform:
+    translateY(-50%)
+    rotate(45deg);
+
+  border-top:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.5
+    );
+
+  border-right:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.5
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BOTTOM RIGHT PANEL CURVE
+========================================================= */
+
+.nadja-feature-panel-curve {
+  position: absolute;
+
+  z-index: 1;
+
+  right: 20px;
+
+  bottom: 20px;
+
+  width: 68px;
+
+  height: 68px;
+
+  border-right:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.35
+    );
+
+  border-bottom:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.35
+    );
+
+  border-bottom-right-radius: 30px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .nadja-feature-panel {
+    padding:
+      44px
+      38px
+      42px;
+
+    border-radius: 28px;
+  }
+
+
+  .nadja-feature-main {
+    --nadja-feature-height:
+      520px;
+
+    grid-template-columns:
+      minmax(360px, 0.92fr)
+      minmax(440px, 1.08fr);
+
+    gap: 46px;
+  }
+
+
+  .nadja-feature-content {
+    padding-left: 30px;
+  }
+
+
+  .nadja-feature-image-area {
+    padding-right: 58px;
+  }
+
+
+  .nadja-feature-image-index {
+    right: 4px;
+  }
+
+
+  .nadja-feature-body > p,
+  .nadja-feature-experience p {
+    font-size: 17px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .nadja-feature {
+    padding-bottom: 90px;
+  }
+
+
+  .nadja-feature-panel {
+    padding:
+      38px
+      28px
+      38px;
+
+    border-radius: 26px;
+  }
+
+
+  .nadja-feature-main {
+    --nadja-feature-height:
+      auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 52px;
+  }
+
+
+  /* =====================================================
+     CONTENT
+  ====================================================== */
+
+  .nadja-feature-content {
+    height: auto;
+
+    min-height: 480px;
+
+    padding-left: 28px;
+
+    grid-template-rows:
+      auto
+      auto
+      1fr
+      auto;
+  }
+
+
+  .nadja-feature-body {
+    margin:
+      40px
+      0;
+  }
+
+
+  /* =====================================================
+     IMAGE
+  ====================================================== */
+
+  .nadja-feature-image-area {
+    width: 100%;
+
+    height: 560px;
+
+    padding-right: 58px;
+  }
+
+
+  .nadja-feature-image {
+    height: 100%;
+  }
+
+
+  .nadja-feature-vertical-meta {
+    top: 31%;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 620px) {
+
+  .nadja-feature {
+    padding:
+      0
+      0
+      75px;
+  }
+
+
+  .nadja-feature-panel {
+    padding:
+      29px
+      16px
+      30px;
+
+    border-radius: 22px;
+  }
+
+
+  /* =====================================================
+     REMOVE SIDE META ON SMALL SCREENS
+  ====================================================== */
+
+  .nadja-feature-vertical-meta {
+    display: none;
+  }
+
+
+  /* =====================================================
+     CONTENT
+  ====================================================== */
+
+  .nadja-feature-content {
+    min-height: 0;
+
+    padding-left: 0;
+
+    display: block;
+  }
+
+
+  /* =====================================================
+     TOP META
+  ====================================================== */
+
+  .nadja-feature-top-meta {
+    gap: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.13em;
+  }
+
+
+  .nadja-feature-top-separator {
+    width: 42px;
+  }
+
+
+  /* =====================================================
+     TITLE
+  ====================================================== */
+
+  .nadja-feature-heading-group {
+    margin-top: 20px;
+  }
+
+
+  .nadja-feature-heading-group h2 {
+    font-size:
+      clamp(
+        21px,
+        6vw,
+        26px
+      );
+  }
+
+
+  .nadja-feature-content-rule {
+    width: 55px;
+
+    margin-top: 8px;
+  }
+
+
+  /* =====================================================
+     BODY
+  ====================================================== */
+
+  .nadja-feature-body {
+    margin:
+      34px
+      0
+      36px;
+
+    padding: 0;
+  }
+
+
+  .nadja-feature-body > p,
+  .nadja-feature-experience p {
+    font-size: 17px;
+
+    line-height: 1.5;
+  }
+
+
+  .nadja-feature-body > p + p {
+    margin-top: 20px;
+  }
+
+
+  /* =====================================================
+     EXPERIENCE
+  ====================================================== */
+
+  .nadja-feature-experience {
+    margin-top: 29px;
+  }
+
+
+  .nadja-feature-experience-heading {
+    gap: 9px;
+  }
+
+
+  .nadja-feature-experience-heading > span:first-child {
+    font-size: 7px;
+
+    letter-spacing: 0.12em;
+  }
+
+
+  .nadja-feature-experience-line {
+    flex: 1;
+
+    width: auto;
+  }
+
+
+  /* =====================================================
+     CTA
+  ====================================================== */
+
+  .nadja-feature-read-more {
+    font-size: 8px;
+  }
+
+
+  /* =====================================================
+     IMAGE
+  ====================================================== */
+
+  .nadja-feature-image-area {
+    height: 430px;
+
+    margin-top: 44px;
+
+    padding-right: 35px;
+  }
+
+
+  .nadja-feature-image {
+    border-radius: 16px;
+  }
+
+
+  .nadja-feature-image-divider {
+    width: 4px;
+  }
+
+
+  /* =====================================================
+     IMAGE INDEX
+  ====================================================== */
+
+  .nadja-feature-image-index {
+    right: 1px;
+
+    top: 21%;
+
+    gap: 11px;
+  }
+
+
+  .nadja-feature-image-index strong {
+    font-size: 18px;
+  }
+
+
+  .nadja-feature-index-line {
+    height: 52px;
+  }
+
+
+  .nadja-feature-image-index small {
+    font-size: 6px;
+  }
+
+
+  /* =====================================================
+     DECORATIVE DIAMOND
+  ====================================================== */
+
+  .nadja-feature-image-diamond {
+    width: 34px;
+
+    height: 34px;
+
+    top: -14px;
+  }
+
+
+  .nadja-feature-image-diamond-side {
+    display: none;
+  }
+
+
+  /* =====================================================
+     CURVE
+  ====================================================== */
+
+  .nadja-feature-panel-curve {
+    right: 13px;
+
+    bottom: 13px;
+
+    width: 44px;
+
+    height: 44px;
+
+    border-bottom-right-radius: 20px;
+  }
+
+}

@@ -1,0 +1,1184 @@
+/* =========================================================
+   WOMB & HEART
+   REVIEWS
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.reviews {
+  width: 100%;
+
+  padding:
+    0
+    0
+    clamp(95px, 8vw, 135px);
+
+  background: #ffffff;
+
+  color: #18191b;
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.reviews-shell {
+  position: relative;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.reviews-panel {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding:
+    clamp(44px, 5vw, 68px)
+    clamp(42px, 5vw, 72px)
+    clamp(38px, 4vw, 54px);
+
+  background: #f3f2ef;
+
+  border-radius: 34px;
+}
+
+
+/* =========================================================
+   TOP META
+========================================================= */
+
+.reviews-top-meta {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #18191b;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.17em;
+}
+
+
+.reviews-top-meta > span:first-child {
+  font-size: 9px;
+}
+
+
+.reviews-top-meta > span:last-child {
+  color: #67625e;
+}
+
+
+.reviews-top-line {
+  width:
+    clamp(
+      60px,
+      7vw,
+      105px
+    );
+
+  height: 1px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   MAIN GRID
+
+   IMPORTANT:
+   No centered 1120px container anymore.
+
+   The main slider now uses the full internal width
+   of the gray panel, so the left visual begins from
+   the same left alignment as STIMMEN.
+========================================================= */
+
+.reviews-main {
+  width: 100%;
+
+  margin:
+    clamp(42px, 5vw, 65px)
+    0
+    0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.78fr)
+    minmax(480px, 1.22fr);
+
+  gap:
+    clamp(
+      65px,
+      8vw,
+      115px
+    );
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT VISUAL
+
+   MOVED TO LEFT.
+   No justify-self:end anymore.
+========================================================= */
+
+.reviews-visual {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 350px;
+
+  justify-self: start;
+}
+
+
+/* =========================================================
+   IMAGE WINDOW
+
+   Image itself begins from the left side of the main grid,
+   aligned with the STIMMEN content above.
+========================================================= */
+
+.reviews-image-window {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 0.82;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #ddd8d1;
+}
+
+
+/* =========================================================
+   IMAGE TRACK
+========================================================= */
+
+.reviews-image-track {
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  transition:
+    transform
+    650ms
+    cubic-bezier(.22, 1, .36, 1);
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   EACH REVIEW IMAGE
+========================================================= */
+
+.reviews-image-slide {
+  position: relative;
+
+  flex:
+    0
+    0
+    100%;
+
+  width: 100%;
+
+  height: 100%;
+
+  margin: 0;
+
+  overflow: hidden;
+}
+
+
+.reviews-image-slide img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  max-width: none;
+
+  object-fit: cover;
+
+  object-position: center center;
+}
+
+
+/* =========================================================
+   VERTICAL IMAGE LABEL
+
+   WOMB & HEART
+   FONT INCREASED BY 2PX:
+   7px -> 9px
+========================================================= */
+
+.reviews-visual-label {
+  position: absolute;
+
+  left: -26px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    rotate(180deg);
+
+  color: #18191b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+
+  writing-mode: vertical-rl;
+
+  text-orientation: mixed;
+}
+
+
+/* =========================================================
+   IMAGE INDEX
+========================================================= */
+
+.reviews-visual-index {
+  position: absolute;
+
+  right: -30px;
+
+  bottom: 32px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 11px;
+
+  color: #18191b;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+.reviews-visual-index > span:first-child {
+  font-size: 20px;
+}
+
+
+.reviews-index-line {
+  width: 1px;
+
+  height: 52px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.reviews-content {
+  min-width: 0;
+
+  width: 100%;
+
+  max-width: 690px;
+
+  justify-self: end;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.reviews-heading h2 {
+  margin: 0;
+
+  color: #18191b;
+
+  font-size:
+    clamp(
+      24px,
+      2vw,
+      30px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.015em;
+
+  text-transform: uppercase;
+}
+
+
+.reviews-heading-line {
+  display: block;
+
+  width: 72px;
+
+  height: 1px;
+
+  margin-top: 10px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   REVIEW WINDOW
+========================================================= */
+
+.reviews-window {
+  width: 100%;
+
+  margin-top:
+    clamp(
+      40px,
+      4vw,
+      55px
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   REVIEW TRACK
+========================================================= */
+
+.reviews-track {
+  width: 100%;
+
+  display: flex;
+
+  transition:
+    transform
+    650ms
+    cubic-bezier(.22, 1, .36, 1);
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   REVIEW SLIDE
+========================================================= */
+
+.review-slide {
+  position: relative;
+
+  flex:
+    0
+    0
+    100%;
+
+  width: 100%;
+
+  min-width: 0;
+
+  padding-right:
+    clamp(
+      0px,
+      2vw,
+      30px
+    );
+}
+
+
+/* =========================================================
+   QUOTE MARK
+========================================================= */
+
+.review-quote-mark {
+  display: block;
+
+  height: 42px;
+
+  color: #9c565a;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 74px;
+
+  font-weight: 400;
+
+  line-height: 0.8;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.review-slide blockquote {
+  max-width: 660px;
+
+  margin:
+    22px
+    0
+    0;
+}
+
+
+/* =========================================================
+   REVIEW TEXT
+
+   REDUCED BY 2PX:
+   OLD = 21px -> 27px
+   NEW = 19px -> 25px
+========================================================= */
+
+.review-slide blockquote p {
+  margin: 0;
+
+  color: #18191b;
+
+  font-size:
+    clamp(
+      19px,
+      1.8vw,
+      25px
+    );
+
+  font-weight: 400;
+
+  line-height: 1.28;
+
+  letter-spacing: -0.018em;
+}
+
+
+/* =========================================================
+   AUTHOR
+========================================================= */
+
+.review-author {
+  margin-top: 36px;
+
+  padding-top: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  border-top:
+    1px
+    solid
+    rgba(
+      24,
+      25,
+      27,
+      0.14
+    );
+}
+
+
+.review-author strong {
+  color: #18191b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.17em;
+}
+
+
+.review-author span {
+  color: #67625e;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.reviews-controls {
+  width: 100%;
+
+  margin-top: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.reviews-dots {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.reviews-dot {
+  width: 7px;
+
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      24,
+      25,
+      27,
+      0.22
+    );
+}
+
+
+.reviews-dot.is-active {
+  background: #18191b;
+}
+
+
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.reviews-arrows {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.reviews-arrow {
+  width: 42px;
+
+  height: 42px;
+
+  padding: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px
+    solid
+    rgba(
+      24,
+      25,
+      27,
+      0.35
+    );
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #18191b;
+}
+
+
+.reviews-arrow svg {
+  width: 16px;
+
+  height: 16px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   NO HOVER MOVEMENT
+========================================================= */
+
+.reviews-arrow:hover {
+  transform: none;
+}
+
+
+.reviews-dot:hover {
+  transform: none;
+}
+
+
+/* =========================================================
+   BOTTOM META
+========================================================= */
+
+.reviews-bottom-meta {
+  width: 100%;
+
+  margin-top:
+    clamp(
+      38px,
+      4vw,
+      52px
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  color: #18191b;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.17em;
+}
+
+
+.reviews-bottom-line {
+  width:
+    clamp(
+      80px,
+      11vw,
+      165px
+    );
+
+  height: 1px;
+
+  background: #9c565a;
+}
+
+
+/* =========================================================
+   PANEL CURVE
+========================================================= */
+
+.reviews-panel-curve {
+  position: absolute;
+
+  right: 20px;
+
+  bottom: 20px;
+
+  width: 68px;
+
+  height: 68px;
+
+  border-right:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.35
+    );
+
+  border-bottom:
+    1px
+    solid
+    rgba(
+      156,
+      86,
+      90,
+      0.35
+    );
+
+  border-bottom-right-radius: 30px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .reviews-panel {
+    padding:
+      44px
+      38px
+      42px;
+
+    border-radius: 28px;
+  }
+
+
+  .reviews-main {
+    width: 100%;
+
+    margin-left: 0;
+
+    margin-right: 0;
+
+    grid-template-columns:
+      minmax(250px, 0.76fr)
+      minmax(400px, 1.24fr);
+
+    gap: 58px;
+  }
+
+
+  .reviews-visual {
+    max-width: 310px;
+
+    justify-self: start;
+  }
+
+
+  .reviews-content {
+    max-width: none;
+  }
+
+
+  /* =====================================================
+     REVIEW TEXT
+     OLD: 20px -> 25px
+     NEW: 18px -> 23px
+  ====================================================== */
+
+  .review-slide blockquote p {
+    font-size:
+      clamp(
+        18px,
+        1.9vw,
+        23px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .reviews {
+    padding-bottom: 90px;
+  }
+
+
+  .reviews-panel {
+    padding:
+      38px
+      28px
+      38px;
+
+    border-radius: 26px;
+  }
+
+
+  .reviews-main {
+    width: 100%;
+
+    margin-left: 0;
+
+    margin-right: 0;
+
+    grid-template-columns:
+      220px
+      minmax(0, 1fr);
+
+    gap: 42px;
+  }
+
+
+  .reviews-visual {
+    max-width: 220px;
+
+    justify-self: start;
+  }
+
+
+  /* =====================================================
+     VERTICAL LABEL
+     KEEP 9PX
+  ====================================================== */
+
+  .reviews-visual-label {
+    display: block;
+
+    left: -21px;
+
+    font-size: 9px;
+  }
+
+
+  .reviews-visual-index {
+    right: -25px;
+  }
+
+
+  /* =====================================================
+     REVIEW TEXT
+     OLD: 21px
+     NEW: 19px
+  ====================================================== */
+
+  .review-slide blockquote p {
+    font-size: 19px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 620px) {
+
+  .reviews {
+    padding-bottom: 75px;
+  }
+
+
+  .reviews-panel {
+    padding:
+      29px
+      16px
+      31px;
+
+    border-radius: 22px;
+  }
+
+
+  /* =====================================================
+     TOP META
+  ====================================================== */
+
+  .reviews-top-meta {
+    gap: 8px;
+
+    font-size: 6px;
+
+    letter-spacing: 0.1em;
+  }
+
+
+  .reviews-top-meta > span:first-child {
+    font-size: 7px;
+  }
+
+
+  .reviews-top-line {
+    width: 34px;
+  }
+
+
+  /* =====================================================
+     STACK IMAGE + CONTENT
+
+     Still aligned to LEFT instead of centered.
+  ====================================================== */
+
+  .reviews-main {
+    width: 100%;
+
+    margin:
+      34px
+      0
+      0;
+
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+  }
+
+
+  /* =====================================================
+     IMAGE
+
+     STARTS AT SAME LEFT POSITION AS STIMMEN.
+  ====================================================== */
+
+  .reviews-visual {
+    width: 62%;
+
+    max-width: 220px;
+
+    justify-self: start;
+
+    margin-left: 0;
+  }
+
+
+  .reviews-image-window {
+    border-radius: 16px;
+  }
+
+
+  /* =====================================================
+     WOMB & HEART
+
+     Keep visible on mobile and increased to 9px.
+  ====================================================== */
+
+  .reviews-visual-label {
+    display: block;
+
+    left: auto;
+
+    right: -22px;
+
+    top: 50%;
+
+    transform:
+      translateY(-50%);
+
+    color: #18191b;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: 0.16em;
+
+    writing-mode: vertical-rl;
+  }
+
+
+  /* =====================================================
+     IMAGE INDEX
+  ====================================================== */
+
+  .reviews-visual-index {
+    right: -48px;
+
+    bottom: 20px;
+  }
+
+
+  .reviews-visual-index > span:first-child {
+    font-size: 17px;
+  }
+
+
+  .reviews-index-line {
+    height: 40px;
+  }
+
+
+  /* =====================================================
+     TITLE
+  ====================================================== */
+
+  .reviews-heading h2 {
+    font-size:
+      clamp(
+        21px,
+        6vw,
+        26px
+      );
+  }
+
+
+  .reviews-heading-line {
+    width: 55px;
+
+    margin-top: 8px;
+  }
+
+
+  /* =====================================================
+     REVIEW
+  ====================================================== */
+
+  .reviews-window {
+    margin-top: 32px;
+  }
+
+
+  .review-quote-mark {
+    height: 34px;
+
+    font-size: 60px;
+  }
+
+
+  .review-slide {
+    padding-right: 0;
+  }
+
+
+  .review-slide blockquote {
+    margin-top: 18px;
+  }
+
+
+  /* =====================================================
+     REVIEW TEXT
+     OLD: 19px
+     NEW: 17px
+  ====================================================== */
+
+  .review-slide blockquote p {
+    font-size: 17px;
+
+    line-height: 1.34;
+  }
+
+
+  /* =====================================================
+     AUTHOR
+  ====================================================== */
+
+  .review-author {
+    margin-top: 28px;
+
+    padding-top: 15px;
+
+    flex-wrap: wrap;
+
+    gap: 8px 12px;
+  }
+
+
+  .review-author strong {
+    font-size: 8px;
+  }
+
+
+  .review-author span {
+    font-size: 7px;
+  }
+
+
+  /* =====================================================
+     CONTROLS
+  ====================================================== */
+
+  .reviews-controls {
+    margin-top: 30px;
+  }
+
+
+  .reviews-arrow {
+    width: 38px;
+
+    height: 38px;
+  }
+
+
+  /* =====================================================
+     BOTTOM META
+  ====================================================== */
+
+  .reviews-bottom-meta {
+    margin-top: 32px;
+
+    font-size: 7px;
+
+    justify-content: flex-start;
+  }
+
+
+  .reviews-bottom-line {
+    flex: 1;
+
+    width: auto;
+
+    max-width: 100px;
+  }
+
+
+  /* =====================================================
+     CURVE
+  ====================================================== */
+
+  .reviews-panel-curve {
+    right: 13px;
+
+    bottom: 13px;
+
+    width: 44px;
+
+    height: 44px;
+
+    border-bottom-right-radius: 20px;
+  }
+
+}
