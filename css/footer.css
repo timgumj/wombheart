@@ -25,10 +25,7 @@
 ========================================================= */
 
 .site-footer .footer-shell {
-  width: min(
-    calc(100% - var(--page-x) * 2),
-    var(--max-width)
-  );
+  width: calc(100% - 20px);
 
   margin-inline: auto;
   padding-inline: clamp(20px, 5vw, 72px);

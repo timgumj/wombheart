@@ -1,0 +1,352 @@
+.section-orbit {
+  position: relative;
+  z-index: 1001;
+
+  display: block;
+
+  width: clamp(112px, 9vw, 128px);
+  flex: 0 0 clamp(112px, 9vw, 128px);
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  animation: section-orbit-spin 36s linear infinite;
+}
+
+.section-orbit::before {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      from 25deg,
+      var(--orbit-bright),
+      var(--orbit-mid) 28%,
+      var(--orbit-deep) 54%,
+      var(--orbit-mid) 78%,
+      var(--orbit-bright)
+    );
+
+  -webkit-mask:
+    radial-gradient(
+      circle,
+      transparent 0 42%,
+      #000 50% 70%,
+      transparent 78%
+    );
+
+  mask:
+    radial-gradient(
+      circle,
+      transparent 0 42%,
+      #000 50% 70%,
+      transparent 78%
+    );
+  content: "";
+  filter: drop-shadow(0 2px 5px rgba(86, 0, 2, 0.15));
+}
+
+.section-orbit svg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+.section-orbit text {
+  fill: var(--orbit-text);
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 2.5px;
+  paint-order: stroke fill;
+
+  font-family: var(--font, Arial, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+@keyframes section-orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.section-orbit--red {
+  --orbit-bright: #760006;
+  --orbit-mid: #560002;
+  --orbit-deep: #310001;
+  --orbit-text: #560002;
+}
+
+.section-orbit--rose {
+  --orbit-bright: #fff0ef;
+  --orbit-mid: #e6babc;
+  --orbit-deep: #b96d72;
+  --orbit-text: #760006;
+  animation-direction: reverse;
+}
+
+.section-orbit--ruby {
+  --orbit-bright: #bd2025;
+  --orbit-mid: #9e1115;
+  --orbit-deep: #760006;
+  --orbit-text: #560002;
+}
+
+.intro-panel,
+.angebote-panel,
+.yoga-mama-shell,
+.nadja-feature-panel,
+.reviews-panel {
+  isolation: isolate;
+}
+
+.section-motif-cutout {
+  --motif-cutout-color: #fff;
+
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 178px;
+  height: 150px;
+  border-top-left-radius: 34px;
+  border-bottom-right-radius: 38px;
+  background: var(--motif-cutout-color);
+  pointer-events: none;
+}
+
+.section-motif-cutout::before,
+.section-motif-cutout::after {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(
+    circle at 100% 100%,
+    transparent 0 24px,
+    var(--motif-cutout-color) 24px 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.section-motif-cutout::before {
+  top: 0;
+  right: -24px;
+}
+
+.section-motif-cutout::after {
+  bottom: -24px;
+  left: 0;
+}
+
+.section-motif-cutout--program {
+  z-index: 4;
+  top: 0;
+}
+
+@media (max-width: 850px) {
+  .section-motif-cutout {
+    display: none;
+  }
+}
+
+.section-side-meta {
+  position: absolute;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  color: #18191b;
+  pointer-events: none;
+}
+
+.section-side-meta .section-orbit {
+  position: relative;
+  inset: auto;
+  flex: 0 0 clamp(112px, 9vw, 128px);
+}
+
+.section-side-title {
+  display: block;
+  color: #18191b;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.intro-vertical-meta {
+  top: 11px;
+  left: 25px;
+  transform: none;
+}
+
+.angebote-side-meta {
+  top: 11px;
+  left: 25px;
+  gap: 8px;
+  transform: none;
+}
+
+.yoga-mama-side-meta {
+  top: 11px;
+  left: 25px;
+  transform: none;
+}
+
+.yoga-nidra-feature .section-side-meta {
+  z-index: 1000;
+}
+
+.nadja-feature-vertical-meta {
+  top: 11px;
+  left: 25px;
+  gap: 8px;
+  transform: none;
+}
+
+.reviews-visual-label.section-side-meta {
+  top: -76px;
+  left: -44px;
+  transform: none;
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+}
+
+.section-side-meta--right {
+  position: absolute;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  color: #18191b;
+  pointer-events: none;
+}
+
+.section-side-rule--right {
+  height: 58px;
+}
+
+.intro-image-index.section-side-meta--right {
+  top: 22%;
+  right: 0;
+  width: auto;
+}
+
+.angebote-bottom-meta.section-side-meta--right {
+  top: 50%;
+  right: 20px;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  margin: 0;
+  transform: translateY(-50%);
+}
+
+.yoga-mama-index.section-side-meta--right {
+  top: 50%;
+  right: 0;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.yoga-nidra-feature .yoga-mama-index.section-side-meta--right {
+  right: clamp(18px, 2vw, 30px);
+}
+
+.nadja-feature-image-index.section-side-meta--right {
+  top: 22%;
+  right: 8px;
+}
+
+.reviews-main {
+  position: relative;
+}
+
+.reviews-visual-index.section-side-meta--right {
+  top: 50%;
+  right: -34px;
+  transform: translateY(-50%);
+}
+
+.section-side-rule {
+  display: block;
+  flex: 0 0 auto;
+  width: 1px;
+  height: 58px;
+  background: #9c565a;
+}
+
+.reviews-current-number {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (min-width: 851px) {
+  .angebote-heading-row {
+    margin-top: 100px;
+  }
+
+  .yoga-nidra-feature .yoga-mama-content {
+    transform: translateY(140px);
+  }
+
+  .nadja-feature-content {
+    transform: translateY(52px);
+  }
+}
+
+@media (min-width: 851px) {
+  .intro-top-meta,
+  .angebote-top-meta,
+  .yoga-mama-kicker,
+  .nadja-feature-top-meta,
+  .reviews-top-meta {
+    display: none;
+  }
+
+  #yoga-nidra-detail .yoga-mama-kicker {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .section-side-meta,
+  .section-side-meta--right {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .section-orbit {
+      animation: none;
+    }
+  }
+
+  .reviews-current-number {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-orbit {
+    animation: none;
+  }
+}

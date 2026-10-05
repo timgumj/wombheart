@@ -1185,3 +1185,24 @@
     top: 12px;
   }
 }
+
+/* Keep the overlapping detail photo circular at every screen size. */
+#yoga-mama-detail .yoga-mama-detail-image {
+  aspect-ratio: 1;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+}
+
+/* Match the hero width while preserving the existing column proportions and heights. */
+#yoga-mama-detail > .yoga-mama-shell,
+#yoga-nidra-detail > .yoga-mama-shell {
+  width: calc(100% - 20px);
+}
+
+@media (min-width: 1001px) {
+  #yoga-mama-detail .yoga-mama-content,
+  #yoga-nidra-detail .yoga-mama-content {
+    max-width: none;
+  }
+}

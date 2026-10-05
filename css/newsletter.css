@@ -32,6 +32,10 @@
   position: relative;
 }
 
+.newsletter .newsletter-shell {
+  width: calc(100% - 20px);
+}
+
 
 /* =========================================================
    PANEL
@@ -95,8 +99,6 @@
   z-index: 2;
 
   width: 100%;
-
-  max-width: 550px;
 
   padding-left:
     clamp(
@@ -213,8 +215,6 @@
 ========================================================= */
 
 .newsletter-intro {
-  max-width: 520px;
-
   margin:
     30px
     0
@@ -242,8 +242,6 @@
   z-index: 3;
 
   width: 100%;
-
-  max-width: 580px;
 
   justify-self: end;
 }

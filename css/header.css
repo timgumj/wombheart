@@ -635,3 +635,228 @@ a:last-child {
     top: 4px;
   }
 }
+
+/* Full-width header with inset navigation. */
+.site-header .header-inner {
+  width: 100%;
+  padding-inline: var(--page-x);
+}
+
+/* Glowing heart badge, centered across the header / hero boundary. */
+.site-header .header-brand {
+  width: 184px;
+  height: 184px;
+  flex-basis: 184px;
+  top: calc(var(--header-h) / 2);
+  z-index: 1002;
+  border-radius: 50%;
+  scale: 1;
+  transition: scale 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header-logo-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  transform: scale(1);
+  transition: transform 350ms ease;
+}
+
+.site-header .header-logo-circle {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle closest-side at 50% 50%,
+    rgba(128, 13, 29, 0) 0%,
+    rgba(128, 13, 29, 0) 36%,
+    rgba(128, 13, 29, 0) 52%,
+    rgba(133, 26, 37, 0.26) 65%,
+    rgba(128, 13, 29, 0.58) 77%,
+    rgba(209, 40, 48, 0.78) 87%,
+    rgba(236, 68, 73, 0.64) 93%,
+    rgba(218, 43, 49, 0) 100%);
+  box-shadow: none;
+}
+
+.site-header .header-logo {
+  width: 110px;
+  max-height: 72px;
+  top: 0;
+  filter: brightness(0) saturate(100%) invert(10%) sepia(61%) saturate(3942%) hue-rotate(333deg) brightness(77%) contrast(115%);
+}
+
+@keyframes header-heartbeat {
+  0%, 65%, 100% { transform: scale(1); }
+  20% { transform: scale(1.025); }
+  35% { transform: scale(1.008); }
+  48% { transform: scale(1.018); }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .header-brand:hover {
+    scale: 1.035;
+  }
+
+  .header-brand:hover .header-logo-art {
+    animation: header-heartbeat 2.4s ease-in-out infinite;
+  }
+}
+
+.header-brand:focus-visible .header-logo-art {
+  transform: scale(1.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-brand,
+  .header-logo-art {
+    transition: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .site-header .header-brand {
+    top: calc(var(--header-h) / 2 + 4px);
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header .header-brand {
+    width: 132px;
+    height: 132px;
+    flex-basis: 132px;
+    top: calc(var(--header-h) / 2 + 3px);
+  }
+
+  .site-header .header-logo {
+    width: 82px;
+    max-height: 52px;
+    top: 0;
+  }
+}
+
+/* Header sits inside the hero; the badge starts flush with its top edge. */
+.hero-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1001;
+}
+
+.hero-header .site-header {
+  background: transparent;
+  color: #ffffff;
+}
+
+.hero-header .header-inner {
+  top: 0;
+  align-items: flex-start;
+}
+
+.hero-header .header-brand {
+  top: 0;
+  width: 224px;
+  height: 112px;
+  flex-basis: 224px;
+  border-radius: 0 0 112px 112px;
+  transform-origin: center top;
+}
+
+.hero-header .header-logo-art {
+  transform-origin: center top;
+}
+
+.hero-header .header-logo-circle {
+  border-radius: inherit;
+  background: radial-gradient(circle 112px at 50% 0,
+    rgba(128, 13, 29, 0) 0%,
+    rgba(128, 13, 29, 0) 46%,
+    rgba(133, 26, 37, 0.22) 61%,
+    rgba(128, 13, 29, 0.56) 76%,
+    rgba(209, 40, 48, 0.84) 87%,
+    rgba(236, 68, 73, 0.68) 94%,
+    rgba(218, 43, 49, 0) 100%);
+}
+
+.hero-header .header-logo {
+  top: -14px;
+  width: 102px;
+  filter: brightness(0) invert(1);
+}
+
+.hero-header .header-nav {
+  align-self: center;
+}
+
+.hero-header .header-nav > a {
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero-header .header-nav-cta {
+  background: transparent;
+  border-color: #ffffff;
+}
+
+.hero-header .header-nav-cta:hover {
+  background: #ffffff;
+  color: #18191b;
+  text-shadow: none;
+}
+
+.hero-header .header-menu-toggle {
+  align-self: center;
+}
+
+@media (max-width: 720px) {
+  .hero-header .header-brand {
+    width: 164px;
+    height: 82px;
+    flex-basis: 164px;
+    border-radius: 0 0 82px 82px;
+  }
+
+  .hero-header .header-logo-circle {
+    background-size: 100% 100%;
+    background-image: radial-gradient(circle 82px at 50% 0,
+      rgba(128, 13, 29, 0) 0%,
+      rgba(128, 13, 29, 0) 46%,
+      rgba(133, 26, 37, 0.22) 61%,
+      rgba(128, 13, 29, 0.56) 76%,
+      rgba(209, 40, 48, 0.84) 87%,
+      rgba(236, 68, 73, 0.68) 94%,
+      rgba(218, 43, 49, 0) 100%);
+  }
+
+  .hero-header .header-logo {
+    width: 74px;
+  }
+}
+
+/* Keep all header content anchored within the hero image container. */
+.hero-stage > .hero-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: auto;
+}
+
+.hero-header .header-mobile-nav {
+  position: absolute;
+  height: calc(100svh - 18px);
+  color: #18191b;
+}
+
+.hero-header .header-mobile-inner {
+  height: calc(100% - var(--header-h));
+}
+
+/* Smaller, lighter desktop navigation. */
+@media (min-width: 1001px) {
+  .header-nav > a {
+    font-size: 12px;
+    font-weight: 300;
+  }
+}

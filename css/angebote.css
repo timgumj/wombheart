@@ -241,7 +241,7 @@
     100%;
 
   max-width:
-    510px;
+    none;
 
   margin:
     0;
@@ -1841,5 +1841,259 @@
 
   #angebote .angebot-card--mama {
     grid-template-columns: max(200px, calc(37.5% + 16.25px)) minmax(0, 1fr);
+  }
+}
+
+/* Match the hero width and scale the desktop bento with its available space. */
+.angebote .angebote-shell {
+  width: calc(100% - 20px);
+}
+
+@media (min-width: 1001px) {
+  #angebote .angebote-panel {
+    container-type: inline-size;
+  }
+
+  #angebote .angebote-grid {
+    grid-template-rows: max(290px, 25cqw) max(320px, 27.6cqw);
+  }
+
+  #angebote .angebot-card--education,
+  #angebote .angebot-card--book {
+    grid-template-rows: minmax(0, 1fr) max(92px, 8cqw);
+  }
+}
+
+/* Replace the bento layout with equal, image-led offer cards. */
+#angebote .angebote-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: none;
+  grid-auto-rows: clamp(380px, 34vw, 470px);
+  gap: 16px;
+}
+
+#angebote .angebot-card {
+  display: block;
+  grid-column: auto;
+  grid-row: auto;
+  border: 0;
+  border-radius: 20px;
+  background: #18191b;
+}
+
+#angebote .angebot-card::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(0, 0, 0, 0.12) 70%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+#angebote .angebot-card-media {
+  position: absolute;
+  inset: 0;
+}
+
+#angebote .angebot-card-copy {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 26px;
+  color: #ffffff;
+  text-align: left;
+}
+
+#angebote .angebot-icon,
+#angebote .angebot-side-meta {
+  display: none;
+}
+
+#angebote .angebot-copy-main,
+#angebote .angebot-copy-main--book {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+#angebote .angebot-book-heading {
+  display: contents;
+}
+
+#angebote .angebot-category,
+#angebote .angebot-category--book {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  max-width: none;
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background: rgba(86, 0, 2, 0.82);
+  color: #ffffff;
+  font-size: 8px;
+  text-align: left;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+#angebote .angebot-card h3 {
+  position: absolute;
+  top: 44px;
+  left: 18px;
+  width: max-content;
+  max-width: calc(100% - 36px);
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: rgba(86, 0, 2, 0.82);
+  color: #ffffff;
+  font-size: clamp(18px, 2vw, 26px);
+  text-align: left;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+#angebote .angebot-copy-rule {
+  display: none;
+}
+
+#angebote .angebot-card-copy p {
+  position: absolute;
+  bottom: 68px;
+  left: 26px;
+  max-width: calc(100% - 52px);
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+}
+
+#angebote .angebot-link {
+  position: absolute;
+  bottom: 26px;
+  left: 26px;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 1199px) {
+  #angebote .angebote-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 390px;
+  }
+}
+
+@media (max-width: 620px) {
+  #angebote .angebote-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 400px;
+    gap: 12px;
+  }
+}
+
+/* Turn card categories into quiet editorial side labels. */
+#angebote .angebot-category,
+#angebote .angebot-category--book {
+  top: 24px;
+  left: 20px;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 42px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 8px;
+  line-height: 1.3;
+  letter-spacing: 0.15em;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  backdrop-filter: none;
+}
+
+#angebote .angebot-category::after,
+#angebote .angebot-category--book::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.72);
+  content: "";
+  transform: translateX(-50%);
+}
+
+#angebote .angebot-card h3 {
+  top: 24px;
+  left: 54px;
+  width: auto;
+  max-width: calc(100% - 72px);
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: #fff;
+  font-size: clamp(17px, 1.7vw, 23px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+  backdrop-filter: none;
+}
+
+#angebote .angebot-card-copy p {
+  bottom: 74px;
+  left: 24px;
+  max-width: calc(100% - 48px);
+  padding: 12px 0 0 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 13px;
+  line-height: 1.55;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+#angebote .angebot-link {
+  bottom: 24px;
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.58);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+  transition: gap 180ms ease, border-color 180ms ease;
+}
+
+#angebote .angebot-link svg {
+  width: 15px;
+  height: 15px;
+}
+
+#angebote .angebot-link:hover {
+  gap: 17px;
+  border-color: #fff;
+}
+
+#angebote .angebot-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #angebote .angebot-link {
+    transition: none;
   }
 }

@@ -30,6 +30,10 @@
   position: relative;
 }
 
+.reviews .reviews-shell {
+  width: calc(100% - 20px);
+}
+
 
 /* =========================================================
    PANEL
@@ -124,14 +128,14 @@
   display: grid;
 
   grid-template-columns:
-    minmax(300px, 0.78fr)
-    minmax(480px, 1.22fr);
+    minmax(300px, 572px)
+    minmax(480px, 1fr);
 
   gap:
     clamp(
-      65px,
-      8vw,
-      115px
+      24px,
+      3vw,
+      40px
     );
 
   align-items: center;
@@ -150,7 +154,7 @@
 
   width: 100%;
 
-  max-width: 350px;
+  max-width: 572px;
 
   justify-self: start;
 }
@@ -322,7 +326,7 @@
 
   width: 100%;
 
-  max-width: 690px;
+  max-width: none;
 
   justify-self: end;
 }
@@ -457,7 +461,7 @@
 ========================================================= */
 
 .review-slide blockquote {
-  max-width: 660px;
+  max-width: none;
 
   margin:
     22px
@@ -771,6 +775,20 @@
    LAPTOP
 ========================================================= */
 
+@media (min-width: 1051px) {
+  .reviews-main {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(16px, 2vw, 28px);
+  }
+
+  .reviews-visual {
+    max-width: none;
+  }
+}
+
 @media (max-width: 1050px) {
 
   .reviews-panel {
@@ -791,15 +809,15 @@
     margin-right: 0;
 
     grid-template-columns:
-      minmax(250px, 0.76fr)
+      minmax(0, 1.12fr)
       minmax(400px, 1.24fr);
 
-    gap: 58px;
+    gap: clamp(32px, 5vw, 50px);
   }
 
 
   .reviews-visual {
-    max-width: 310px;
+    max-width: 403px;
 
     justify-self: start;
   }

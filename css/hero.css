@@ -1665,3 +1665,40 @@
   }
 
 }
+/* Keep a 10px margin on each side of the hero. */
+.hero .hero-shell {
+  width: calc(100% - 20px);
+}
+
+/* The overlaid header is now part of the hero's viewport height. */
+.hero {
+  height: 100svh;
+}
+
+.hero .hero-shell {
+  position: relative;
+}
+
+.hero .hero-nadja {
+  top: calc(var(--header-h) + 24px);
+}
+
+.hero .hero-shade {
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(0, 0, 0, 0.12) 25%,
+    rgba(0, 0, 0, 0) 48%);
+}
+
+/* Founder information sits beneath the logo on the left. */
+.hero .hero-nadja {
+  left: var(--page-x);
+  right: auto;
+  top: 144px;
+}
+
+@media (max-width: 720px) {
+  .hero .hero-nadja {
+    top: 108px;
+  }
+}

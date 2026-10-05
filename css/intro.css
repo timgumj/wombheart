@@ -61,7 +61,6 @@
     34px;
 }
 
-
 /* =========================================================
    MAIN TWO-COLUMN LAYOUT
 
@@ -839,7 +838,6 @@
     none;
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
@@ -1341,4 +1339,44 @@
       20px;
   }
 
+}
+/* Align the intro panel with the hero's 10px side margins. */
+.intro-editorial .intro-editorial-shell {
+  width: calc(100% - 20px);
+}
+
+/* Let both desktop columns and the photograph grow with the wider panel. */
+@media (min-width: 1001px) {
+  .intro-editorial .intro-main {
+    --intro-column-height: max(520px, 40vw);
+  }
+
+  .intro-editorial .intro-content {
+    grid-template-rows: auto auto auto auto;
+    align-content: center;
+    row-gap: 16px;
+  }
+
+  .intro-editorial .intro-heading-group {
+    margin-top: 0;
+  }
+
+  .intro-editorial .intro-body {
+    align-self: start;
+    padding-block: 0;
+  }
+
+  .intro-editorial .intro-body p + p {
+    margin-top: 10px;
+  }
+
+  .intro-editorial .intro-read-more {
+    align-self: start;
+  }
+
+  .intro-editorial .intro-content,
+  .intro-editorial .intro-image-area,
+  .intro-editorial .intro-body {
+    max-width: none;
+  }
 }

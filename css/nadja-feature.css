@@ -32,6 +32,10 @@
   position: relative;
 }
 
+.nadja-feature .nadja-feature-shell {
+  width: calc(100% - 20px);
+}
+
 
 /* =========================================================
    COMPLETE GRAY PANEL
@@ -109,6 +113,12 @@
   align-items: start;
 
   padding-left: 36px;
+}
+
+@media (min-width: 851px) {
+  .nadja-feature-content {
+    margin-top: clamp(90px, 7vw, 110px);
+  }
 }
 
 
@@ -213,7 +223,7 @@
 
   width: 100%;
 
-  max-width: 540px;
+  max-width: none;
 
   padding:
     22px

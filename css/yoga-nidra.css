@@ -280,7 +280,6 @@
   transform: scale(1.08);
 }
 
-
 /* =========================================================
    DETAIL IMAGE LABEL
 ========================================================= */
@@ -295,7 +294,6 @@
 
   color: #18191b;
 }
-
 
 /* =========================================================
    TOP KICKER
@@ -1540,4 +1538,11 @@
     display: none;
   }
 
+}
+
+#yoga-nidra-detail .yoga-mama-detail-image {
+  aspect-ratio: 1;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
 }

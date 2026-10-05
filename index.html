@@ -24,26 +24,28 @@
        SECTIONS
   ====================================================== -->
 
-    <link rel="stylesheet" href="./css/intro.css?v=20261004-intro-refined" />
+    <link rel="stylesheet"         href="./css/intro.css?v=20261005-intro-motif-centered" />
 
     <link
       rel="stylesheet"
-      href="./css/angebote.css?v=20261004-angebote-refined"
+      href="./css/angebote.css?v=20261005-angebote-editorial-cards"
     />
 
     <link rel="stylesheet" href="./css/yoga-mama.css?v=20261004-yoga-mama" />
 
     <link
       rel="stylesheet"
-      href="./css/nadja-feature.css?v=20261004-nadja-feature"
+      href="./css/nadja-feature.css?v=20261005-nadja-feature-notch"
     />
     <link
       rel="stylesheet"
       href="./css/yoga-nidra.css?v=20261005-yoga-nidra-mirror"
     />
-    <link rel="stylesheet" href="./css/reviews.css?v=20261005-reviews" />
+    <link rel="stylesheet" href="./css/reviews.css?v=20261005-reviews-centered-60" />
     <link rel="stylesheet" href="./css/newsletter.css?v=20261005-newsletter" />
     <link rel="stylesheet" href="./css/footer.css?v=20261005-footer-logo" />
+    <link rel="stylesheet" href="./css/section-motifs.css?v=20261005-section-motifs-smooth-joins" />
+    <link rel="stylesheet" href="./css/program-switcher.css?v=20261005-program-switcher-image-spacing" />
   </head>
 
   <body>
@@ -57,7 +59,7 @@
        HEADER
   ====================================================== -->
 
-    <div data-component="header"></div>
+
 
     <!-- =====================================================
        MAIN
@@ -71,6 +73,7 @@
       <section class="hero" id="hero" data-hero>
         <div class="home-shell hero-shell">
           <div class="hero-stage">
+            <div class="hero-header" data-component="header"></div>
             <!-- =============================================
                HERO IMAGE
           ============================================== -->
@@ -80,21 +83,6 @@
             </figure>
 
             <div class="hero-shade" aria-hidden="true"></div>
-
-            <!-- =============================================
-               TOP LEFT CORNER
-          ============================================== -->
-
-            <a class="hero-corner hero-corner--top" href="#angebote">
-              <span class="hero-corner-pill">
-                <span> ANGEBOTE </span>
-
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14"></path>
-                  <path d="m13 6 6 6-6 6"></path>
-                </svg>
-              </span>
-            </a>
 
             <!-- =============================================
                NADJA INFO
@@ -262,9 +250,9 @@
                BOTTOM RIGHT CORNER
           ============================================== -->
 
-            <a class="hero-corner hero-corner--bottom" href="#yoga-mama">
+            <a class="hero-corner hero-corner--bottom" href="#angebote">
               <span class="hero-corner-pill">
-                <span> YOGA MAMA </span>
+                <span> ANGEBOTE </span>
 
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h14"></path>
@@ -283,20 +271,28 @@
       <section class="intro-editorial" id="nadja">
         <div class="home-shell intro-editorial-shell">
           <div class="intro-panel">
+            <span class="section-motif-cutout" aria-hidden="true"></span>
+
             <!-- =============================================
                VERTICAL META
           ============================================== -->
 
-            <div class="intro-vertical-meta" aria-hidden="true">
-              <span class="intro-vertical-word"> FRAU </span>
-
-              <span class="intro-vertical-separator"></span>
-
-              <span class="intro-vertical-word"> ZYKLUS </span>
-
-              <span class="intro-vertical-separator"></span>
-
-              <span class="intro-vertical-word"> VERBINDUNG </span>
+            <div class="intro-vertical-meta section-side-meta" aria-hidden="true">
+              <span
+                class="section-orbit section-orbit--red section-orbit--intro"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 160 160" aria-hidden="true">
+                  <defs>
+                    <path id="section-orbit-path-intro" d="M80 80m0-70a70 70 0 1 1 0 140a70 70 0 1 1 0-140" />
+                  </defs>
+                  <text>
+                    <textPath href="#section-orbit-path-intro" startOffset="0%" textLength="414" lengthAdjust="spacing">
+                      SEIT 2020 · WOMB &amp; HEART · SEIT 2020 · WOMB &amp; HEART ·
+                    </textPath>
+                  </text>
+                </svg>
+              </span>
             </div>
 
             <!-- =============================================
@@ -379,14 +375,9 @@
                   ></span>
                 </figure>
 
-                <div class="intro-image-index" aria-hidden="true">
-                  <strong> 01 </strong>
-
-                  <span class="intro-index-line"></span>
-
-                  <small> 02 </small>
-
-                  <small> 03 </small>
+                <div class="intro-image-index section-side-meta--right" aria-hidden="true">
+                  <span class="section-side-rule section-side-rule--right"></span>
+                  <span class="section-side-title"> FRAU · ZYKLUS · VERBINDUNG </span>
                 </div>
               </div>
             </div>
@@ -403,6 +394,25 @@
       <section class="angebote" id="angebote">
         <div class="home-shell angebote-shell">
           <div class="angebote-panel">
+            <span class="section-motif-cutout" aria-hidden="true"></span>
+
+            <div class="angebote-side-meta section-side-meta" aria-hidden="true">
+              <span
+                class="section-orbit section-orbit--rose section-orbit--angebote"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 160 160" aria-hidden="true">
+                  <defs>
+                    <path id="section-orbit-path-angebote" d="M80 80m0-70a70 70 0 1 1 0 140a70 70 0 1 1 0-140" />
+                  </defs>
+                  <text>
+                    <textPath href="#section-orbit-path-angebote" startOffset="0%" textLength="414" lengthAdjust="spacing">
+                      ANGEBOTE · KÖRPER · ZYKLUS · VERBINDUNG · ANGEBOTE ·
+                    </textPath>
+                  </text>
+                </svg>
+              </span>
+            </div>
             <!-- =============================================
                TOP META
           ============================================== -->
@@ -485,7 +495,7 @@
                 </div>
 
                 <figure class="angebot-card-media">
-                  <img src="./assets/images/yogamama.jpg" alt="" />
+                  <img src="./assets/images/dark.webp" alt="" />
                 </figure>
               </article>
 
@@ -626,12 +636,9 @@
                BOTTOM META
           ============================================== -->
 
-            <div class="angebote-bottom-meta" aria-hidden="true">
-              <span> WOMB &amp; HEART </span>
-
-              <span class="angebote-bottom-line"></span>
-
-              <span> SEIT 2020 </span>
+            <div class="angebote-bottom-meta section-side-meta section-side-meta--right" aria-hidden="true">
+              <span class="section-side-rule section-side-rule--right"></span>
+              <span class="section-side-title"> WOMB &amp; HEART · SEIT 2020 </span>
             </div>
 
             <span class="angebote-panel-curve" aria-hidden="true"></span>
@@ -640,19 +647,81 @@
       </section>
 
       <!-- =====================================================
-         YOGA MAMA FEATURE
+         YOGA MAMA & YOGA NIDRA FEATURE
     ====================================================== -->
 
-      <section class="yoga-mama-feature" id="yoga-mama-detail">
+      <section
+        class="program-experience"
+        id="yoga-experiences"
+        aria-label="Yoga Mama und Yoga Nidra"
+      >
+        <div class="home-shell program-experience-shell">
+          <div class="program-switcher">
+            <span class="program-switcher-label">WÄHLE DEINE PRAXIS</span>
+            <div class="program-switcher-tabs" role="tablist" aria-label="Praxis auswählen">
+              <button
+                class="program-switcher-tab"
+                id="tab-yoga-mama"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="yoga-mama-detail"
+                tabindex="0"
+                data-program-tab="mama"
+              >
+                <span>01</span>
+                Yoga Mama
+              </button>
+              <button
+                class="program-switcher-tab"
+                id="tab-yoga-nidra"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="yoga-nidra-detail"
+                tabindex="-1"
+                data-program-tab="nidra"
+              >
+                <span>02</span>
+                Yoga Nidra
+              </button>
+            </div>
+          </div>
+        </div>
+
+      <section
+        class="yoga-mama-feature"
+        id="yoga-mama-detail"
+        role="tabpanel"
+        aria-labelledby="tab-yoga-mama"
+        tabindex="0"
+        data-program-panel="mama"
+      >
         <div class="home-shell yoga-mama-shell">
           <!-- =============================================
              LEFT EDITORIAL META
         ============================================== -->
 
-          <div class="yoga-mama-side-meta" aria-hidden="true">
-            <span class="yoga-mama-side-line"></span>
-
-            <span class="yoga-mama-side-word"> WOMB &amp; HEART </span>
+          <span
+            class="section-motif-cutout section-motif-cutout--program"
+            aria-hidden="true"
+          ></span>
+          <div class="yoga-mama-side-meta section-side-meta" aria-hidden="true">
+            <span
+              class="section-orbit section-orbit--red section-orbit--yoga-mama"
+              aria-hidden="true"
+            >
+              <svg viewBox="0 0 160 160" aria-hidden="true">
+                <defs>
+                  <path id="section-orbit-path-yoga-mama" d="M80 80m0-70a70 70 0 1 1 0 140a70 70 0 1 1 0-140" />
+                </defs>
+                <text>
+                  <textPath href="#section-orbit-path-yoga-mama" startOffset="0%" textLength="414" lengthAdjust="spacing">
+                    YOGA MAMA · ONLINE-GEBURTSVORBEREITUNG · YOGA MAMA ·
+                  </textPath>
+                </text>
+              </svg>
+            </span>
           </div>
 
           <!-- =============================================
@@ -667,11 +736,10 @@
             <div class="yoga-mama-visual">
               <figure class="yoga-mama-main-image">
                 <img
-                  src="./assets/images/nadjabeach.webp"
+                  src="./assets/images/yogamama22.webp"
                   alt="Yoga Mama Geburtsvorbereitung"
                 />
               </figure>
-
               <figure class="yoga-mama-detail-image">
                 <img src="./assets/images/nadja_flower.jpg" alt="" />
 
@@ -686,14 +754,6 @@
           ============================================ -->
 
             <div class="yoga-mama-content">
-              <div class="yoga-mama-kicker">
-                <span> YOGA MAMA </span>
-
-                <span class="yoga-mama-kicker-line"></span>
-
-                <span> ONLINE-GEBURTSVORBEREITUNG </span>
-              </div>
-
               <h2>FÜR DEINE GEBURT.</h2>
 
               <span class="yoga-mama-title-line" aria-hidden="true"></span>
@@ -830,14 +890,9 @@
              RIGHT EDITORIAL META
         ============================================== -->
 
-          <div class="yoga-mama-index" aria-hidden="true">
-            <span class="yoga-mama-index-line"></span>
-
-            <span> 01 </span>
-
-            <span> 02 </span>
-
-            <span> 03 </span>
+          <div class="yoga-mama-index section-side-meta--right" aria-hidden="true">
+            <span class="section-side-rule section-side-rule--right"></span>
+            <span class="section-side-title"> YOGA MAMA · ONLINE-GEBURTSVORBEREITUNG </span>
           </div>
 
           <div class="yoga-mama-background-word" aria-hidden="true">MAMA</div>
@@ -854,16 +909,37 @@
       <section
         class="yoga-mama-feature yoga-nidra-feature"
         id="yoga-nidra-detail"
+        role="tabpanel"
+        aria-labelledby="tab-yoga-nidra"
+        tabindex="0"
+        data-program-panel="nidra"
+        hidden
       >
         <div class="home-shell yoga-mama-shell">
           <!-- =============================================
              LEFT EDITORIAL META
         ============================================== -->
 
-          <div class="yoga-mama-side-meta" aria-hidden="true">
-            <span class="yoga-mama-side-line"></span>
-
-            <span class="yoga-mama-side-word"> DEEP REST </span>
+          <span
+            class="section-motif-cutout section-motif-cutout--program"
+            aria-hidden="true"
+          ></span>
+          <div class="yoga-mama-side-meta section-side-meta" aria-hidden="true">
+            <span
+              class="section-orbit section-orbit--red section-orbit--yoga-nidra"
+              aria-hidden="true"
+            >
+              <svg viewBox="0 0 160 160" aria-hidden="true">
+                <defs>
+                  <path id="section-orbit-path-yoga-nidra" d="M80 80m0-70a70 70 0 1 1 0 140a70 70 0 1 1 0-140" />
+                </defs>
+                <text>
+                  <textPath href="#section-orbit-path-yoga-nidra" startOffset="0%" textLength="414" lengthAdjust="spacing">
+                    YOGA NIDRA · RUHE · REGULATION · TIEFE · YOGA NIDRA ·
+                  </textPath>
+                </text>
+              </svg>
+            </span>
           </div>
 
           <!-- =============================================
@@ -1013,7 +1089,6 @@
                   alt="Yoga Nidra Praxis"
                 />
               </figure>
-
               <!-- SMALL DETAIL IMAGE -->
 
               <figure class="yoga-mama-detail-image">
@@ -1030,14 +1105,9 @@
              RIGHT EDITORIAL INDEX
         ============================================== -->
 
-          <div class="yoga-mama-index" aria-hidden="true">
-            <span class="yoga-mama-index-line"></span>
-
-            <span> 01 </span>
-
-            <span> 02 </span>
-
-            <span> 03 </span>
+          <div class="yoga-mama-index section-side-meta--right" aria-hidden="true">
+            <span class="section-side-rule section-side-rule--right"></span>
+            <span class="section-side-title"> YOGA NIDRA · RUHE · REGULATION · TIEFE </span>
           </div>
 
           <!-- =============================================
@@ -1048,6 +1118,8 @@
         </div>
       </section>
 
+      </section>
+
       <!-- =====================================================
          NADJA FEATURE / MEIN WEG
     ====================================================== -->
@@ -1055,20 +1127,28 @@
       <section class="nadja-feature" id="nadja-journey">
         <div class="home-shell nadja-feature-shell">
           <div class="nadja-feature-panel">
+            <span class="section-motif-cutout" aria-hidden="true"></span>
+
             <!-- =============================================
                LEFT VERTICAL META
           ============================================== -->
 
-            <div class="nadja-feature-vertical-meta" aria-hidden="true">
-              <span class="nadja-feature-vertical-word"> YOGA </span>
-
-              <span class="nadja-feature-vertical-separator"></span>
-
-              <span class="nadja-feature-vertical-word"> NIDRA </span>
-
-              <span class="nadja-feature-vertical-separator"></span>
-
-              <span class="nadja-feature-vertical-word"> BEGLEITUNG </span>
+            <div class="nadja-feature-vertical-meta section-side-meta" aria-hidden="true">
+              <span
+                class="section-orbit section-orbit--red section-orbit--nadja"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 160 160" aria-hidden="true">
+                  <defs>
+                    <path id="section-orbit-path-nadja" d="M80 80m0-70a70 70 0 1 1 0 140a70 70 0 1 1 0-140" />
+                  </defs>
+                  <text>
+                    <textPath href="#section-orbit-path-nadja" startOffset="0%" textLength="414" lengthAdjust="spacing">
+                      NADJA · WOMB &amp; HEART · NADJA · WOMB &amp; HEART ·
+                    </textPath>
+                  </text>
+                </svg>
+              </span>
             </div>
 
             <!-- =============================================
@@ -1169,14 +1249,9 @@
                   ></span>
                 </figure>
 
-                <div class="nadja-feature-image-index" aria-hidden="true">
-                  <strong> 01 </strong>
-
-                  <span class="nadja-feature-index-line"></span>
-
-                  <small> 02 </small>
-
-                  <small> 03 </small>
+                <div class="nadja-feature-image-index section-side-meta--right" aria-hidden="true">
+                  <span class="section-side-rule section-side-rule--right"></span>
+                  <span class="section-side-title"> YOGA · NIDRA · BEGLEITUNG </span>
                 </div>
 
                 <span
@@ -1255,19 +1330,24 @@
 
                 <!-- VERTICAL LABEL -->
 
-                <span class="reviews-visual-label" aria-hidden="true">
-                  WOMB &amp; HEART
+                <span class="reviews-visual-label section-side-meta" aria-hidden="true">
+                  <span
+                    class="section-orbit section-orbit--ruby section-orbit--reviews"
+                    aria-hidden="true"
+                  >
+                    <svg viewBox="0 0 160 160" aria-hidden="true">
+                      <defs>
+                        <path id="section-orbit-path-reviews" d="M80 80m0-70a70 70 0 1 1 0 140a70 70 0 1 1 0-140" />
+                      </defs>
+                      <text>
+                        <textPath href="#section-orbit-path-reviews" startOffset="0%" textLength="414" lengthAdjust="spacing">
+                          STIMMEN · ERFAHRUNGEN · WOMB &amp; HEART · STIMMEN ·
+                        </textPath>
+                      </text>
+                    </svg>
+                  </span>
                 </span>
 
-                <!-- IMAGE INDEX -->
-
-                <div class="reviews-visual-index" aria-hidden="true">
-                  <span data-review-current> 01 </span>
-
-                  <span class="reviews-index-line"></span>
-
-                  <span> 04 </span>
-                </div>
               </div>
 
               <!-- =================================================
@@ -1386,7 +1466,6 @@
                     </article>
                   </div>
                 </div>
-
                 <!-- ===============================================
                CONTROLS
           ================================================ -->
@@ -1460,6 +1539,11 @@
                     </button>
                   </div>
                 </div>
+              </div>
+              <div class="reviews-visual-index section-side-meta--right" aria-hidden="true">
+                <span class="section-side-rule section-side-rule--right"></span>
+                <span class="section-side-title"> WOMB &amp; HEART </span>
+                <span class="reviews-current-number" data-review-current>01</span>
               </div>
             </div>
 
@@ -1751,5 +1835,6 @@
       src="./js/component-loader.js?v=20261004-premium-hero"
     ></script>
     <script type="module" src="./js/reviews.js?v=20261005-reviews"></script>
+    <script type="module" src="./js/program-switcher.js?v=20261005-program-switcher"></script>
   </body>
 </html>
