@@ -1348,7 +1348,7 @@
 /* Let both desktop columns and the photograph grow with the wider panel. */
 @media (min-width: 1001px) {
   .intro-editorial .intro-main {
-    --intro-column-height: max(520px, 40vw);
+    --intro-column-height: clamp(500px, 40vw, 570px);
   }
 
   .intro-editorial .intro-content {
@@ -1381,6 +1381,10 @@
   }
 
   .intro-editorial .intro-main {
+    width: calc(100% + clamp(82px, 7vw, 105px) - clamp(42px, 5vw, 72px));
+    margin-left: calc(clamp(42px, 5vw, 72px) - clamp(82px, 7vw, 105px));
+    min-height: var(--intro-column-height);
+    grid-template-columns: minmax(430px, 0.92fr) minmax(500px, 1.08fr);
     column-gap: calc(clamp(55px, 6.5vw, 95px) + 40px);
   }
 
@@ -1401,11 +1405,25 @@
   .intro-editorial .intro-content {
     position: relative;
     left: 100px;
+    height: calc(var(--intro-column-height) * 0.7);
+    padding-left: 36px;
+    align-self: center;
+    align-content: start;
   }
 }
 
 @media (min-width: 1001px) and (max-width: 1100px) {
   .intro-editorial .intro-main {
+    --intro-column-height: 520px;
+    grid-template-columns: minmax(360px, 0.92fr) minmax(440px, 1.08fr);
     column-gap: 86px;
+  }
+
+  .intro-editorial .intro-image-area {
+    padding-right: 58px;
+  }
+
+  .intro-editorial .intro-content {
+    padding-left: 30px;
   }
 }
