@@ -1108,3 +1108,99 @@
   }
 
 }
+/* Shorten only the desktop Mein Weg image by 30%. */
+@media (min-width: 1001px) {
+  .nadja-feature .nadja-feature-image-area {
+    height: calc(var(--nadja-feature-height) * 0.7);
+  }
+}
+
+/* Center both Mein Weg columns vertically on desktop. */
+@media (min-width: 1001px) {
+  .nadja-feature .nadja-feature-main {
+    min-height: var(--nadja-feature-height);
+    align-items: center;
+  }
+
+  .nadja-feature .nadja-feature-content {
+    height: auto;
+    margin-top: 0;
+    grid-template-rows: auto auto auto auto;
+    align-content: center;
+  }
+}
+
+/* Align the Mein Weg heading with the photograph's top edge. */
+@media (min-width: 1001px) {
+  .nadja-feature .nadja-feature-main {
+    align-items: start;
+    align-content: center;
+  }
+
+  .nadja-feature .nadja-feature-content {
+    transform: none;
+    align-content: start;
+  }
+
+  .nadja-feature .nadja-feature-heading-group {
+    margin-top: 0;
+  }
+}
+
+/* Move the complete text column toward the image without narrowing its content. */
+@media (min-width: 1001px) {
+  .nadja-feature .nadja-feature-content {
+    position: relative;
+    left: 100px;
+    transform: none;
+  }
+}
+
+/* Add 40px of separation to the original desktop column gap. */
+@media (min-width: 1101px) {
+  .nadja-feature .nadja-feature-main {
+    column-gap: calc(clamp(55px, 6.5vw, 95px) + 40px);
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1100px) {
+  .nadja-feature .nadja-feature-main {
+    column-gap: 86px;
+  }
+}
+
+/* Move the image outward as the text moves left: 40px more visible separation. */
+@media (min-width: 1001px) {
+  .nadja-feature .nadja-feature-image-area {
+    left: 20px;
+  }
+}
+
+/* Turn the experience label and rule into a left-side vertical caption. */
+@media (min-width: 1001px) {
+  .nadja-feature .nadja-feature-experience-heading {
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: max-content;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center;
+    white-space: nowrap;
+  }
+
+  .nadja-feature .nadja-feature-experience-line {
+    width: 72px;
+    height: 1px;
+    flex: 0 0 72px;
+  }
+}
+
+@media (min-width: 1001px) {
+  .nadja-feature .nadja-feature-experience-line {
+    height: 1px;
+    min-height: 1px;
+    max-height: 1px;
+    border: 0;
+    padding: 0;
+  }
+}
