@@ -31,7 +31,7 @@
 
   background: #ffffff;
 
-  color: #18191b;
+  color: #512c3e;
 
   overflow: hidden;
 }
@@ -212,7 +212,7 @@
 
   border-radius: 22px;
 
-  background: #ddd8cf;
+  background: #eab4c9;
 }
 
 
@@ -292,7 +292,7 @@
 
   bottom: 17px;
 
-  color: #18191b;
+  color: #512c3e;
 }
 
 /* =========================================================
@@ -313,7 +313,7 @@
 
   gap: 12px;
 
-  color: #18191b;
+  color: #512c3e;
 
   line-height: 1;
 
@@ -335,7 +335,7 @@
 
 .yoga-nidra-feature
 .yoga-mama-kicker > span:last-child {
-  color: #67625e;
+  color: #6b4c5b;
 
   font-size: 8px;
 
@@ -367,7 +367,7 @@
     0
     auto;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -382,7 +382,7 @@
     0
     0;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size:
     clamp(
@@ -415,7 +415,7 @@
 
   margin-top: 10px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -434,7 +434,7 @@
     0
     0;
 
-  color: #3e3b38;
+  color: #512c3e;
 
   font-size: 18px;
 
@@ -502,9 +502,7 @@
     1px
     solid
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.11
     );
 
@@ -512,7 +510,7 @@
 
   background: transparent;
 
-  color: #18191b;
+  color: #512c3e;
 }
 
 
@@ -542,7 +540,7 @@
 .yoga-mama-benefit-copy h3 {
   margin: 0;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 12px;
 
@@ -569,7 +567,7 @@
     0
     0;
 
-  color: #4a4643;
+  color: #512c3e;
 
   font-size: 16px;
 
@@ -611,7 +609,7 @@
 
   border-radius: 999px;
 
-  background: #671422;
+  background: #560002;
 
   color: #ffffff;
 
@@ -658,7 +656,7 @@
 
 .yoga-nidra-feature
 .yoga-mama-button:hover {
-  background: #671422;
+  background: #560002;
 
   transform: none;
 }
@@ -701,7 +699,7 @@
 
   gap: 11px;
 
-  color: #18191b;
+  color: #512c3e;
 
   pointer-events: none;
 }
@@ -728,7 +726,7 @@
 
   margin: 0;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -738,7 +736,7 @@
 
 .yoga-nidra-feature
 .yoga-mama-side-word {
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 8px;
 
@@ -881,9 +879,7 @@
 
   color:
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.035
     );
 

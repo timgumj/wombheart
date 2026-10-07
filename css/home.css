@@ -5,19 +5,15 @@
 
 :root {
   --white: #ffffff;
-  --black: #18191b;
-  --grey: #6e6d69;
+  --black: #512c3e;
+  --grey: #6b4c5b;
 
   --burgundy: #560002;
-  --burgundy-mid: #760006;
-  --burgundy-warm: #9e1115;
-  --red-glow: #e33b3d;
+  --burgundy-mid: #512c3e;
+  --burgundy-warm: #ee263e;
+  --red-glow: #ff1f1f;
 
-  --font:
-    "Founders Grotesk Condensed",
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+  --font: "Host Grotesk", sans-serif;
 
   --max-width: 1440px;
 
@@ -160,7 +156,7 @@ img {
 
   padding: 10px 15px;
 
-  background: #18191b;
+  background: #512c3e;
   color: #ffffff;
 
   transform:

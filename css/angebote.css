@@ -25,7 +25,7 @@
     #ffffff;
 
   color:
-    #18191b;
+    #512c3e;
 }
 
 
@@ -69,7 +69,7 @@
     );
 
   background:
-    #f3f2ef;
+    #fff6f7;
 
   border-radius:
     34px;
@@ -98,7 +98,7 @@
     12px;
 
   color:
-    #18191b;
+    #512c3e;
 
   line-height:
     1;
@@ -137,13 +137,13 @@
     auto;
 
   background:
-    #9c565a;
+    #ee263e;
 }
 
 
 .angebote-top-meta > span:last-child {
   color:
-    #67625e;
+    #6b4c5b;
 
   font-size:
     8px;
@@ -209,7 +209,7 @@
     0;
 
   color:
-    #18191b;
+    #512c3e;
 
   font-size:
     clamp(
@@ -247,7 +247,7 @@
     0;
 
   color:
-    #3e3b38;
+    #512c3e;
 
   font-size:
     18px;
@@ -332,9 +332,7 @@
     1px
     solid
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.08
     );
 
@@ -403,9 +401,7 @@
     1px
     solid
     rgba(
-      156,
-      86,
-      90,
+      238, 38, 62,
       0.72
     );
 
@@ -424,7 +420,7 @@
     );
 
   color:
-    #7e3f43;
+    #512c3e;
 }
 
 
@@ -477,7 +473,7 @@
     8px;
 
   color:
-    #925056;
+    #ee263e;
 
   font-size:
     8px;
@@ -502,7 +498,7 @@
     0;
 
   color:
-    #18191b;
+    #512c3e;
 
   font-size:
     clamp(
@@ -540,7 +536,7 @@
     10px;
 
   background:
-    #9c565a;
+    #ee263e;
 }
 
 
@@ -558,7 +554,7 @@
     0;
 
   color:
-    #4a4642;
+    #512c3e;
 
   font-size:
     16px;
@@ -600,7 +596,7 @@
     currentColor;
 
   color:
-    #18191b;
+    #512c3e;
 
   font-size:
     9px;
@@ -685,7 +681,7 @@
     hidden;
 
   background:
-    #ddd9d2;
+    #eab4c9;
 }
 
 
@@ -809,7 +805,7 @@
     9px;
 
   color:
-    #18191b;
+    #512c3e;
 
   pointer-events:
     none;
@@ -847,7 +843,7 @@
     22px;
 
   background:
-    #9c565a;
+    #ee263e;
 }
 
 
@@ -1162,7 +1158,7 @@
     15px;
 
   color:
-    #18191b;
+    #512c3e;
 
   font-size:
     8px;
@@ -1187,9 +1183,7 @@
 
   background:
     rgba(
-      156,
-      86,
-      90,
+      238, 38, 62,
       0.68
     );
 }
@@ -1222,9 +1216,7 @@
     1px
     solid
     rgba(
-      156,
-      86,
-      90,
+      238, 38, 62,
       0.35
     );
 
@@ -1232,9 +1224,7 @@
     1px
     solid
     rgba(
-      156,
-      86,
-      90,
+      238, 38, 62,
       0.35
     );
 
@@ -1872,13 +1862,19 @@
   gap: 16px;
 }
 
+@media (min-width: 1001px) {
+  #angebote .angebote-grid {
+    column-gap: 28px;
+  }
+}
+
 #angebote .angebot-card {
   display: block;
   grid-column: auto;
   grid-row: auto;
   border: 0;
   border-radius: 20px;
-  background: #18191b;
+  background: #512c3e;
 }
 
 #angebote .angebot-card::after {
@@ -2051,7 +2047,7 @@
 }
 
 #angebote .angebot-card-copy p {
-  bottom: 74px;
+  bottom: 96px;
   left: 24px;
   max-width: calc(100% - 48px);
   padding: 12px 0 0 12px;
@@ -2065,26 +2061,41 @@
 #angebote .angebot-link {
   bottom: 24px;
   left: 24px;
+  width: calc(100% - 48px);
+  min-height: 56px;
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.58);
-  color: #fff;
-  font-size: 9px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #560002 !important;
+  font-size: 10px;
   letter-spacing: 0.16em;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
-  transition: gap 180ms ease, border-color 180ms ease;
+  text-shadow: none;
+  transition: transform 220ms ease;
+}
+
+#angebote .angebot-link * {
+  color: #560002 !important;
 }
 
 #angebote .angebot-link svg {
-  width: 15px;
-  height: 15px;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  transition: transform 220ms ease;
 }
 
 #angebote .angebot-link:hover {
-  gap: 17px;
-  border-color: #fff;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+#angebote .angebot-link:hover svg {
+  transform: translateX(4px);
 }
 
 #angebote .angebot-link:focus-visible {
@@ -2093,7 +2104,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #angebote .angebot-link {
+  #angebote .angebot-link,
+  #angebote .angebot-link svg {
     transition: none;
+    transform: none;
   }
 }

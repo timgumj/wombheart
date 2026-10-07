@@ -20,7 +20,7 @@
 
   background: #ffffff;
 
-  color: #18191b;
+  color: #512c3e;
 }
 
 
@@ -122,7 +122,7 @@
 
   gap: 12px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 8px;
 
@@ -142,7 +142,7 @@
 
 
 .newsletter-kicker > span:last-child {
-  color: #67625e;
+  color: #6b4c5b;
 }
 
 
@@ -160,7 +160,7 @@
 
   flex: 0 0 auto;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -174,7 +174,7 @@
     0
     0;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size:
     clamp(
@@ -206,7 +206,7 @@
 
   margin-top: 10px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -220,7 +220,7 @@
     0
     0;
 
-  color: #45413e;
+  color: #512c3e;
 
   font-size: 18px;
 
@@ -257,7 +257,7 @@
     0
     13px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 9px;
 
@@ -296,9 +296,7 @@
     1px
     solid
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.22
     );
 
@@ -332,7 +330,7 @@
 
   background: transparent;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-family: var(--font);
 
@@ -347,9 +345,7 @@
 .newsletter-field input::placeholder {
   color:
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.48
     );
 }
@@ -380,7 +376,7 @@
 
   border-radius: 999px;
 
-  background: #671422;
+  background: #560002;
 
   color: #ffffff;
 
@@ -430,7 +426,7 @@
     0
     0;
 
-  color: #706b67;
+  color: #6b4c5b;
 
   font-size: 11px;
 
@@ -471,7 +467,7 @@
 
   gap: 11px;
 
-  color: #18191b;
+  color: #512c3e;
 
   pointer-events: none;
 }
@@ -493,7 +489,7 @@
       90px
     );
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -542,7 +538,7 @@
 
   gap: 12px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 8px;
 
@@ -564,7 +560,7 @@
 
   height: 1px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -591,9 +587,7 @@
 
   color:
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.028
     );
 

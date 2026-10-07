@@ -22,7 +22,7 @@
   padding:
     4px
     0
-    14px;
+    0;
 
   background:
     #ffffff;
@@ -50,7 +50,7 @@
     20px;
 
   background:
-    #dddddd;
+    #fff6f7;
 
   isolation:
     isolate;
@@ -143,7 +143,7 @@
     #ffffff;
 
   color:
-    #18191b;
+    #512c3e;
 
   opacity: 1;
   visibility: visible;
@@ -181,12 +181,12 @@
   border-right:
     2px
     solid
-    #18191b;
+    #512c3e;
 
   border-bottom:
     2px
     solid
-    #18191b;
+    #512c3e;
 
   border-bottom-right-radius:
     30px;
@@ -233,7 +233,7 @@
       0
       22px,
 
-      #18191b
+      #512c3e
       22px
       24px,
 
@@ -281,7 +281,7 @@
       0
       22px,
 
-      #18191b
+      #512c3e
       22px
       24px,
 
@@ -315,12 +315,12 @@
   border-top:
     2px
     solid
-    #18191b;
+    #512c3e;
 
   border-left:
     2px
     solid
-    #18191b;
+    #512c3e;
 
   border-top-left-radius:
     30px;
@@ -361,7 +361,7 @@
       0
       22px,
 
-      #18191b
+      #512c3e
       22px
       24px,
 
@@ -404,7 +404,7 @@
       0
       22px,
 
-      #18191b
+      #512c3e
       22px
       24px,
 
@@ -456,7 +456,7 @@
   border:
     2px
     solid
-    #18191b;
+    #512c3e;
 
   border-radius:
     999px;
@@ -465,7 +465,7 @@
     #ffffff;
 
   color:
-    #18191b;
+    #512c3e;
 
   font-size:
     15px;
@@ -529,7 +529,7 @@
 .hero-corner:hover
 .hero-corner-pill {
   background:
-    #18191b;
+    #512c3e;
 
   color:
     #ffffff;
@@ -776,9 +776,7 @@
     1px
     solid
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.18
     );
 
@@ -787,14 +785,12 @@
 
   background:
     rgba(
-      244,
-      241,
-      234,
+      255, 246, 247,
       0.94
     );
 
   color:
-    #18191b;
+    #512c3e;
 
   box-shadow:
     0
@@ -836,7 +832,7 @@
     11px;
 
   background:
-    #dedbd2;
+    #eab4c9;
 }
 
 
@@ -900,9 +896,7 @@
 
   color:
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.5
     );
 
@@ -936,9 +930,7 @@
 
   color:
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.5
     );
 
@@ -963,7 +955,7 @@
     0;
 
   color:
-    #18191b;
+    #512c3e;
 
   font-size:
     20px;
@@ -1012,7 +1004,7 @@
   border:
     1.5px
     solid
-    #18191b;
+    #512c3e;
 
   border-radius:
     4px;
@@ -1021,7 +1013,7 @@
     transparent;
 
   color:
-    #18191b;
+    #512c3e;
 
   font-size:
     10px;
@@ -1047,7 +1039,7 @@
 
 .hero-slide-button:hover {
   background:
-    #18191b;
+    #512c3e;
 
   color:
     #ffffff;
@@ -1069,7 +1061,7 @@
     center;
 
   justify-content:
-    center;
+    space-between;
 
   gap:
     11px;
@@ -1111,10 +1103,10 @@
     50%;
 
   background:
-    #f3f0e6;
+    #fff6f7;
 
   color:
-    #18191b;
+    #512c3e;
 
   box-shadow:
     0
@@ -1230,6 +1222,30 @@
    TABLET
 ========================================================= */
 
+@media (min-width: 901px) {
+  .hero-slider {
+    width: 210px;
+  }
+
+  .hero-slide {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 8px;
+    padding: 7px;
+  }
+
+  .hero-slide-image {
+    width: 64px;
+  }
+
+  .hero-slide-text {
+    padding: 14px 0 0;
+  }
+
+  .hero-slide h2 {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 900px) {
 
   .hero-slider {
@@ -1262,7 +1278,7 @@
     padding:
       3px
       0
-      9px;
+      0;
   }
 
 
@@ -1339,7 +1355,7 @@
         0
         16px,
 
-        #18191b
+        #512c3e
         16px
         18px,
 
@@ -1368,7 +1384,7 @@
         0
         16px,
 
-        #18191b
+        #512c3e
         16px
         18px,
 
@@ -1397,7 +1413,7 @@
         0
         16px,
 
-        #18191b
+        #512c3e
         16px
         18px,
 
@@ -1426,7 +1442,7 @@
         0
         16px,
 
-        #18191b
+        #512c3e
         16px
         18px,
 
@@ -1665,9 +1681,14 @@
   }
 
 }
-/* Keep a 10px margin on each side of the hero. */
+/* Let the hero span the full viewport width. */
 .hero .hero-shell {
-  width: calc(100% - 20px);
+  width: 100%;
+  max-width: none;
+}
+
+.hero .hero-stage {
+  border-radius: 0;
 }
 
 /* The overlaid header is now part of the hero's viewport height. */

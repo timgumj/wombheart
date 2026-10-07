@@ -22,7 +22,7 @@
 
   background: #ffffff;
 
-  color: #18191b;
+  color: #512c3e;
 }
 
 
@@ -98,7 +98,7 @@
 
   border-radius: 22px;
 
-  background: #ddd8cf;
+  background: #eab4c9;
 }
 
 
@@ -155,7 +155,7 @@
 
   border-radius: 18px;
 
-  background: #ddd8cf;
+  background: #eab4c9;
 
   box-shadow:
     0
@@ -201,7 +201,7 @@
   left: 12px;
   bottom: 17px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 8px;
 
@@ -246,12 +246,12 @@
 
   height: 78px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
 .yoga-mama-side-word {
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 8px;
 
@@ -299,7 +299,7 @@
 
   gap: 11px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 9px;
 
@@ -316,7 +316,7 @@
 
   height: 1px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -334,7 +334,7 @@
     0
     0;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size:
     clamp(
@@ -368,7 +368,7 @@
 
   margin-top: 10px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -388,7 +388,7 @@
     0
     0;
 
-  color: #3e3b38;
+  color: #512c3e;
 
   font-size: 18px;
 
@@ -454,9 +454,7 @@
     1px
     solid
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.11
     );
 
@@ -464,7 +462,7 @@
 
   background: transparent;
 
-  color: #18191b;
+  color: #512c3e;
 }
 
 
@@ -494,7 +492,7 @@
 .yoga-mama-benefit-copy h3 {
   margin: 0;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 12px;
 
@@ -520,7 +518,7 @@
     0
     0;
 
-  color: #4a4643;
+  color: #512c3e;
 
   font-size: 16px;
 
@@ -564,7 +562,7 @@
 
   border-radius: 999px;
 
-  background: #671422;
+  background: #560002;
 
   color: #ffffff;
 
@@ -587,7 +585,7 @@
 
 
 .yoga-mama-button:hover {
-  background: #18191b;
+  background: #512c3e;
 
   transform:
     translateY(-2px);
@@ -648,7 +646,7 @@
 
   gap: 16px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 8px;
 
@@ -665,7 +663,7 @@
 
   margin-bottom: 5px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -685,9 +683,7 @@
 
   color:
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.035
     );
 
@@ -999,7 +995,7 @@
 
     line-height: 1.05;
 
-    color: #18191b;
+    color: #512c3e;
   }
 
 

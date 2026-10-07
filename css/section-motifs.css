@@ -1,3 +1,29 @@
+.section-heading-with-motif {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 22px);
+  min-width: 0;
+}
+
+.section-heading-with-motif .section-orbit {
+  width: clamp(64px, 7vw, 96px);
+  flex: 0 0 clamp(64px, 7vw, 96px);
+  z-index: auto;
+}
+
+.section-heading-with-motif h2,
+.program-experience .yoga-mama-content .section-heading-with-motif h2 {
+  min-width: 0;
+  margin: 0;
+}
+
+@media (max-width: 620px) {
+  .section-heading-with-motif .section-orbit {
+    width: 56px;
+    flex-basis: 56px;
+  }
+}
+
 .section-orbit {
   position: relative;
   z-index: 1001;
@@ -77,24 +103,24 @@
 }
 
 .section-orbit--red {
-  --orbit-bright: #760006;
+  --orbit-bright: #512c3e;
   --orbit-mid: #560002;
-  --orbit-deep: #310001;
+  --orbit-deep: #512c3e;
   --orbit-text: #560002;
 }
 
 .section-orbit--rose {
-  --orbit-bright: #fff0ef;
-  --orbit-mid: #e6babc;
-  --orbit-deep: #b96d72;
-  --orbit-text: #760006;
+  --orbit-bright: #fff6f7;
+  --orbit-mid: #eab4c9;
+  --orbit-deep: #ee263e;
+  --orbit-text: #512c3e;
   animation-direction: reverse;
 }
 
 .section-orbit--ruby {
-  --orbit-bright: #bd2025;
-  --orbit-mid: #9e1115;
-  --orbit-deep: #760006;
+  --orbit-bright: #ff1f1f;
+  --orbit-mid: #ee263e;
+  --orbit-deep: #512c3e;
   --orbit-text: #560002;
 }
 
@@ -165,7 +191,7 @@
   align-items: center;
   gap: 10px;
 
-  color: #18191b;
+  color: #512c3e;
   pointer-events: none;
 }
 
@@ -177,7 +203,7 @@
 
 .section-side-title {
   display: block;
-  color: #18191b;
+  color: #512c3e;
   font-size: 8px;
   font-weight: 700;
   line-height: 1;
@@ -233,7 +259,7 @@
   align-items: center;
   gap: 10px;
 
-  color: #18191b;
+  color: #512c3e;
   pointer-events: none;
 }
 
@@ -288,7 +314,7 @@
   flex: 0 0 auto;
   width: 1px;
   height: 58px;
-  background: #9c565a;
+  background: #ee263e;
 }
 
 .reviews-current-number {

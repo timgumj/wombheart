@@ -1,0 +1,257 @@
+:root {
+  --palette-burgundy: #560002;
+  --palette-plum: #512c3e;
+  --palette-fire: #ff1f1f;
+  --palette-pink: #eab4c9;
+  --palette-light: #fff6f7;
+  --palette-white: #ffffff;
+  --palette-footer: #430002;
+  --palette-motif: #560002;
+  --section-gap: clamp(28px, 3.2vw, 44px);
+}
+
+html,
+body {
+  background: var(--palette-burgundy);
+}
+
+main {
+  background: var(--palette-burgundy);
+}
+
+body {
+  color: var(--palette-white);
+}
+
+.intro-editorial,
+.angebote,
+.nadja-feature,
+.reviews,
+.newsletter {
+  background-color: var(--palette-burgundy);
+  color: var(--palette-white);
+}
+
+.site-footer,
+.site-footer .footer-shell {
+  background-color: var(--palette-footer) !important;
+  color: var(--palette-white);
+}
+
+.hero-stage {
+  background-color: var(--palette-burgundy);
+}
+
+.intro-panel,
+.angebote-panel,
+.program-experience,
+.nadja-feature-panel,
+.reviews-panel,
+.newsletter-panel,
+.site-footer .footer-shell {
+  background-color: var(--palette-burgundy);
+  color: var(--palette-white);
+}
+
+.intro-panel *,
+.angebote-panel *,
+.program-experience *,
+.nadja-feature-panel *,
+.reviews-panel *,
+.newsletter-panel *,
+.site-footer .footer-shell * {
+  color: var(--palette-white) !important;
+}
+
+.angebot-card {
+  background-color: var(--palette-plum);
+}
+
+.section-motif-cutout {
+  --motif-cutout-color: var(--palette-motif);
+}
+
+.section-orbit::before {
+  inset: 18%;
+  border: 5px solid var(--palette-white);
+  background: transparent;
+  -webkit-mask: none;
+  mask: none;
+  filter: none;
+}
+
+.section-orbit text {
+  fill: var(--palette-white);
+  stroke: none;
+  paint-order: normal;
+}
+
+.intro-panel .intro-top-separator,
+.intro-panel .intro-content-rule,
+.intro-panel .intro-vertical-separator,
+.intro-panel .intro-index-line,
+.angebote-panel .angebote-top-separator,
+.angebote-panel .angebot-copy-rule,
+.angebote-panel .angebot-side-rule,
+.angebote-panel .angebote-bottom-line,
+.program-experience .yoga-mama-side-line,
+.program-experience .yoga-mama-index-line,
+.program-experience .section-side-rule,
+.nadja-feature-panel .nadja-feature-top-separator,
+.nadja-feature-panel .nadja-feature-content-rule,
+.nadja-feature-panel .nadja-feature-experience-line,
+.nadja-feature-panel .nadja-feature-vertical-separator,
+.nadja-feature-panel .nadja-feature-index-line,
+.reviews-panel .reviews-top-line,
+.reviews-panel .reviews-index-line,
+.reviews-panel .reviews-heading-line,
+.reviews-panel .reviews-bottom-line,
+.newsletter-panel .newsletter-kicker-line,
+.newsletter-panel .newsletter-title-line,
+.newsletter-panel .newsletter-side-line,
+.newsletter-panel .newsletter-bottom-line {
+  background-color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.program-switcher-control,
+.program-switcher-tabs {
+  background-color: var(--palette-light);
+}
+
+.program-experience .program-switcher-label,
+.program-experience .program-switcher-tab,
+.site-footer .footer-back-top {
+  color: var(--palette-burgundy) !important;
+}
+
+.program-experience .program-switcher-tab[aria-selected="true"] {
+  background-color: var(--palette-burgundy);
+  color: var(--palette-white) !important;
+}
+
+.program-experience .program-switcher-tab[aria-selected="false"] > span {
+  color: var(--palette-burgundy) !important;
+}
+
+.program-experience .yoga-mama-content,
+.program-experience .yoga-nidra-feature .yoga-mama-content {
+  border: 1px solid var(--palette-white);
+  background: var(--palette-burgundy) !important;
+  box-shadow: none;
+}
+
+.program-experience .yoga-mama-content * {
+  color: var(--palette-white) !important;
+}
+
+.program-experience .yoga-mama-button {
+  background-color: var(--palette-white) !important;
+  color: var(--palette-burgundy) !important;
+}
+
+.program-experience .yoga-mama-button *,
+.nadja-feature-panel .nadja-feature-read-more,
+.nadja-feature-panel .nadja-feature-read-more * {
+  color: var(--palette-burgundy) !important;
+}
+
+.program-experience .yoga-mama-kicker-line,
+.program-experience .yoga-mama-title-line {
+  background-color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.program-experience .yoga-mama-benefit {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+.reviews-panel .reviews-arrow {
+  border-color: rgba(255, 255, 255, 0.72) !important;
+  color: var(--palette-white) !important;
+}
+
+.reviews-panel .reviews-dot,
+.reviews-panel .reviews-dot.is-active {
+  background-color: var(--palette-white) !important;
+}
+
+.newsletter-panel .newsletter-form {
+  background-color: var(--palette-white) !important;
+}
+
+.newsletter-panel .newsletter-field input {
+  color: var(--palette-burgundy) !important;
+}
+
+.newsletter-panel .newsletter-submit {
+  background-color: var(--palette-burgundy) !important;
+  color: var(--palette-white) !important;
+}
+
+.newsletter-panel .newsletter-submit span,
+.newsletter-panel .newsletter-submit svg {
+  color: var(--palette-white) !important;
+}
+
+.newsletter-panel .newsletter-submit svg path {
+  stroke: var(--palette-white) !important;
+}
+
+.newsletter-panel .newsletter-background-word {
+  color: rgba(190, 183, 184, 0.36) !important;
+}
+
+.newsletter-panel input::placeholder {
+  color: var(--palette-plum) !important;
+}
+
+main > .intro-editorial {
+  padding-top: 0;
+}
+
+main > .angebote {
+  margin-top: -60px;
+}
+
+main > .intro-editorial,
+main > .angebote,
+main > .nadja-feature,
+main > .reviews,
+main > .newsletter {
+  padding-bottom: var(--section-gap) !important;
+}
+
+main > .program-experience {
+  margin-bottom: var(--section-gap) !important;
+}
+
+/* Reduce mobile paragraph sizes by 2px from their section defaults. */
+@media (max-width: 620px) {
+  .intro-editorial .intro-body p {
+    font-size: 16px;
+  }
+
+  .angebote-heading-row p,
+  .program-experience .yoga-mama-intro,
+  .nadja-feature-body > p,
+  .nadja-feature-experience p,
+  .review-slide blockquote p,
+  .newsletter-intro {
+    font-size: 15px;
+  }
+
+  #angebote .angebot-card-copy p,
+  .program-experience #yoga-mama-detail .yoga-mama-benefit-copy p,
+  .program-experience #yoga-nidra-detail .yoga-mama-benefit-copy p {
+    font-size: 11px;
+  }
+
+  .newsletter-privacy {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 560px) {
+  .intro-editorial .intro-body p {
+    font-size: 15px;
+  }
+}

@@ -4,8 +4,8 @@
   padding: clamp(34px, 4vw, 52px) 0 0;
   overflow: hidden;
   border-radius: 34px;
-  background: #f4f2ee;
-  color: #18191b;
+  background: #fff6f7;
+  color: #512c3e;
 }
 
 .program-experience-shell {
@@ -21,7 +21,7 @@
 .program-switcher {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -33,11 +33,11 @@
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 8px 24px rgba(49, 0, 1, 0.14);
+  box-shadow: 0 8px 24px rgba(86, 0, 2, 0.14);
 }
 
 .program-switcher-label {
-  color: #67625e;
+  color: #6b4c5b;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -75,23 +75,23 @@
 }
 
 .program-switcher-tab > span {
-  color: #9c565a;
+  color: #ee263e;
   font-size: 9px;
   letter-spacing: 0.12em;
 }
 
 .program-switcher-tab[aria-selected="true"] {
   background: #560002;
-  color: #fffaf8;
+  color: #fff6f7;
   box-shadow: 0 5px 14px rgba(86, 0, 2, 0.16);
 }
 
 .program-switcher-tab[aria-selected="true"] > span {
-  color: #e6babc;
+  color: #eab4c9;
 }
 
 .program-switcher-tab:focus-visible {
-  outline: 2px solid #9c565a;
+  outline: 2px solid #ee263e;
   outline-offset: 3px;
 }
 
@@ -100,7 +100,8 @@
 }
 
 .program-experience .yoga-mama-feature,
-.program-experience .yoga-nidra-feature {
+.program-experience .yoga-nidra-feature,
+.program-experience .book-feature {
   position: relative;
   width: 100%;
   padding: 0 0 clamp(42px, 5vw, 64px);
@@ -138,11 +139,12 @@
   margin: 0;
   overflow: hidden;
   border-radius: 34px 34px 0 0;
-  background: #f4f2ee;
+  background: #fff6f7;
 }
 
 #yoga-mama-detail .yoga-mama-main-image,
-#yoga-nidra-detail .yoga-mama-main-image {
+#yoga-nidra-detail .yoga-mama-main-image,
+#buy-book-detail .yoga-mama-main-image {
   width: 100%;
 }
 
@@ -152,7 +154,7 @@
   background:
     linear-gradient(
       180deg,
-      rgba(49, 0, 1, 0.62) 0%,
+      rgba(86, 0, 2, 0.62) 0%,
       rgba(86, 0, 2, 0.2) 42%,
       transparent 100%
     );
@@ -182,11 +184,12 @@
   aspect-ratio: 1;
   border: 1px solid rgba(255, 255, 255, 0.86);
   border-radius: 50%;
-  box-shadow: 0 12px 34px rgba(49, 0, 1, 0.2);
+  box-shadow: 0 12px 34px rgba(86, 0, 2, 0.2);
 }
 
 #yoga-mama-detail .yoga-mama-detail-image,
-#yoga-nidra-detail .yoga-mama-detail-image {
+#yoga-nidra-detail .yoga-mama-detail-image,
+#buy-book-detail .yoga-mama-detail-image {
   top: 22px;
   right: 26px;
   bottom: auto;
@@ -243,13 +246,14 @@
   padding: clamp(24px, 2.5vw, 34px) clamp(28px, 4vw, 54px) 28px;
   border: 1px solid rgba(86, 0, 2, 0.08);
   border-radius: 24px;
-  background: linear-gradient(135deg, #fff 0%, #f7f5f1 100%);
-  box-shadow: 0 22px 68px rgba(49, 0, 1, 0.1);
+  background: linear-gradient(135deg, #fff 0%, #fff6f7 100%);
+  box-shadow: 0 22px 68px rgba(86, 0, 2, 0.1);
   transform: none;
 }
 
 #yoga-mama-detail .yoga-mama-content,
-#yoga-nidra-detail .yoga-mama-content {
+#yoga-nidra-detail .yoga-mama-content,
+#buy-book-detail .yoga-mama-content {
   width: min(92%, 1060px);
   max-width: none;
   margin: 0 auto;
@@ -321,12 +325,12 @@
 
 #yoga-mama-detail .yoga-mama-index .section-side-rule,
 #yoga-nidra-detail .yoga-mama-index .section-side-rule {
-  background: #9c565a;
+  background: #ee263e;
 }
 
 #yoga-mama-detail .yoga-mama-index .section-side-title,
 #yoga-nidra-detail .yoga-mama-index .section-side-title {
-  color: #18191b;
+  color: #512c3e;
 }
 
 @media (max-width: 850px) {
@@ -396,7 +400,8 @@
   }
 
   .program-experience .yoga-mama-feature,
-  .program-experience .yoga-nidra-feature {
+  .program-experience .yoga-nidra-feature,
+  .program-experience .book-feature {
     padding-bottom: 56px;
   }
 
@@ -414,46 +419,53 @@
   }
 
   .program-experience .yoga-mama-content,
-  .program-experience .yoga-nidra-feature .yoga-mama-content {
+  .program-experience .yoga-nidra-feature .yoga-mama-content,
+  .program-experience .book-feature .yoga-mama-content {
     width: calc(100% - 16px);
     padding: 94px 20px 26px;
     border-radius: 20px;
   }
 
   #yoga-mama-detail .yoga-mama-content,
-  #yoga-nidra-detail .yoga-mama-content {
+  #yoga-nidra-detail .yoga-mama-content,
+  #buy-book-detail .yoga-mama-content {
     width: calc(100% - 16px);
     margin: 0 auto;
     padding: 24px 20px 26px;
   }
 
   .program-experience .yoga-mama-kicker,
-  .program-experience .yoga-nidra-feature .yoga-mama-kicker {
+  .program-experience .yoga-nidra-feature .yoga-mama-kicker,
+  .program-experience .book-feature .yoga-mama-kicker {
     flex-wrap: wrap;
     gap: 8px;
     white-space: normal;
   }
 
   .program-experience .yoga-mama-kicker-line,
-  .program-experience .yoga-nidra-feature .yoga-mama-kicker-line {
+  .program-experience .yoga-nidra-feature .yoga-mama-kicker-line,
+  .program-experience .book-feature .yoga-mama-kicker-line {
     width: 34px;
   }
 
   .program-experience .yoga-mama-benefits,
-  .program-experience .yoga-nidra-feature .yoga-mama-benefits {
+  .program-experience .yoga-nidra-feature .yoga-mama-benefits,
+  .program-experience .book-feature .yoga-mama-benefits {
     grid-template-columns: 1fr;
     gap: 18px;
     margin-top: 24px;
   }
 
   .program-experience .yoga-mama-benefit,
-  .program-experience .yoga-nidra-feature .yoga-mama-benefit {
+  .program-experience .yoga-nidra-feature .yoga-mama-benefit,
+  .program-experience .book-feature .yoga-mama-benefit {
     grid-template-columns: 48px minmax(0, 1fr);
     gap: 14px;
   }
 
   .program-experience .yoga-mama-benefit-icon,
-  .program-experience .yoga-nidra-feature .yoga-mama-benefit-icon {
+  .program-experience .yoga-nidra-feature .yoga-mama-benefit-icon,
+  .program-experience .book-feature .yoga-mama-benefit-icon {
     width: 46px;
     height: 46px;
   }
@@ -474,7 +486,8 @@
   }
 
   .program-experience .yoga-mama-feature,
-  .program-experience .yoga-nidra-feature {
+  .program-experience .yoga-nidra-feature,
+  .program-experience .book-feature {
     padding-bottom: 36px;
   }
 
@@ -489,7 +502,8 @@
   .program-experience .yoga-mama-content,
   .program-experience .yoga-nidra-feature .yoga-mama-content,
   #yoga-mama-detail .yoga-mama-content,
-  #yoga-nidra-detail .yoga-mama-content {
+  #yoga-nidra-detail .yoga-mama-content,
+  #buy-book-detail .yoga-mama-content {
     padding: 18px 44px 18px;
   }
 
@@ -562,23 +576,113 @@
   box-shadow: none;
 }
 
+.book-feature .yoga-mama-benefits {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(24px, 3vw, 42px);
+  row-gap: 0;
+  align-items: start;
+}
+
+.book-feature .yoga-mama-benefit {
+  align-items: start;
+}
+
+.book-feature-journal {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.book-feature-description {
+  max-width: 760px;
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.book-feature-benefit-title,
+.book-feature-emphasis {
+  font-weight: 700;
+}
+
+.book-feature-link {
+  display: inline-flex;
+  margin: 8px 14px 0 0;
+  border-bottom: 1px solid currentColor;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.book-feature-link:focus-visible {
+  outline: 2px solid #ee263e;
+  outline-offset: 4px;
+}
+
+@media (max-width: 620px) {
+  .program-experience .program-switcher-control {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .program-experience .program-switcher-label {
+    justify-content: flex-start;
+  }
+
+  .program-experience .program-switcher-tabs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .program-experience .program-switcher-tab {
+    min-width: 0;
+    justify-content: center;
+    gap: 4px;
+    padding-inline: 4px;
+    font-size: 8px;
+  }
+
+  .program-experience .program-switcher-tab > span {
+    font-size: 8px;
+  }
+
+  .book-feature .yoga-mama-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .book-feature-journal {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .book-feature-description {
+    font-size: 14px;
+  }
+}
+
 .program-experience #yoga-mama-detail .yoga-mama-layout,
-.program-experience #yoga-nidra-detail .yoga-mama-layout {
+.program-experience #yoga-nidra-detail .yoga-mama-layout,
+.program-experience #buy-book-detail .yoga-mama-layout {
   padding-top: clamp(250px, 25vw, 350px);
 }
 
 #yoga-mama-detail > .yoga-mama-shell,
-#yoga-nidra-detail > .yoga-mama-shell {
+#yoga-nidra-detail > .yoga-mama-shell,
+#buy-book-detail > .yoga-mama-shell {
   width: 100%;
 }
 
 .program-experience #yoga-mama-detail .yoga-mama-visual,
-.program-experience #yoga-nidra-detail .yoga-mama-visual {
+.program-experience #yoga-nidra-detail .yoga-mama-visual,
+.program-experience #buy-book-detail .yoga-mama-visual {
   top: 0;
 }
 
 .program-experience #yoga-mama-detail .yoga-mama-detail-image,
-.program-experience #yoga-nidra-detail .yoga-mama-detail-image {
+.program-experience #yoga-nidra-detail .yoga-mama-detail-image,
+.program-experience #buy-book-detail .yoga-mama-detail-image {
   top: 228px;
   width: clamp(124px, 10vw, 142px);
 }
@@ -590,7 +694,8 @@
 }
 
 .program-experience #yoga-mama-detail .yoga-mama-benefit,
-.program-experience #yoga-nidra-detail .yoga-mama-benefit {
+.program-experience #yoga-nidra-detail .yoga-mama-benefit,
+.program-experience #buy-book-detail .yoga-mama-benefit {
   min-height: 76px;
   align-items: center;
   gap: 12px;
@@ -599,26 +704,29 @@
   border-top: 1px solid rgba(86, 0, 2, 0.14);
   border-radius: 0;
   background: transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: none;
 }
 
 .program-experience #yoga-mama-detail .yoga-mama-benefit:nth-last-child(-n + 2),
-.program-experience #yoga-nidra-detail .yoga-mama-benefit:nth-last-child(-n + 2) {
+.program-experience #yoga-nidra-detail .yoga-mama-benefit:nth-last-child(-n + 2),
+.program-experience #buy-book-detail .yoga-mama-benefit:nth-last-child(-n + 2) {
   border-bottom: 1px solid rgba(86, 0, 2, 0.14);
 }
 
 .program-experience #yoga-mama-detail .yoga-mama-benefit-icon,
-.program-experience #yoga-nidra-detail .yoga-mama-benefit-icon {
+.program-experience #yoga-nidra-detail .yoga-mama-benefit-icon,
+.program-experience #buy-book-detail .yoga-mama-benefit-icon {
   width: 30px;
   height: 30px;
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #8a3c40;
+  color: #ee263e;
 }
 
 .program-experience #yoga-mama-detail .yoga-mama-benefit-copy h3,
-.program-experience #yoga-nidra-detail .yoga-mama-benefit-copy h3 {
+.program-experience #yoga-nidra-detail .yoga-mama-benefit-copy h3,
+.program-experience #buy-book-detail .yoga-mama-benefit-copy h3 {
   margin: 0;
   color: #560002;
   font-size: 10px;
@@ -627,16 +735,23 @@
 }
 
 .program-experience #yoga-mama-detail .yoga-mama-benefit-copy p,
-.program-experience #yoga-nidra-detail .yoga-mama-benefit-copy p {
+.program-experience #yoga-nidra-detail .yoga-mama-benefit-copy p,
+.program-experience #buy-book-detail .yoga-mama-benefit-copy p {
   margin: 7px 0 0;
-  color: #55504c;
+  color: #6b4c5b;
   font-size: 14px;
   line-height: 1.5;
 }
 
 @media (min-width: 851px) {
   .program-experience-shell {
-    top: clamp(146px, 10.5vw, 154px);
+    top: calc(clamp(146px, 10.5vw, 154px) - 60px);
+  }
+
+  .program-experience #yoga-mama-detail .yoga-mama-detail-image,
+  .program-experience #yoga-nidra-detail .yoga-mama-detail-image,
+  .program-experience #buy-book-detail .yoga-mama-detail-image {
+    top: 238px;
   }
 }
 
@@ -660,13 +775,16 @@
 
   .program-experience #yoga-mama-detail .yoga-mama-side-meta,
   .program-experience #yoga-nidra-detail .yoga-mama-side-meta,
+  .program-experience #buy-book-detail .yoga-mama-side-meta,
   .program-experience #yoga-mama-detail .yoga-mama-detail-image,
-  .program-experience #yoga-nidra-detail .yoga-mama-detail-image {
+  .program-experience #yoga-nidra-detail .yoga-mama-detail-image,
+  .program-experience #buy-book-detail .yoga-mama-detail-image {
     top: 86px;
   }
 
   .program-experience #yoga-mama-detail .yoga-mama-detail-image,
-  .program-experience #yoga-nidra-detail .yoga-mama-detail-image {
+  .program-experience #yoga-nidra-detail .yoga-mama-detail-image,
+  .program-experience #buy-book-detail .yoga-mama-detail-image {
     width: clamp(124px, 15vw, 184px);
   }
 }
@@ -699,25 +817,67 @@
   }
 
   .program-experience #yoga-mama-detail .yoga-mama-layout,
-  .program-experience #yoga-nidra-detail .yoga-mama-layout {
+  .program-experience #yoga-nidra-detail .yoga-mama-layout,
+  .program-experience #buy-book-detail .yoga-mama-layout {
     padding-top: clamp(220px, 63vw, 280px);
   }
 
   .program-experience #yoga-mama-detail .yoga-mama-side-meta,
   .program-experience #yoga-nidra-detail .yoga-mama-side-meta,
+  .program-experience #buy-book-detail .yoga-mama-side-meta,
   .program-experience #yoga-mama-detail .yoga-mama-detail-image,
-  .program-experience #yoga-nidra-detail .yoga-mama-detail-image {
+  .program-experience #yoga-nidra-detail .yoga-mama-detail-image,
+  .program-experience #buy-book-detail .yoga-mama-detail-image {
     top: 78px;
   }
 
   .program-experience #yoga-mama-detail .yoga-mama-benefit,
-  .program-experience #yoga-nidra-detail .yoga-mama-benefit {
+  .program-experience #yoga-nidra-detail .yoga-mama-benefit,
+  .program-experience #buy-book-detail .yoga-mama-benefit {
     min-height: 0;
     padding: 13px 2px;
   }
 
   .program-experience #yoga-mama-detail .yoga-mama-benefit-copy p,
-  .program-experience #yoga-nidra-detail .yoga-mama-benefit-copy p {
+  .program-experience #yoga-nidra-detail .yoga-mama-benefit-copy p,
+  .program-experience #buy-book-detail .yoga-mama-benefit-copy p {
     font-size: 13px;
+  }
+}
+
+.program-switcher-tab {
+  white-space: nowrap;
+}
+
+.book-feature-description {
+  max-width: 760px;
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.book-feature-benefit-title,
+.book-feature-emphasis {
+  font-weight: 700;
+}
+
+.book-feature-link {
+  display: inline-flex;
+  margin: 8px 14px 0 0;
+  border-bottom: 1px solid currentColor;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.book-feature-link:focus-visible {
+  outline: 2px solid #ee263e;
+  outline-offset: 4px;
+}
+
+@media (max-width: 620px) {
+  .book-feature-description {
+    font-size: 14px;
   }
 }

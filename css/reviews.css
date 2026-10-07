@@ -18,7 +18,7 @@
 
   background: #ffffff;
 
-  color: #18191b;
+  color: #512c3e;
 }
 
 
@@ -51,7 +51,7 @@
     clamp(42px, 5vw, 72px)
     clamp(38px, 4vw, 54px);
 
-  background: #f3f2ef;
+  background: #fff6f7;
 
   border-radius: 34px;
 }
@@ -70,7 +70,7 @@
 
   gap: 12px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 8px;
 
@@ -88,7 +88,7 @@
 
 
 .reviews-top-meta > span:last-child {
-  color: #67625e;
+  color: #6b4c5b;
 }
 
 
@@ -102,7 +102,7 @@
 
   height: 1px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -178,7 +178,7 @@
 
   border-radius: 20px;
 
-  background: #ddd8d1;
+  background: #eab4c9;
 }
 
 
@@ -258,7 +258,7 @@
     translateY(-50%)
     rotate(180deg);
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 9px;
 
@@ -293,7 +293,7 @@
 
   gap: 11px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 7px;
 
@@ -313,7 +313,7 @@
 
   height: 52px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -339,7 +339,7 @@
 .reviews-heading h2 {
   margin: 0;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size:
     clamp(
@@ -367,7 +367,7 @@
 
   margin-top: 10px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -441,7 +441,7 @@
 
   height: 42px;
 
-  color: #9c565a;
+  color: #ee263e;
 
   font-family:
     Georgia,
@@ -481,7 +481,7 @@
 .review-slide blockquote p {
   margin: 0;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size:
     clamp(
@@ -517,16 +517,14 @@
     1px
     solid
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.14
     );
 }
 
 
 .review-author strong {
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 9px;
 
@@ -539,7 +537,7 @@
 
 
 .review-author span {
-  color: #67625e;
+  color: #6b4c5b;
 
   font-size: 8px;
 
@@ -596,16 +594,14 @@
 
   background:
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.22
     );
 }
 
 
 .reviews-dot.is-active {
-  background: #18191b;
+  background: #512c3e;
 }
 
 
@@ -637,9 +633,7 @@
     1px
     solid
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.35
     );
 
@@ -647,7 +641,7 @@
 
   background: transparent;
 
-  color: #18191b;
+  color: #512c3e;
 }
 
 
@@ -704,7 +698,7 @@
 
   gap: 12px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 8px;
 
@@ -726,7 +720,7 @@
 
   height: 1px;
 
-  background: #9c565a;
+  background: #ee263e;
 }
 
 
@@ -749,9 +743,7 @@
     1px
     solid
     rgba(
-      156,
-      86,
-      90,
+      238, 38, 62,
       0.35
     );
 
@@ -759,9 +751,7 @@
     1px
     solid
     rgba(
-      156,
-      86,
-      90,
+      238, 38, 62,
       0.35
     );
 
@@ -1025,7 +1015,7 @@
     transform:
       translateY(-50%);
 
-    color: #18191b;
+    color: #512c3e;
 
     font-size: 9px;
 

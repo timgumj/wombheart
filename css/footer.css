@@ -16,7 +16,7 @@
   padding: 0 0 10px;
 
   background: #ffffff;
-  color: #18191b;
+  color: #512c3e;
 }
 
 
@@ -30,7 +30,7 @@
   margin-inline: auto;
   padding-inline: clamp(20px, 5vw, 72px);
   border-radius: 34px;
-  background: #f3f1eb;
+  background: #fff6f7;
 }
 
 
@@ -145,20 +145,20 @@
     radial-gradient(
       circle at 50% 45%,
 
-      #650003 0%,
-      #650003 42%,
+      #560002 0%,
+      #560002 42%,
 
-      #710004 43%,
-      #710004 52%,
+      #512c3e 43%,
+      #512c3e 52%,
 
-      #86100f 57%,
-      #9d1c1c 64%,
+      #ee263e 57%,
+      #ff1f1f 64%,
 
-      #d43b3c 70%,
-      #e64b4b 73%,
+      #ff1f1f 70%,
+      #ff1f1f 73%,
 
-      #a6191a 79%,
-      #6a0004 88%,
+      #ee263e 79%,
+      #560002 88%,
       #560002 100%
     );
 
@@ -168,9 +168,7 @@
     0
     10px
     rgba(
-      255,
-      81,
-      81,
+      255, 31, 31,
       0.28
     ),
     inset
@@ -187,9 +185,7 @@
     0
     8px
     rgba(
-      218,
-      49,
-      49,
+      255, 31, 31,
       0.3
     );
 
@@ -280,7 +276,7 @@
     0
     20px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 15px;
 
@@ -306,7 +302,7 @@
     0
     11px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 13px;
 
@@ -362,9 +358,7 @@
 
   background:
     rgba(
-      24,
-      25,
-      27,
+      81, 44, 62,
       0.15
     );
 }
@@ -419,7 +413,7 @@
 .site-footer .footer-copyright {
   justify-self: start;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 10px;
 
@@ -454,7 +448,7 @@
 
 
 .site-footer .footer-legal a {
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 10px;
 
@@ -497,7 +491,7 @@
 
   gap: 9px;
 
-  color: #18191b;
+  color: #512c3e;
 
   font-size: 10px;
 
@@ -539,7 +533,7 @@
   outline:
     1px
     solid
-    #18191b;
+    #512c3e;
 
   outline-offset: 4px;
 }
