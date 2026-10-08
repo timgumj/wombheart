@@ -1,14 +1,15 @@
 /* Alternating homepage bands. Hero and header retain their existing palette. */
 #nadja,
 #yoga-experiences,
-#reviews {
+#nadja-journey,
+#newsletter {
   --section-background: #FF1F1F;
   --palette-motif: #FF1F1F;
 }
 #angebote,
-#nadja-journey,
-#newsletter {
+#reviews {
   --section-background: #560002;
+  --palette-motif: #560002;
 }
 #nadja,
 #angebote,
