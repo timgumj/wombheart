@@ -1,0 +1,74 @@
+/* Homepage typography: locally hosted Founders Grotesk Condensed and Victor Narrow Medium. */
+@font-face {
+  font-family: "Founders Grotesk Condensed";
+  src: url("../assets/fonts/founders-grotesk-condensed-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VictorNarrow-Medium";
+  src: url("../assets/fonts/VictorNarrow-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  --font: "Founders Grotesk Condensed", "Arial Narrow", Arial, sans-serif;
+  --font-title: "VictorNarrow-Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body,
+input,
+textarea,
+select,
+.review-quote-mark,
+#angebote .angebot-card h3,
+#angebote .angebot-card-copy p,
+#angebote .angebot-orbit text {
+  font-family: var(--font);
+}
+
+main h1,
+main h2,
+main h3,
+#angebote .angebot-card h3,
+main .hero-slide h2,
+main .hero-nadja strong,
+main .hero-nadja-brand,
+main .section-heading-with-motif h2,
+main .intro-content h2,
+main .angebote-heading-row h2,
+main .angebot-card h3,
+main .yoga-mama-content h2,
+main .yoga-mama-benefit-copy h3,
+main .nadja-feature-heading-group h2,
+main .reviews-heading h2,
+main .newsletter-content h2 {
+  font-family: var(--font-title);
+  letter-spacing: 0.02em;
+}
+
+/* Keep paragraph sizing consistent across desktop homepage sections. */
+@media (min-width: 1001px) {
+  body p {
+    font-size: 22px !important;
+  }
+}
+
+/* Slightly loosen the compact desktop paragraph spacing. */
+@media (min-width: 1001px) {
+  body p { line-height: 0.85 !important; }
+  .intro-body p,
+  .angebote-heading-row p,
+  .nadja-feature-body > p,
+  .nadja-feature-experience p,
+  .newsletter-intro,
+  .yoga-mama-intro { line-height: 0.89 !important; }
+  #angebote .angebot-card-copy p { line-height: 0.675 !important; }
+  .newsletter-privacy { line-height: 0.875 !important; }
+  .review-slide blockquote p { line-height: 0.79 !important; }
+  .program-experience .yoga-mama-benefit-copy p { line-height: 0.9 !important; }
+}

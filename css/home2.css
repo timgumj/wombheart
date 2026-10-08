@@ -1,0 +1,436 @@
+body.home2-page figure:not(.angebot-card-media),
+body.home2-page figure:not(.angebot-card-media) img,
+body.home2-page .hero-stage,
+body.home2-page .hero-slider-window,
+body.home2-page .reviews-image-window {
+  border-radius: 0 !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+}
+
+@media (min-width: 1001px) {
+  .home2-page .angebote-heading-row .section-heading-with-motif {
+    align-items: flex-start;
+  }
+}
+
+.home2-page #yoga-experiences {
+  display: contents;
+}
+
+.home2-page #yoga-experiences > .program-experience-shell {
+  display: none !important;
+}
+
+.home2-page #angebote [data-program-panel]:not(.home2-is-active) {
+  display: none !important;
+}
+
+.home2-page
+  #angebote
+  .home2-is-selected
+  [data-program-panel].home2-is-active:not([hidden]) {
+  display: block !important;
+}
+
+.home2-page #angebote .angebote-grid > .angebot-card[hidden] {
+  display: none !important;
+}
+
+.home2-page #angebote .home2-is-selected [data-program-panel] {
+  position: absolute;
+  z-index: 6;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+}
+
+.home2-page #angebote .angebote-grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  transition: grid-template-columns 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.home2-page #angebote .home2-is-selected [data-program-panel].home2-is-active {
+  animation: home2-fade-in 0.7s ease 0.2s both;
+}
+
+@keyframes home2-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.home2-page #angebote .angebote-grid[data-home2-active-program="mama"] { grid-template-columns: 7fr 1fr 1fr 1fr; }
+.home2-page #angebote .angebote-grid[data-home2-active-program="nidra"] { grid-template-columns: 1fr 7fr 1fr 1fr; }
+.home2-page #angebote .angebote-grid[data-home2-active-program="education"] { grid-template-columns: 1fr 1fr 7fr 1fr; }
+.home2-page #angebote .angebote-grid[data-home2-active-program="book"] { grid-template-columns: 1fr 1fr 1fr 7fr; }
+
+.home2-page #angebote .angebote-grid[data-home2-active-program] {
+  grid-auto-rows: 720px;
+  align-items: stretch;
+}
+
+.home2-page #angebote .angebote-grid[data-home2-active-program] > .angebot-card {
+  grid-row: 1;
+  width: 100%;
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.home2-page #angebote .angebote-grid[data-home2-active-program]
+  > .angebot-card.home2-is-selected {
+  grid-column: auto;
+}
+
+.home2-page #angebote .angebote-grid[data-home2-active-program]
+  > .angebot-card.home2-is-selected
+  > .angebot-card-copy,
+.home2-page #angebote .angebote-grid[data-home2-active-program]
+  > .angebot-card.home2-is-selected
+  > .angebot-card-media {
+  visibility: hidden;
+}
+
+.home2-page #angebote .angebote-grid[data-home2-active-program]
+  > .angebot-card.home2-is-selected
+  > .home2-card-label {
+  display: none;
+}
+
+.home2-page #angebote .home2-card-label {
+  position: absolute;
+  z-index: 5;
+  inset: 16px 12px auto auto;
+  display: none;
+  color: #fff6f2;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+  writing-mode: vertical-rl;
+  pointer-events: none;
+}
+
+.home2-page #angebote .angebote-grid[data-home2-active-program]
+  > .angebot-card:not(.home2-is-selected) {
+  cursor: pointer;
+}
+
+.home2-page #angebote .angebote-grid[data-home2-active-program]
+  > .angebot-card:not(.home2-is-selected) .angebot-card-copy,
+.home2-page #angebote .angebote-grid[data-home2-active-program]
+  > .angebot-card:not(.home2-is-selected) .angebot-orbit {
+  display: none;
+}
+
+.home2-page #angebote .angebote-grid[data-home2-active-program]
+  > .angebot-card:not(.home2-is-selected) .home2-card-label {
+  display: block;
+}
+
+.home2-page #angebote .angebote-grid[data-home2-active-program]
+  > .angebot-card:not(.home2-is-selected)::before {
+  border-radius: 0;
+  background: linear-gradient(180deg, rgba(67, 5, 7, 0.48), transparent 65%);
+}
+
+.home2-page #angebote .home2-is-selected [data-program-panel].home2-is-active {
+  position: absolute;
+  z-index: 6;
+  inset: 0;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  background: #430507;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-shell {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-layout {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-visual {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.home2-page #angebote .home2-is-selected [data-program-panel] * {
+  transition: none !important;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-visual {
+  position: absolute !important;
+  z-index: 0;
+  inset: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 0;
+  transform: none !important;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-main-image {
+  position: absolute !important;
+  inset: 0 0 0 60% !important;
+  width: 40% !important;
+  height: 100% !important;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: #430507;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-detail-image,
+.home2-page #angebote .home2-is-selected .yoga-mama-side-meta,
+.home2-page #angebote .home2-is-selected .yoga-mama-index,
+.home2-page #angebote .home2-is-selected .yoga-mama-background-word {
+  display: none;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-content {
+  position: absolute;
+  z-index: 4;
+  inset: 0 40% 0 0;
+  display: flex;
+  width: 60%;
+  height: 100%;
+  max-width: none;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0 clamp(24px, 3vw, 44px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 0;
+  border-radius: 0;
+  background: #430507;
+  box-shadow: none;
+  color: #fff6f2;
+  transform: none;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-content > .section-heading-with-motif {
+  align-items: center;
+  gap: 14px;
+}
+
+.home2-page #angebote .home2-is-selected .section-heading-with-motif .section-orbit {
+  width: clamp(58px, 6vw, 82px);
+  flex-basis: clamp(58px, 6vw, 82px);
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-content h2 {
+  margin-top: 0;
+  color: #fff6f2;
+  font-size: clamp(24px, 2.4vw, 38px);
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-kicker {
+  color: #f1b5b3;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-kicker-line {
+  background: #edb7b5;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-intro,
+.home2-page #angebote .home2-is-selected .book-feature-description {
+  max-width: 760px;
+  margin-top: 12px;
+  color: #fff6f2;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-benefits {
+  display: grid;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 56px;
+  margin-top: 16px;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-benefit {
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 246, 242, 0.45);
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-benefit-icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  color: #edb7b5;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-benefit-copy h3 {
+  color: #fff6f2;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-benefit-copy p {
+  width: auto !important;
+  max-width: none !important;
+  margin-top: 6px;
+  color: rgba(255, 246, 242, 0.86);
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+}
+
+.home2-page #angebote .home2-is-selected .section-orbit text,
+.home2-page #angebote .home2-is-selected .section-orbit textPath {
+  letter-spacing: 0.22em;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-button {
+  align-self: flex-start;
+  margin-top: 22px;
+  font-size: 14px;
+  background: #fff !important;
+  color: #430507 !important;
+}
+
+.home2-page #angebote .home2-is-selected .yoga-mama-button * {
+  color: #430507 !important;
+  stroke: currentColor;
+}
+
+.home2-page .home2-program-return {
+  position: absolute;
+  z-index: 8;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 246, 242, 0.72);
+  border-radius: 0;
+  background: rgba(67, 5, 7, 0.52);
+  color: #fff6f2;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.home2-page .home2-program-return[hidden] {
+  display: none !important;
+}
+
+.home2-page .home2-program-return svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.home2-page .home2-program-return:focus-visible {
+  outline: 2px solid #ee263e;
+  outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .home2-page #angebote .angebote-grid[data-home2-active-program] {
+    grid-template-columns: minmax(0, 7fr) repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 620px;
+    gap: 5px;
+  }
+
+  .home2-page #angebote .home2-is-selected .yoga-mama-content {
+    justify-content: flex-start;
+    padding: 52px 12px 16px;
+  }
+
+  .home2-page #angebote .home2-is-selected .yoga-mama-content > .section-heading-with-motif {
+    gap: 8px;
+  }
+
+  .home2-page #angebote .home2-is-selected .section-heading-with-motif .section-orbit {
+    width: 44px;
+    flex-basis: 44px;
+  }
+
+  .home2-page #angebote .home2-is-selected .yoga-mama-content h2 {
+    font-size: 21px;
+  }
+
+  .home2-page #angebote .home2-is-selected .yoga-mama-benefits {
+    display: grid;
+    align-items: start;
+    grid-auto-rows: min-content;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    margin-top: 8px;
+  }
+
+  .home2-page #angebote .home2-is-selected .yoga-mama-benefit {
+    padding: 5px 0;
+  }
+
+  .home2-page #angebote .home2-is-selected .yoga-mama-intro,
+  .home2-page #angebote .home2-is-selected .book-feature-description {
+    font-size: 12px;
+  }
+
+  .home2-page .home2-program-return {
+    top: 8px;
+    right: 8px;
+    min-height: 34px;
+    padding-inline: 7px;
+    font-size: 7px;
+  }
+
+  .home2-page #angebote .home2-card-label {
+    inset-block-start: 10px;
+    font-size: 8px;
+  }
+}

@@ -1,6 +1,6 @@
 const tablist = document.querySelector(".program-switcher-tabs");
 
-if (tablist) {
+if (tablist && !document.body.classList.contains("home2-page")) {
   const tabs = Array.from(tablist.querySelectorAll("[data-program-tab]"));
   const panels = Array.from(document.querySelectorAll("[data-program-panel]"));
 

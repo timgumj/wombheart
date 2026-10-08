@@ -71,9 +71,10 @@
     <link rel="stylesheet" href="./css/angebote-posters.css?v=20261008" />
     <link rel="stylesheet" href="./css/home-fonts.css?v=20261008-adjusted-leading" />
     <link rel="stylesheet" href="./css/section-colors.css?v=20261008-red-footer" />
+    <link rel="stylesheet" href="./css/home2.css?v=20261008-expanded-benefit-rows" />
   </head>
 
-  <body>
+  <body class="home2-page">
     <!-- =====================================================
        SKIP LINK
   ====================================================== -->
@@ -610,7 +611,7 @@
                     <p>Wissen, das Erfahrung werden darf.</p>
                   </div>
 
-                  <a class="angebot-link" href="#education-detail">
+                  <a class="angebot-link" href="#education">
                     <span> ENTDECKEN </span>
 
                     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -1157,7 +1158,7 @@
 
                 <figure class="yoga-mama-main-image">
                   <img
-                    src="./assets/images/NadjaBrenneisen_Yoga-Nidra-2048x1365.webp"
+                    src="./assets/images/yogamamadark.webp"
                     alt="Yoga Nidra Praxis"
                   />
                 </figure>
@@ -1354,6 +1355,107 @@
 
                 <a class="yoga-mama-button" href="#book">
                   <span>ZUM BUCH</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="m13 6 6 6-6 6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="yoga-mama-feature"
+          id="education-detail"
+          role="tabpanel"
+          tabindex="0"
+          data-program-panel="education"
+          hidden
+        >
+          <div class="home-shell yoga-mama-shell">
+            <div class="yoga-mama-layout">
+              <div class="yoga-mama-visual">
+                <figure class="yoga-mama-main-image">
+                  <img src="./assets/images/water.webp" alt="Education" />
+                </figure>
+              </div>
+
+              <div class="yoga-mama-content">
+                <div class="yoga-mama-kicker">
+                  <span> EDUCATION </span>
+                  <span class="yoga-mama-kicker-line"></span>
+                  <span> LERNEN · WEITERGEBEN </span>
+                </div>
+
+                <div class="section-heading-with-motif">
+                  <h2>WISSEN, DAS BLEIBT.</h2>
+                </div>
+
+                <p class="yoga-mama-intro">
+                  Fortbildungen und Ausbildungen für alle, die Frauen in
+                  Schwangerschaft, Geburt und Mutterschaft begleiten möchten.
+                </p>
+
+                <div class="yoga-mama-benefits">
+                  <div class="yoga-mama-benefit">
+                    <span class="yoga-mama-benefit-icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48">
+                        <path d="M6 16 24 8l18 8-18 8Z"></path>
+                        <path d="M14 21v10c0 3 5 6 10 6s10-3 10-6V21"></path>
+                      </svg>
+                    </span>
+                    <div class="yoga-mama-benefit-copy">
+                      <h3>AUSBILDUNG</h3>
+                      <p>Fundierte Yoga- und Geburtsvorbereitungs-Ausbildung.</p>
+                    </div>
+                  </div>
+
+                  <div class="yoga-mama-benefit">
+                    <span class="yoga-mama-benefit-icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48">
+                        <path d="M24 38 10.5 25C3 17.8 7.8 8 16.5 8c4.1 0 6.5 2.3 7.5 4 1-1.7 3.4-4 7.5-4C40.2 8 45 17.8 37.5 25Z"></path>
+                      </svg>
+                    </span>
+                    <div class="yoga-mama-benefit-copy">
+                      <h3>BEGLEITUNG</h3>
+                      <p>Persönliche Begleitung und Austausch in kleinen Gruppen.</p>
+                    </div>
+                  </div>
+
+                  <div class="yoga-mama-benefit">
+                    <span class="yoga-mama-benefit-icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="7"></circle>
+                        <path d="M24 6v7"></path>
+                        <path d="M24 35v7"></path>
+                        <path d="M6 24h7"></path>
+                        <path d="M35 24h7"></path>
+                      </svg>
+                    </span>
+                    <div class="yoga-mama-benefit-copy">
+                      <h3>PRAXIS</h3>
+                      <p>Sofort anwendbare Tools für deine eigene Arbeit.</p>
+                    </div>
+                  </div>
+
+                  <div class="yoga-mama-benefit">
+                    <span class="yoga-mama-benefit-icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48">
+                        <path d="M24 41V22"></path>
+                        <path d="M24 28c-8-1-11-7-10-14 7 1 11 5 10 13"></path>
+                        <path d="M24 22c1-8 5-12 12-13 1 7-2 13-12 15"></path>
+                      </svg>
+                    </span>
+                    <div class="yoga-mama-benefit-copy">
+                      <h3>WACHSTUM</h3>
+                      <p>Wissen, das Erfahrung wird und dich weiterbringt.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <a class="yoga-mama-button" href="#education">
+                  <span>EDUCATION ENTDECKEN</span>
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M5 12h14"></path>
                     <path d="m13 6 6 6-6 6"></path>
@@ -2106,6 +2208,10 @@
     <script
       type="module"
       src="./js/program-switcher.js?v=20261005-program-switcher"
+    ></script>
+    <script
+      type="module"
+      src="./js/home2-program-cards.js?v=20261008-b"
     ></script>
   </body>
 </html>

@@ -1,0 +1,109 @@
+/* Reference-inspired offer posters; scoped to the homepage offer cards. */
+#angebote .angebote-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: none;
+  grid-auto-rows: auto;
+  gap: 12px;
+}
+#angebote .angebot-card {
+  aspect-ratio: 0.56;
+  min-height: 530px;
+  border-radius: 0;
+  background: #430507;
+  container-type: inline-size;
+}
+#angebote .angebot-card::after { background: none; }
+#angebote .angebot-card-copy { padding: 0; text-align: center; }
+#angebote .angebot-category {
+  top: 30px; left: 7%; width: 86%; padding: 0;
+  writing-mode: horizontal-tb; transform: none;
+  text-align: center; font-size: 8px; line-height: 1.5;
+  letter-spacing: .13em; text-shadow: none;
+}
+#angebote .angebot-category::after { display: none; }
+#angebote .angebot-card h3 {
+  top: 64px; left: 5%; width: 90%; max-width: none;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: clamp(30px, 12cqw, 48px); font-weight: 400;
+  line-height: .95; letter-spacing: -.055em; text-align: center;
+  text-shadow: none;
+}
+#angebote .angebot-card-copy p {
+  left: 9%; bottom: 96px; width: 82%; max-width: none;
+  padding: 0; border: 0; margin: 0;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: clamp(21px, 8.3cqw, 30px); line-height: 1.05;
+  text-align: center; text-transform: uppercase; text-shadow: none;
+}
+#angebote .angebot-link {
+  left: 12%; bottom: 27px; width: 76%; min-height: 44px;
+  padding: 0 4px; border-radius: 0; border-bottom: 1px solid #edb7b5;
+  background: transparent; font-size: 9px; letter-spacing: .16em;
+}
+#angebote .angebot-link,
+#angebote .angebot-link * { color: #fff6f2 !important; }
+#angebote .angebot-link:hover { transform: none; opacity: .8; }
+#angebote .angebot-card-media { background: #242323; }
+#angebote .angebot-card-media img { filter: grayscale(1); }
+/* A circular portrait with a warm halo. */
+#angebote .angebot-card--mama .angebot-card-media {
+  inset: 25% 9% auto; width: 82%; aspect-ratio: 1;
+  border-radius: 50%; box-shadow: 0 0 20px 7px #e62f35a8;
+}
+#angebote .angebot-card--mama .angebot-card-media img { object-position: left center; }
+#angebote .angebot-card--mama h3 { color: #ff5955 !important; }
+#angebote .angebot-card--mama .angebot-card-copy p { color: #ffc1b9 !important; }
+/* Full-bleed monochrome photograph and a fine typographic orbit. */
+#angebote .angebot-card--nidra::after {
+  background: linear-gradient(180deg, #0009, transparent 40%, #111 83%);
+}
+#angebote .angebot-card--nidra .angebot-card-media img { object-position: 48% center; }
+#angebote .angebot-orbit {
+  position: absolute; z-index: 2; width: 88%; left: 6%; top: 25%;
+  overflow: visible; pointer-events: none;
+}
+#angebote .angebot-orbit text {
+  fill: #fff6f2; font-family: 'Host Grotesk', sans-serif;
+  font-size: 12px; font-weight: 400; letter-spacing: 1px;
+}
+/* A rising red glow and an arched moon photograph. */
+#angebote .angebot-card--education {
+  background: radial-gradient(ellipse at 50% 64%, #ef3434 0%, #98181b 32%, #430507 65%);
+}
+#angebote .angebot-card--education .angebot-card-media {
+  inset: 34% -12% -8%; border-radius: 50% 50% 0 0;
+}
+#angebote .angebot-card--education .angebot-card-media img { opacity: .46; object-position: center; }
+#angebote .angebot-card--education::after {
+  background: linear-gradient(180deg, transparent 37%, #43050733 52%, #430507 82%);
+}
+#angebote .angebot-card--education h3 { color: #f1b5b3 !important; }
+/* A translucent, curved red veil over the original book photograph. */
+#angebote .angebot-card--book::before {
+  content: ''; position: absolute; z-index: 1; inset: 0 -25% 35%;
+  border-radius: 0 0 50% 50%;
+  background: linear-gradient(180deg, #430507e8 0%, #711315aa 40%, #eb3032ed 100%);
+  pointer-events: none;
+}
+#angebote .angebot-card--book::after {
+  background: linear-gradient(180deg, transparent 55%, #160506ee 84%);
+}
+#angebote .angebot-card--book .angebot-card-media img { object-position: center; }
+#angebote .angebot-card--book h3 { top: 42%; }
+#angebote .angebot-card--book .angebot-category { top: calc(42% - 30px); }
+@media (max-width: 1100px) {
+  #angebote .angebote-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #angebote .angebot-card { aspect-ratio: .65; min-height: 570px; }
+  #angebote .angebot-card--mama .angebot-card-media { width: 72%; left: 14%; right: 14%; }
+  #angebote .angebot-orbit { width: 76%; left: 12%; }
+}
+@media (max-width: 620px) {
+  #angebote .angebote-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  #angebote .angebot-card { aspect-ratio: .6; min-height: 540px; }
+  #angebote .angebot-card-copy p { font-size: clamp(24px, 8.3cqw, 30px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #angebote .angebot-card-media img,
+  #angebote .angebot-link,
+  #angebote .angebot-link svg { transition: none; transform: none; }
+}

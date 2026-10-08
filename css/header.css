@@ -845,10 +845,10 @@ a:last-child {
   height: calc(100% - var(--header-h));
 }
 
-/* Smaller, lighter desktop navigation. */
+/* Larger, bold desktop navigation. */
 @media (min-width: 1001px) {
   .header-nav > a {
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 700;
   }
 }

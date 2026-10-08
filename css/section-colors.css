@@ -1,0 +1,44 @@
+/* Alternating homepage bands. Hero and header retain their existing palette. */
+#nadja,
+#yoga-experiences,
+#reviews {
+  --section-background: #FF1F1F;
+  --palette-motif: #FF1F1F;
+}
+#angebote,
+#nadja-journey,
+#newsletter {
+  --section-background: #560002;
+}
+#nadja,
+#angebote,
+#yoga-experiences,
+#nadja-journey,
+#reviews,
+#newsletter,
+#nadja .intro-panel,
+#angebote .angebote-panel,
+#nadja-journey .nadja-feature-panel,
+#reviews .reviews-panel,
+#newsletter .newsletter-panel {
+  background-color: var(--section-background);
+}
+/* Keep color boundaries continuous, without overlaps or inset gutters. */
+main > #angebote { margin-top: 0; }
+main > #yoga-experiences {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 0 !important;
+  padding-bottom: var(--section-gap);
+}
+#yoga-experiences .yoga-mama-content {
+  background: var(--section-background) !important;
+}
+#footer,
+#footer .footer-shell {
+  background-color: #3d0001 !important;
+  color: #ffffff;
+}
+#footer .footer-shell * { color: #ffffff !important; }
+#footer .footer-divider { background-color: rgb(255 255 255 / 25%); }
+#footer a:focus-visible { outline-color: #ffffff; }
