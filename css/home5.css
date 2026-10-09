@@ -1,0 +1,1030 @@
+/* HOME3: editorial homepage built from the Womb & Heart copy deck.
+   Typography follows home2: h2/h3 = clamp(24px, 2vw, 30px), paragraphs from home-fonts.css. */
+
+body.home5-page figure,
+body.home5-page figure img,
+body.home5-page .hero-stage,
+body.home5-page .hero-slider-window,
+body.home5-page .hero-slide,
+body.home5-page .hero-slide-image,
+body.home5-page .hero-slide-image img,
+body.home5-page .hero-slide-button {
+  border-radius: 0 !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+}
+
+/* ---------- section frame (identical width + padding everywhere) ---------- */
+
+.home5-page .h3-section {
+  width: 100%;
+  padding: clamp(56px, 6vw, 96px) 0;
+  color: #fff;
+}
+
+.home5-page .h3-section--red {
+  background-color: #ff1f1f !important;
+  --palette-motif: #ff1f1f;
+}
+
+.home5-page .h3-section--burgundy {
+  background-color: #560002 !important;
+  --palette-motif: #560002;
+}
+
+.home5-page .h3-section *,
+.home5-page .h3-section p {
+  color: #fff !important;
+}
+
+.home5-page .h3-shell {
+  position: relative;
+  width: calc(100% - 20px);
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: clamp(42px, 5vw, 72px);
+  --h3-gap: clamp(32px, 5vw, 72px);
+}
+
+/* ---------- vertical side text + lines ---------- */
+
+.home5-page .h3-side {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.home5-page .h3-side--left {
+  left: clamp(14px, 2vw, 25px);
+  flex-direction: column-reverse;
+}
+
+.home5-page .h3-side--right {
+  right: clamp(14px, 2vw, 25px);
+}
+
+.home5-page .h3-side-title {
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.home5-page .h3-side--left .h3-side-title {
+  transform: rotate(180deg);
+}
+
+.home5-page .h3-side-rule {
+  display: block;
+  flex: 0 0 auto;
+  width: 1px;
+  height: 58px;
+  background: rgb(255 255 255 / 60%);
+}
+
+/* ---------- header row: motif + heading left, description right ---------- */
+
+.home5-page .h3-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--h3-gap);
+  align-items: center;
+  margin-bottom: clamp(36px, 4vw, 56px);
+}
+
+.home5-page .h3-head .section-heading-with-motif {
+  align-items: center;
+}
+
+.home5-page .h3-section h2 {
+  text-transform: uppercase;
+}
+
+.home5-page #yoga-mama .h3-flip h3 {
+  text-transform: uppercase;
+}
+
+.home5-page .h3-head-desc p + p {
+  margin-top: 0.8em;
+}
+
+.home5-page .h3-section h2,
+.home5-page .h3-section h3 {
+  margin: 0;
+  font-size: clamp(24px, 2vw, 30px);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.home5-page .h3-section h3 {
+  margin-bottom: 18px;
+}
+
+.home5-page .h3-pillars h3,
+.home5-page .h3-duo h3 {
+  margin-bottom: 8px;
+}
+
+.home5-page .h3-copy p + p,
+.home5-page .h3-copy ul + p,
+.home5-page .h3-copy p + ul {
+  margin-top: 0.8em;
+}
+
+.home5-page .h3-number {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+/* ---------- CTA pill (same as the white pills elsewhere) ---------- */
+
+.home5-page .h3-section a.h3-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 390px;
+  max-width: 100%;
+  height: 56px;
+  margin-top: clamp(24px, 2.5vw, 36px);
+  padding: 0 28px;
+  border-radius: 0;
+  background: #fff;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  transition: transform 0.25s ease;
+}
+
+.home5-page .h3-section a.h3-cta,
+.home5-page .h3-section a.h3-cta * {
+  color: #560002 !important;
+}
+
+.home5-page .h3-section a.h3-cta svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: #560002;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home5-page .h3-section a.h3-cta:hover {
+  transform: translateY(-2px);
+}
+
+.home5-page .h3-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.home5-page .h3-cta-row a.h3-cta {
+  width: 300px;
+}
+
+/* ---------- figures ---------- */
+
+.home5-page .h3-figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: rgb(255 255 255 / 10%);
+}
+
+.home5-page .h3-figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home5-page .h3-figure--book {
+  background: none;
+}
+
+.home5-page .h3-figure--book img {
+  object-fit: cover;
+}
+
+.home5-page .h3-figure--stripes::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(#fff, #fff) 25% 0 / 6px 100% no-repeat,
+    linear-gradient(#fff, #fff) 50% 0 / 6px 100% no-repeat,
+    linear-gradient(#fff, #fff) 75% 0 / 6px 100% no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+/* ---------- split: text and image share one height ---------- */
+
+.home5-page .h3-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--h3-gap);
+  align-items: stretch;
+}
+
+.home5-page .h3-split-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.home5-page .h3-split-text .h3-cta {
+  margin-top: 0;
+}
+
+.home5-page .h3-split .h3-figure {
+  min-height: 380px;
+}
+
+/* ---------- two columns with aligned rows ---------- */
+
+.home5-page .h3-two-ways-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto 1fr auto;
+  column-gap: var(--h3-gap);
+}
+
+.home5-page .h3-way {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 5;
+  align-content: start;
+  padding: 28px;
+  background: #560002;
+}
+
+.home5-page #yoga-nidra .h3-way {
+  background: #650a10;
+}
+
+.home5-page .h3-way .h3-figure {
+  aspect-ratio: 16 / 10;
+  margin-bottom: 24px;
+}
+
+.home5-page .h3-way .h3-number {
+  margin-bottom: 14px;
+}
+
+.home5-page .h3-way .h3-cta {
+  margin-top: 28px;
+}
+
+.home5-page .h3-way-cta {
+  align-self: end;
+}
+
+/* ---------- yoga mama: alternating image / text rows ---------- */
+
+.home5-page .h3-flip-list {
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.home5-page .h3-flip {
+  --flip-bg: #3b0103;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.home5-page .h3-flip--2 {
+  --flip-bg: #6b1a24;
+}
+
+.home5-page .h3-flip--3 {
+  --flip-bg: #7a2230;
+}
+
+.home5-page .h3-flip:nth-child(even) .h3-flip-media {
+  order: 2;
+}
+
+.home5-page .h3-flip-media {
+  position: relative;
+  align-self: start;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: var(--flip-bg);
+}
+
+.home5-page .h3-flip-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home5-page .h3-flip-text {
+  position: relative;
+  display: flex;
+  padding-inline: 50px;
+  background: var(--flip-bg);
+}
+
+.home5-page .h3-flip-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+  width: 100%;
+}
+
+.home5-page .h3-flip-text {
+  align-items: stretch;
+  padding-block: clamp(24px, 3vw, 43px);
+}
+
+.home5-page .h3-flip-inner > h3:first-child {
+  margin-bottom: 17px;
+  font-size: clamp(12px, 1vw, 15px);
+}
+
+.home5-page .h3-flip-inner .h3-copy {
+  max-width: none;
+}
+
+.home5-page .h3-flip-inner .h3-copy p + p {
+  margin-top: 0.84em;
+}
+
+/* title + description sit on top, list/lines settle at the bottom */
+.home5-page .h3-flip-inner > .h3-pillars,
+.home5-page .h3-flip-inner > .h3-duo,
+.home5-page .h3-flip-inner > .h3-cta {
+  margin-top: 32px;
+}
+
+.home5-page .h3-flip-inner > .h3-pillars,
+.home5-page .h3-flip-inner > .h3-duo {
+  width: 100%;
+}
+
+.home5-page .h3-flip-inner > .h3-duo {
+  margin-bottom: 0;
+  padding-top: 24px;
+}
+
+.home5-page .h3-flip-inner > .h3-duo + .h3-copy {
+  margin-top: 17px;
+}
+
+.home5-page .h3-flip-inner .h3-pillars li {
+  padding: 17px 0;
+  border-color: rgb(255 255 255 / 55%);
+}
+
+.home5-page .h3-flip-inner .h3-list {
+  width: 100%;
+  margin: 0.96em 0;
+}
+
+.home5-page .h3-flip-inner .h3-list li {
+  padding: 0.42em 0;
+  border-color: rgb(255 255 255 / 55%);
+}
+
+.home5-page .h3-flip-inner .h3-list li {
+  line-height: 1.2;
+}
+
+.home5-page .h3-flip-side {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+.home5-page .h3-flip-side-title {
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.home5-page .h3-flip-side-rule {
+  width: 1px;
+  height: 58px;
+  background: rgb(255 255 255 / 60%);
+}
+
+.home5-page .h3-pillars {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home5-page .h3-pillars li {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.4fr) 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid rgb(255 255 255 / 35%);
+}
+
+.home5-page .h3-pillars li:last-child {
+  border-bottom: 1px solid rgb(255 255 255 / 35%);
+}
+
+.home5-page .h3-pillars h3 {
+  margin: 0;
+}
+
+.home5-page .h3-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin: 1.4em 0;
+}
+
+.home5-page .h3-duo > div {
+  padding-top: 18px;
+  border-top: 1px solid rgb(255 255 255 / 45%);
+}
+
+.home5-page .h3-list {
+  margin: 0.8em 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home5-page .h3-list li {
+  padding: 0.35em 0;
+  border-top: 1px solid rgb(255 255 255 / 25%);
+  font-size: 22px;
+  line-height: 0.85;
+}
+
+.home5-page .h3-list li:last-child {
+  border-bottom: 1px solid rgb(255 255 255 / 25%);
+}
+
+/* ---------- journal ---------- */
+
+.home5-page .h3-journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 28px);
+  margin-top: clamp(28px, 3vw, 40px);
+}
+
+.home5-page .h3-journal-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.home5-page .h3-journal-card .h3-figure {
+  position: absolute;
+  inset: 0;
+}
+
+.home5-page .h3-journal-card::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(20 0 1 / 65%) 0%, rgb(20 0 1 / 0%) 45%, rgb(20 0 1 / 45%) 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.home5-page .h3-journal-top {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+}
+
+.home5-page .h3-journal-title {
+  display: block;
+  font-size: clamp(20px, 1.6vw, 26px);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.home5-page .h3-journal-card .h3-number {
+  margin-bottom: 10px;
+}
+
+.home5-page .h3-section .h3-journal-btn {
+  position: absolute;
+  z-index: 2;
+  bottom: 24px;
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 0;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #560002 !important;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1000px) {
+  .home5-page .h3-head,
+  .home5-page .h3-split,
+  .home5-page .h3-journal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home5-page .h3-two-ways-grid {
+    display: block;
+  }
+
+  .home5-page .h3-way {
+    display: block;
+    margin-bottom: 48px;
+  }
+
+  .home5-page .h3-flip-list {
+    grid-auto-rows: auto;
+  }
+
+  .home5-page .h3-flip {
+    min-height: 0;
+  }
+
+  .home5-page .h3-flip {
+    grid-template-columns: 1fr;
+  }
+
+  .home5-page .h3-flip:nth-child(even) .h3-flip-media {
+    order: 0;
+  }
+
+  .home5-page .h3-flip-media {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .home5-page .h3-flip-text {
+    padding-inline: 30px;
+  }
+
+  .home5-page .h3-split .h3-figure {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .home5-page .h3-side {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .home5-page .h3-shell {
+    padding-inline: 18px;
+  }
+
+  .home5-page .h3-copy p,
+  .home5-page .h3-head-desc p,
+  .home5-page .h3-pillars p,
+  .home5-page .h3-duo p,
+  .home5-page .h3-list li,
+  .home5-page .h3-journal-label {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .home5-page .h3-pillars li,
+  .home5-page .h3-duo {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.home5-page .h3-flip h3 {
+  font-size: clamp(12px, 1vw, 15px);
+}
+
+/* ---------- full-bleed banner (Ich möchte die Welt verstehen) ---------- */
+
+.home5-page .h3-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #560002;
+  color: #fff;
+}
+
+.home5-page .h3-banner-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 30%;
+}
+
+.home5-page .h3-banner::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgb(20 0 1 / 88%) 0%, rgb(20 0 1 / 55%) 40%, rgb(20 0 1 / 0%) 70%);
+  content: "";
+}
+
+.home5-page .h3-banner-inner {
+  position: relative;
+  z-index: 2;
+  width: min(560px, 100%);
+  margin-left: clamp(24px, 9vw, 140px);
+  padding: 60px 0;
+}
+
+.home5-page .h3-banner h2 {
+  margin: 0 0 24px;
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: #fff !important;
+}
+
+.home5-page .h3-banner-copy p {
+  color: #fff !important;
+}
+
+.home5-page .h3-banner-copy p + p {
+  margin-top: 0.8em;
+}
+
+.home5-page .h3-banner a.h3-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  margin-top: 32px;
+  padding: 0 28px;
+  border-radius: 0;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+}
+
+.home5-page .h3-banner a.h3-banner-btn,
+.home5-page .h3-banner a.h3-banner-btn * {
+  color: #560002 !important;
+}
+
+@media (max-width: 1000px) {
+  .home5-page .h3-banner {
+    min-height: 0;
+  }
+
+  .home5-page .h3-banner::before {
+    background: rgb(20 0 1 / 70%);
+  }
+
+  .home5-page .h3-banner-inner {
+    margin-inline: 24px;
+  }
+}
+
+/* ---------- nadja: heading + copy left, image right (top aligned) ---------- */
+
+.home5-page .h3-nadja-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--h3-gap);
+  align-items: start;
+}
+
+.home5-page .h3-nadja-text .section-heading-with-motif {
+  align-items: center;
+  margin-bottom: clamp(24px, 2.5vw, 36px);
+}
+
+.home5-page .h3-nadja-grid .h3-figure {
+  align-self: stretch;
+  min-height: 420px;
+}
+
+@media (max-width: 1000px) {
+  .home5-page .h3-nadja-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home5-page .h3-nadja-grid .h3-figure {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Victor Narrow text: normal weight, uppercase */
+.home5-page h1,
+.home5-page h2,
+.home5-page h3,
+.home5-page h4,
+.home5-page strong,
+.home5-page .hero-nadja-brand {
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+}
+
+/* reviews: bottom meta sits right under the dots + arrows, curve removed */
+.home5-page .reviews-controls + .reviews-bottom-meta {
+  margin-top: 24px;
+  justify-content: space-between;
+}
+
+.home5-page .reviews-controls + .reviews-bottom-meta .reviews-bottom-line {
+  flex: 1 1 auto;
+  width: auto;
+}
+
+.home5-page .reviews-panel-curve {
+  display: none !important;
+}
+
+.home5-page .header-nav-cta {
+  border-radius: 0 !important;
+}
+
+/* ---------- hero: ANGEBOTE button, bottom right ---------- */
+
+.home5-page .hero-offers-btn {
+  position: absolute;
+  z-index: 6;
+  right: clamp(18px, 2.4vw, 36px);
+  bottom: clamp(18px, 2.4vw, 36px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 8px 28px;
+  border-radius: 0;
+  background: #fff;
+  color: #560002 !important;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.home5-page .hero-offers-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- two ways in: premium cards ---------- */
+
+.home5-page #two-ways .h3-two-ways-grid {
+  column-gap: clamp(20px, 2.5vw, 36px);
+}
+
+.home5-page #two-ways .h3-way {
+  padding: 0;
+  background: #650a10;
+  grid-template-rows: auto 1fr auto;
+  grid-row: span 3;
+}
+
+.home5-page #two-ways .h3-way .h3-figure {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.home5-page #two-ways .h3-way-body {
+  padding: clamp(28px, 3vw, 48px) clamp(28px, 3.4vw, 54px) 0;
+}
+
+.home5-page #two-ways .h3-way .h3-number {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgb(255 255 255 / 40%);
+  font-size: 11px;
+}
+
+.home5-page #two-ways .h3-way h3 {
+  min-height: 2.4em;
+  margin: 0 0 22px;
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+}
+
+.home5-page #two-ways .h3-way .h3-copy p {
+  line-height: 1.05 !important;
+  opacity: 0.92;
+}
+
+.home5-page #two-ways .h3-way .h3-copy p + p {
+  margin-top: 1em;
+}
+
+.home5-page #two-ways .h3-way-cta {
+  padding: 28px clamp(28px, 3.4vw, 54px) clamp(28px, 3vw, 48px);
+}
+
+.home5-page #two-ways .h3-way .h3-cta {
+  margin-top: 0;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .home5-page #two-ways .h3-way {
+    margin-bottom: 20px;
+  }
+}
+
+.home5-page .reviews-image-window,
+.home5-page .reviews-image-window * {
+  border-radius: 0 !important;
+}
+
+.home5-page .newsletter-form,
+.home5-page .newsletter-submit {
+  border-radius: 0 !important;
+}
+
+.home5-page .newsletter-form input,
+.home5-page .newsletter-form input::placeholder,
+.home5-page .newsletter-submit {
+  font-family: var(--font-title) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+}
+
+.home5-page .newsletter-field,
+.home5-page .newsletter-field * {
+  font-family: var(--font-title) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+}
+
+.home5-page .newsletter-form-label,
+.home5-page .newsletter p.newsletter-form-label {
+  font-family: var(--font-title) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+}
+
+@media (min-width: 1001px) {
+  .home5-page .header-nav a,
+  .home5-page .header-nav button {
+    font-weight: 400 !important;
+    font-size: 18px !important;
+  }
+}
+
+/* Two Ways In: poster cards modelled on home2 offers (no hover) */
+.home5-page .h3-posters{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+.home5-page .h3-poster{position:relative;overflow:hidden;background:#430507;min-height:720px;container-type:inline-size;text-align:center}
+.home5-page .h3-poster-cat{position:absolute;top:34px;left:7%;width:86%;font-size:10px;letter-spacing:.16em;line-height:1.5;text-transform:uppercase;color:#fff6f2!important}
+.home5-page .h3-poster h3{position:absolute;top:66px;left:5%;width:90%;margin:0;font-size:clamp(34px,10cqw,56px);line-height:.95;letter-spacing:.01em;color:#fff6f2!important;z-index:3}
+.home5-page .h3-poster--mama h3{color:#ff5955!important}
+.home5-page .h3-poster-media{position:absolute;margin:0;background:#242323}
+.home5-page .h3-poster-media img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);display:block}
+.home5-page .h3-poster--mama .h3-poster-media{left:50%;top:25%;width:62%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;box-shadow:0 0 20px 7px #e62f35a8;overflow:hidden}
+.home5-page .h3-poster--mama .h3-poster-media img{object-position:left center}
+.home5-page .h3-poster--nidra .h3-poster-media{inset:0}
+.home5-page .h3-poster--nidra::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#000a,transparent 40%,#111 85%);pointer-events:none;z-index:1}
+.home5-page .h3-poster-orbit{position:absolute;z-index:2;width:80%;left:10%;top:25%;overflow:visible;pointer-events:none}
+.home5-page .h3-poster-orbit text{fill:#fff6f2;font-family:var(--font-title);font-size:12px;letter-spacing:1px}
+.home5-page .h3-poster p{position:absolute;z-index:3;left:9%;bottom:100px;width:82%;margin:0;font-family:var(--font-title)!important;font-size:clamp(20px,5.2cqw,28px)!important;line-height:1.1!important;text-transform:uppercase;color:#fff6f2!important}
+.home5-page .h3-poster--mama p{color:#ffc1b9!important}
+.home5-page .h3-poster-link{position:absolute;z-index:3;left:12%;bottom:30px;width:76%;min-height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 4px;border-bottom:1px solid #edb7b5;font-size:11px;letter-spacing:.16em;color:#fff6f2!important;text-decoration:none}
+.home5-page .h3-poster-link *{color:#fff6f2!important}
+.home5-page .h3-poster-link svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+@media (max-width:800px){.home5-page .h3-posters{grid-template-columns:1fr}.home5-page .h3-poster{min-height:640px}}
+
+.home5-page .h3-poster{min-height:780px}
+.home5-page .h3-poster--mama .h3-poster-media,.home5-page .h3-poster--mama .h3-poster-media img{border-radius:50%!important}
+.home5-page .h3-poster--mama .h3-poster-media{width:56%;top:26%}
+.home5-page .h3-poster-orbit{width:68%;left:16%;top:25%}
+.home5-page .h3-poster p{font-size:clamp(18px,4.4cqw,24px)!important;bottom:104px}
+
+.home5-page .h3-poster-orbit{width:60%;left:20%;top:24%}
+.home5-page .h3-poster--mama .h3-poster-media{width:50%;top:calc(24% + 20px)}
+
+.home5-page .h3-poster{min-height:0;aspect-ratio:.66}
+.home5-page .h3-poster-orbit{top:21%}
+.home5-page .h3-poster--mama .h3-poster-media{top:calc(21% + 20px)}
+
+.home5-page .h3-poster{aspect-ratio:.74}
+
+/* Compact posters (~40% shorter) */
+.home5-page .h3-poster{aspect-ratio:auto;height:445px;min-height:0}
+.home5-page .h3-poster-cat{top:22px}
+.home5-page .h3-poster h3{top:44px;font-size:clamp(32px,8cqw,46px)}
+.home5-page .h3-poster-orbit{width:190px;left:50%;top:112px;transform:translateX(-50%)}
+.home5-page .h3-poster--mama .h3-poster-media{width:112px;top:151px}
+.home5-page .h3-poster p{bottom:82px}
+.home5-page .h3-poster-link{bottom:20px;min-height:40px}
+@media (max-width:800px){.home5-page .h3-poster{height:460px}}
+
+.home5-page .h3-poster-orbit{width:170px;top:104px}
+.home5-page .h3-poster--mama .h3-poster-media{width:100px;top:139px}
+
+.home5-page .h3-poster-orbit{width:190px;top:98px}
+.home5-page .h3-poster--mama .h3-poster-media{width:124px;top:131px}
+
+/* ===== HOME4: Yoga Mama tabbed full-viewport rows ===== */
+.home5-page #yoga-mama{overflow-x:clip}
+.home5-page #yoga-mama .h3-side{display:none}
+.home5-page .h4-rows{width:100vw;margin-left:calc(50% - 50vw);margin-top:clamp(40px,5vw,72px)}
+.home5-page .h4-row{position:sticky;top:0;height:100vh;min-height:620px;display:grid;grid-template-columns:42% 58%;background:#560002;box-shadow:0 -30px 60px rgba(0,0,0,.35);border-top:1px solid rgba(255,255,255,.12);overflow:hidden}
+.home5-page .h4-left{display:flex;flex-direction:column;justify-content:space-between;padding:112px clamp(32px,3.4vw,64px) 48px clamp(32px,3.4vw,64px);min-height:0}
+.home5-page .h4-top,.home5-page .h4-bottom{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+.home5-page .h4-row.is-in .h4-top{opacity:1;transform:none}
+.home5-page .h4-row.is-in .h4-bottom{opacity:1;transform:none;transition-delay:.25s}
+.home5-page .h4-count{display:block;margin-bottom:22px;font-family:var(--font-title);font-size:13px;letter-spacing:.3em;opacity:.55}
+.home5-page .h4-row-title{margin:0 0 14px;max-width:26ch;font-size:clamp(15px,1.15vw,19px)!important;line-height:1.25!important;letter-spacing:.1em}
+.home5-page .h4-row-intro{margin:0 0 30px;max-width:46ch;font-size:19px!important;line-height:1.1!important;opacity:.75}
+.home5-page .h4-tabs{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-top:26px}
+.home5-page .h4-tab{display:flex;align-items:baseline;gap:12px;padding:3px 0;border:0;background:none;cursor:pointer;font-family:var(--font-title);font-weight:400;text-transform:uppercase;font-size:clamp(22px,2.1vw,34px);line-height:1.05;letter-spacing:.04em;color:#fff!important;opacity:.32;position:relative;transition:opacity .4s ease,transform .5s cubic-bezier(.2,.8,.2,1),letter-spacing .5s ease}
+.home5-page .h4-tab *{color:#fff!important}
+.home5-page .h4-tab:hover{opacity:.7;transform:translateX(8px)}
+.home5-page .h4-tab.is-active{opacity:1;transform:translateX(18px);letter-spacing:.09em}
+.home5-page .h4-tab-n{font-size:12px;letter-spacing:.2em;opacity:.7;min-width:22px}
+.home5-page .h4-tab-t{position:relative}
+.home5-page .h4-tab-t::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.home5-page .h4-tab.is-active .h4-tab-t::after{transform:scaleX(1)}
+.home5-page .h4-panels{display:grid;max-width:34em}
+.home5-page .h4-panel{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(24px);filter:blur(6px)}
+.home5-page .h4-panel.is-active{visibility:visible;animation:h4-text-in .9s cubic-bezier(.2,.8,.2,1) .15s both}
+.home5-page .h4-panel p{margin:0;font-size:clamp(22px,1.9vw,28px)!important;line-height:1.12!important}
+@keyframes h4-text-in{from{opacity:0;transform:translateY(24px);filter:blur(6px);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;filter:blur(0);clip-path:inset(0 0 0 0)}}
+.home5-page .h4-bottom .h3-cta{margin-top:30px}
+.home5-page .h4-right{position:relative;padding:92px 28px 28px 0}
+.home5-page .h4-media{position:relative;width:100%;height:100%;overflow:hidden;background:#3b0103;transform:translate(var(--px,0),var(--py,0));transition:transform .8s cubic-bezier(.2,.8,.2,1);clip-path:inset(0 0 0 100%)}
+.home5-page .h4-row.is-in .h4-media{clip-path:inset(0 0 0 0);transition:transform .8s cubic-bezier(.2,.8,.2,1),clip-path 1.3s cubic-bezier(.77,0,.18,1)}
+.home5-page .h4-img{position:absolute;inset:-22px;width:calc(100% + 44px);height:calc(100% + 44px);object-fit:cover;clip-path:inset(100% 0 0 0);transform:scale(1.18)}
+.home5-page .h4-img.is-prev{clip-path:inset(0);transform:scale(1)}
+.home5-page .h4-img.is-active{clip-path:inset(0);transform:scale(1);transition:clip-path 1s cubic-bezier(.77,0,.18,1),transform 1.6s cubic-bezier(.2,.8,.2,1)}
+@media (max-width:1000px){
+  .home5-page .h4-row{position:relative;height:auto;grid-template-columns:1fr}
+  .home5-page .h4-right{order:-1;height:56vh;padding:80px 20px 0}
+  .home5-page .h4-left{padding:28px 24px 48px;gap:28px}
+}
+@media (prefers-reduced-motion:reduce){.home5-page .h4-panel.is-active{animation:none;opacity:1;filter:none}.home5-page .h4-img,.home5-page .h4-media{transition:none!important}}
+
+.home5-page .h4-tab,.home5-page .h4-tab *{font-family:var(--font-title)!important;font-weight:400!important;text-transform:uppercase!important}
+.home5-page .h4-count{font-family:var(--font-title)!important}
+
+/* ===== HOME4: simplified rows (static list, one image) ===== */
+.home5-page .h4-left{padding-top:104px;padding-bottom:40px}
+.home5-page .h4-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.35)}
+.home5-page .h4-list li{display:grid;grid-template-columns:34px minmax(110px,150px) 1fr;column-gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.35)}
+.home5-page .h4-item-n{font-family:var(--font-title);font-size:12px;letter-spacing:.2em;opacity:.65;padding-top:4px}
+.home5-page .h4-list h4{margin:0;font-size:clamp(17px,1.4vw,22px)!important;letter-spacing:.06em;line-height:1.1}
+.home5-page .h4-list p{margin:0;font-size:clamp(16px,1.15vw,19px)!important;line-height:1.12!important}
+.home5-page .h4-bottom .h3-cta{margin-top:24px}
+.home5-page .h4-img{clip-path:none;transform:scale(1.04);transition:transform 1.8s cubic-bezier(.2,.8,.2,1)}
+.home5-page .h4-row.is-in .h4-img{transform:scale(1)}
+
+/* HOME4: full-height image, tighter top, lifted bottom, no item numbers */
+.home5-page .h4-right{padding:0!important}
+.home5-page .h4-left{padding-top:84px!important;padding-bottom:88px!important}
+.home5-page .h4-item-n{display:none!important}
+.home5-page .h4-list li{grid-template-columns:minmax(110px,150px) 1fr!important}
+.home5-page .h4-row-intro{margin-bottom:18px}
+@media (max-width:1000px){.home5-page .h4-right{padding:0!important}.home5-page .h4-left{padding:28px 24px 48px!important}}
+.home5-page .h4-row{border-top:0!important}
+.home5-page .h4-media{transform:none!important;top:0!important}
+.home5-page .h4-img{top:0!important}
+.home5-page .h4-img{transform:none!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover}
+.home5-page .h3-journal-grid + .h3-cta{display:flex!important;width:fit-content;margin-left:auto!important;margin-right:auto!important}

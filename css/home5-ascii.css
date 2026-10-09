@@ -1,0 +1,126 @@
+﻿/* HOME5: ASCII / signal-on-black. Brand fonts only. */
+.home5-page{--hot:#ff4a3d;--ink:#090001;--tf:var(--font-title),"Arial Narrow",sans-serif;background:var(--ink)!important;overflow-x:clip;counter-reset:sec}
+.home5-page .a5-field{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
+.home5-page main{position:relative;z-index:1;background:transparent!important}
+.home5-page ::selection{background:var(--hot);color:var(--ink)}
+
+/* strip the old decoration */
+.home5-page .h3-side,.home5-page .section-orbit,.home5-page .h3-poster-orbit{display:none!important}
+.home5-page .h3-section{background:transparent!important;background-image:none!important;position:relative;counter-increment:sec;overflow-x:clip;padding-top:clamp(90px,12vw,190px)!important;padding-bottom:clamp(70px,9vw,140px)!important}
+.home5-page .h3-section::before,.home5-page .h3-section::after{content:none}
+
+/* giant ghost section index, outlined */
+.home5-page .h3-section>.h3-shell::before{content:"/" counter(sec,decimal-leading-zero);position:absolute;right:-1vw;top:-.18em;font:400 clamp(180px,28vw,460px)/.8 var(--tf);color:transparent;-webkit-text-stroke:1.5px rgba(255,74,61,.35);pointer-events:none;z-index:0;letter-spacing:-.04em}
+.home5-page .h3-shell>*{position:relative;z-index:1}
+
+/* headlines: uppercase, restrained size, outlined on a few */
+.home5-page .h3-head{display:block!important;margin-bottom:clamp(40px,5vw,80px)!important}
+.home5-page .h3-head .section-heading-with-motif{display:block!important}
+.home5-page .h3-section h2{font-family:var(--tf)!important;font-size:clamp(28px,2.6vw,44px)!important;line-height:.95!important;letter-spacing:.01em!important;text-transform:uppercase!important;font-weight:400!important;margin:0!important;max-width:22ch;color:#fff!important}
+.home5-page .h3-section h2::after{content:"_";color:var(--hot);margin-left:.06em;animation:a5-blink 1s steps(1) infinite}
+@keyframes a5-blink{50%{opacity:0}}
+.home5-page #two-ways h2,.home5-page #book h2,.home5-page #mothering-the-mother h2{-webkit-text-fill-color:transparent;-webkit-text-stroke:1.2px var(--hot)}
+.home5-page .h3-head-desc{margin:24px 0 0 auto!important;max-width:440px;border-left:4px solid var(--hot);padding-left:20px}
+.home5-page .h3-head-desc p{font-size:21px!important;line-height:.95!important;text-transform:none}
+.home5-page .h3-head-desc p::before{content:">> ";color:var(--hot)}
+
+/* images: normal photos, ASCII on hover */
+.home5-page .h3-figure,.home5-page .h3-poster-media,.home5-page .h3-figure img{border-radius:0!important}
+.home5-page .h3-figure{clip-path:polygon(0 0,calc(100% - 38px) 0,100% 38px,100% 100%,38px 100%,0 calc(100% - 38px))}
+.home5-page .h3-nadja-grid .h3-figure{transform:translateY(40px)}
+.home5-page .ascii-canvas{position:absolute;z-index:2;pointer-events:none;opacity:0;transition:opacity .45s ease}
+.home5-page .ascii-host:hover .ascii-canvas{opacity:1}
+.home5-page .ascii-host{cursor:crosshair}
+
+/* staggered, off-grid layouts */
+.home5-page .h3-posters{gap:clamp(32px,4vw,64px)!important}
+.home5-page .h3-poster{border-radius:0!important;border:0!important;clip-path:polygon(0 0,calc(100% - 44px) 0,100% 44px,100% 100%,44px 100%,0 calc(100% - 44px))}
+.home5-page .h3-poster+.h3-poster{margin-top:110px}
+.home5-page .h3-two-ways-grid>.h3-way+.h3-way{margin-top:140px}
+.home5-page .h3-journal-grid>*:nth-child(2){margin-top:90px}
+.home5-page .h3-journal-grid>*:nth-child(3){margin-top:180px}
+.home5-page .h3-journal-card{border:0!important;border-radius:0!important;background:rgba(255,74,61,.07)!important}
+.home5-page .h3-split-text{border:0!important;border-left:4px solid var(--hot)!important;padding-left:28px!important}
+
+/* type details */
+.home5-page .h3-number,.home5-page .h4-count{font-family:var(--tf)!important;color:var(--hot)!important;letter-spacing:.14em}
+.home5-page .h3-number::before,.home5-page .h4-count::before{content:"[ "}
+.home5-page .h3-number::after,.home5-page .h4-count::after{content:" ]"}
+.home5-page .h3-copy p,.home5-page .h4-list p{text-transform:none}
+
+/* buttons: hot slab, command-line label */
+.home5-page .h3-cta,.home5-page .h3-banner-btn,.home5-page .h3-journal-btn,.home5-page .h3-poster-link{border-radius:0!important;background:var(--hot)!important;border:0!important;padding:16px 26px!important;box-shadow:7px 7px 0 rgba(255,255,255,.9);transition:transform .2s,box-shadow .2s}
+.home5-page .h3-cta *,.home5-page .h3-cta,.home5-page .h3-banner-btn *,.home5-page .h3-banner-btn,.home5-page .h3-journal-btn,.home5-page .h3-poster-link,.home5-page .h3-poster-link *{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;font-family:var(--tf)!important;font-weight:400!important;letter-spacing:.1em}
+.home5-page .h3-cta svg,.home5-page .h3-poster-link svg{display:none!important}
+.home5-page .h3-cta span::before{content:"> "}
+.home5-page .h3-cta span::after{content:"_";animation:a5-blink 1s steps(1) infinite}
+.home5-page .h3-cta:hover{transform:translate(7px,7px);box-shadow:0 0 0 #fff}
+
+/* ticker tape */
+.home5-page .a5-ticker{position:relative;z-index:6;width:110vw;margin:0 -5vw;overflow:hidden;white-space:nowrap;padding:.16em 0;transform:rotate(-2.2deg);font:400 clamp(44px,7vw,110px)/1 var(--tf);text-transform:uppercase;pointer-events:none;border-block:3px solid var(--hot)}
+.home5-page .a5-ticker--rev{transform:rotate(1.8deg)}
+.home5-page .a5-ticker--solid{background:var(--hot);color:var(--ink)}
+.home5-page .a5-ticker--line{background:var(--ink);color:transparent;-webkit-text-stroke:1.5px var(--hot)}
+.home5-page .a5-track{display:inline-flex;animation:a5-run 38s linear infinite}
+.home5-page .a5-ticker--rev .a5-track{animation-direction:reverse}
+.home5-page .a5-track span{padding-right:.4em}
+@keyframes a5-run{to{transform:translateX(-50%)}}
+
+/* gauge */
+.home5-page .a5-hud{position:fixed;right:22px;bottom:18px;z-index:50;font:400 17px/1 var(--tf);letter-spacing:.14em;color:var(--hot);background:var(--ink);padding:9px 12px;border:1px solid var(--hot);opacity:0;transform:translateY(14px);transition:.4s;pointer-events:none}
+.home5-page .a5-hud.is-on{opacity:1;transform:none}
+
+/* yoga mama sticky rows on black */
+.home5-page .h4-row{background:var(--ink)!important;border-top:3px solid var(--hot)!important}
+.home5-page .h4-row-title{font-family:var(--tf)!important;font-size:clamp(22px,2vw,34px)!important;line-height:.95!important;max-width:16ch}
+.home5-page .h4-list{border:0!important;border-top:2px solid var(--hot)!important}
+.home5-page .h4-list li{border:0!important;border-bottom:2px solid var(--hot)!important}
+.home5-page .h4-list h4{color:var(--hot)!important}
+.home5-page .h3-banner{position:relative;z-index:2}
+
+@media (max-width:1000px){
+  .home5-page .h3-poster+.h3-poster,.home5-page .h3-two-ways-grid>.h3-way+.h3-way,.home5-page .h3-journal-grid>*:nth-child(n){margin-top:0}
+  .home5-page .h3-head-desc{margin-left:0!important}
+}
+@media (prefers-reduced-motion:reduce){.home5-page .a5-track,.home5-page .h3-section h2::after,.home5-page .h3-cta span::after{animation:none}}
+
+/* burgundy / red section backgrounds instead of black */
+.home5-page{background:#560002!important}
+.home5-page .h3-section--burgundy{background:#560002!important;--hot:#ff4a3d}
+.home5-page .h3-section--red{background:#ff1f1f!important;--hot:#fff}
+.home5-page .h3-section--red .h3-cta,.home5-page .h3-section--red .h3-cta *{color:#560002!important;-webkit-text-fill-color:#560002!important}
+.home5-page .h3-section--red>.h3-shell::before{-webkit-text-stroke-color:rgba(255,255,255,.4)}
+.home5-page .h4-row{background:#560002!important}
+.home5-page .a5-ticker--line{background:#560002}
+.home5-page .a5-hud{background:#560002}
+.home5-page .a5-ticker--solid{background:#ff4a3d;color:#560002}
+.home5-page .h3-journal-card{background:rgba(0,0,0,.18)!important}
+
+/* let the ASCII shade field show through the section colours */
+.home5-page .h3-section--burgundy{background:rgba(86,0,2,.72)!important}
+.home5-page .h3-section--red{background:rgba(255,31,31,.78)!important}
+.home5-page .h4-row{background:rgba(86,0,2,.8)!important}
+
+/* stronger shade field through sections and columns */
+.home5-page .h3-section--burgundy{background:rgba(86,0,2,.38)!important}
+.home5-page .h3-section--red{background:rgba(255,31,31,.42)!important}
+.home5-page .h4-row{background:rgba(86,0,2,.5)!important}
+.home5-page .h3-section [class*="card"],.home5-page .h3-section [class*="col"],.home5-page .h3-section [class*="panel"]{background-color:rgba(60,0,2,.35)!important}
+
+/* sticky rows must be opaque so they cover the previous row */
+.home5-page .h4-row{background:#560002!important}
+.home5-page .ascii-canvas{display:none!important}
+.home5-page .ascii-host{cursor:auto}
+
+/* one button style everywhere: coral slab, burgundy text */
+.home5-page .h3-section--red .h3-cta,.home5-page .h3-section--burgundy .h3-cta,.home5-page .h3-cta{background:#ff4a3d!important}
+.home5-page .hero-offers-btn{background:#ff4a3d!important;color:#560002!important;border-radius:0!important;box-shadow:7px 7px 0 rgba(255,255,255,.9)}
+
+/* circular statement text in the two ways posters */
+.home5-page .a5-hud{display:none!important}
+.home5-page #two-ways .h3-poster{height:660px!important;min-height:0!important;aspect-ratio:auto!important}
+.home5-page #two-ways .h3-poster p{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.home5-page #two-ways .h3-poster-ring{position:absolute;z-index:3;left:50%;top:110px;width:min(440px,86%);transform:translateX(-50%);overflow:visible;pointer-events:none}
+.home5-page #two-ways .h3-poster-ring text{fill:#fff6f2;font-family:var(--font-title);font-size:23px;letter-spacing:1px;text-transform:uppercase}
+.home5-page #two-ways .h3-poster--mama .h3-poster-ring text{fill:#ffc1b9}
+.home5-page #two-ways .h3-poster--mama .h3-poster-media{width:236px!important;top:212px!important}
