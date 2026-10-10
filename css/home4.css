@@ -14,6 +14,26 @@ body.home4-page .hero-slide-button {
   -webkit-clip-path: none !important;
 }
 
+.home4-page .hero-slider {
+  left: var(--page-x);
+}
+
+@media (min-width:1001px){
+  .home4-page .hero-nadja-content strong{
+    font-size:clamp(40px,2.9vw,50px)!important;
+  }
+
+  .home4-page .hero-nadja-brand{
+    font-size:20.8px!important;
+  }
+
+  .home4-page .hero-nadja-rule{
+    width:1px;
+    min-height:0;
+    border-radius:0;
+  }
+}
+
 /* ---------- section frame (identical width + padding everywhere) ---------- */
 
 .home4-page .h3-section {
@@ -70,17 +90,14 @@ body.home4-page .hero-slide-button {
 }
 
 .home4-page .h3-side-title {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   white-space: nowrap;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-}
-
-.home4-page .h3-side--left .h3-side-title {
-  transform: rotate(180deg);
+  transform: rotate(180deg)!important;
 }
 
 .home4-page .h3-side-rule {
@@ -424,13 +441,13 @@ body.home4-page .hero-slide-button {
 }
 
 .home4-page .h3-flip-side-title {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   white-space: nowrap;
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  transform: rotate(180deg)!important;
 }
 
 .home4-page .h3-flip-side-rule {
@@ -764,7 +781,106 @@ body.home4-page .hero-slide-button {
   text-transform: uppercase !important;
 }
 
+.home4-page .hero-nadja-brand{
+  font-family:var(--font)!important;
+  font-weight:300!important;
+  text-transform:uppercase!important;
+}
+
 /* reviews: bottom meta sits right under the dots + arrows, curve removed */
+.home4-page #reviews {
+  --section-background: #ff1f1f;
+}
+
+.home4-page #womb-heart{
+  background-color:#FFAAAA!important;
+  --palette-motif:#FFAAAA;
+}
+
+.home4-page #reviews .reviews-section-heading{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--h3-gap,clamp(32px,5vw,72px));
+  align-items:center;
+  margin-top:clamp(24px,3vw,40px);
+}
+
+.home4-page #reviews .reviews-section-heading h2{
+  margin:0;
+  color:#fff!important;
+  font-size:clamp(24px,2vw,30px);
+  line-height:1.05;
+  letter-spacing:.02em;
+}
+
+.home4-page #reviews .reviews-section-heading p{
+  margin:0;
+  color:#fff!important;
+  font-size:22px!important;
+  line-height:1.2!important;
+}
+
+@media (min-width:1051px){
+  .home4-page #reviews .reviews-section-heading{
+    width:60%;
+    margin-right:auto;
+    margin-left:auto;
+  }
+}
+
+.home4-page #reviews .reviews-main{
+  margin-top:clamp(24px,3vw,40px);
+}
+
+.home4-page #reviews .review-author strong{
+  font-size:13px;
+  letter-spacing:.12em;
+}
+
+.home4-page #reviews .review-author span{
+  font-size:12px;
+  letter-spacing:.1em;
+}
+
+.home4-page #reviews .review-slide blockquote p{
+  font-size:clamp(21px,calc(1.8vw + 2px),27px);
+}
+
+.home4-page #reviews .review-author{
+  border-top-color:#fff;
+}
+
+.home4-page #reviews .reviews-visual-index .section-side-title{
+  color:#fff!important;
+  font-size:10px;
+  letter-spacing:.2em;
+  transform:rotate(180deg)!important;
+}
+
+.home4-page #reviews .reviews-visual-index .section-side-rule--right{
+  background:#fff;
+}
+
+@media (max-width:1050px){
+  .home4-page #reviews .review-slide blockquote p{
+    font-size:clamp(20px,calc(1.9vw + 2px),25px);
+  }
+}
+
+@media (max-width:620px){
+  .home4-page #reviews .review-slide blockquote p{
+    font-size:21px;
+  }
+
+  .home4-page #reviews .review-author strong{
+    font-size:12px;
+  }
+
+  .home4-page #reviews .review-author span{
+    font-size:11px;
+  }
+}
+
 .home4-page .reviews-controls + .reviews-bottom-meta {
   margin-top: 24px;
   justify-content: space-between;
@@ -963,7 +1079,7 @@ body.home4-page .hero-slide-button {
 .home4-page .h3-poster--mama .h3-poster-media{width:124px;top:131px}
 
 /* ===== HOME4: Yoga Mama tabbed full-viewport rows ===== */
-.home4-page #yoga-mama{overflow-x:clip}
+.home4-page #yoga-mama{overflow-x:clip;padding-bottom:0}
 .home4-page #yoga-mama .h3-side{display:none}
 .home4-page .h4-rows{width:100vw;margin-left:calc(50% - 50vw);margin-top:clamp(40px,5vw,72px)}
 .home4-page .h4-row{position:sticky;top:0;height:100vh;min-height:620px;display:grid;grid-template-columns:42% 58%;background:#560002;box-shadow:0 -30px 60px rgba(0,0,0,.35);border-top:1px solid rgba(255,255,255,.12);overflow:hidden}
@@ -973,7 +1089,7 @@ body.home4-page .hero-slide-button {
 .home4-page .h4-row.is-in .h4-bottom{opacity:1;transform:none;transition-delay:.25s}
 .home4-page .h4-count{display:block;margin-bottom:22px;font-family:var(--font-title);font-size:13px;letter-spacing:.3em;opacity:.55}
 .home4-page .h4-row-title{margin:0 0 14px;max-width:26ch;font-size:clamp(15px,1.15vw,19px)!important;line-height:1.25!important;letter-spacing:.1em}
-.home4-page .h4-row-intro{margin:0 0 30px;max-width:46ch;font-size:19px!important;line-height:1.1!important;opacity:.75}
+.home4-page .h4-row-intro{margin:0 0 30px;max-width:46ch;font-size:19px!important;line-height:1.2!important;opacity:.75}
 .home4-page .h4-tabs{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-top:26px}
 .home4-page .h4-tab{display:flex;align-items:baseline;gap:12px;padding:3px 0;border:0;background:none;cursor:pointer;font-family:var(--font-title);font-weight:400;text-transform:uppercase;font-size:clamp(22px,2.1vw,34px);line-height:1.05;letter-spacing:.04em;color:#fff!important;opacity:.32;position:relative;transition:opacity .4s ease,transform .5s cubic-bezier(.2,.8,.2,1),letter-spacing .5s ease}
 .home4-page .h4-tab *{color:#fff!important}
@@ -986,7 +1102,7 @@ body.home4-page .hero-slide-button {
 .home4-page .h4-panels{display:grid;max-width:34em}
 .home4-page .h4-panel{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(24px);filter:blur(6px)}
 .home4-page .h4-panel.is-active{visibility:visible;animation:h4-text-in .9s cubic-bezier(.2,.8,.2,1) .15s both}
-.home4-page .h4-panel p{margin:0;font-size:clamp(22px,1.9vw,28px)!important;line-height:1.12!important}
+.home4-page .h4-panel p{margin:0;font-size:clamp(22px,1.9vw,28px)!important;line-height:1.2!important}
 @keyframes h4-text-in{from{opacity:0;transform:translateY(24px);filter:blur(6px);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;filter:blur(0);clip-path:inset(0 0 0 0)}}
 .home4-page .h4-bottom .h3-cta{margin-top:30px}
 .home4-page .h4-right{position:relative;padding:92px 28px 28px 0}
@@ -1011,7 +1127,7 @@ body.home4-page .hero-slide-button {
 .home4-page .h4-list li{display:grid;grid-template-columns:34px minmax(110px,150px) 1fr;column-gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.35)}
 .home4-page .h4-item-n{font-family:var(--font-title);font-size:12px;letter-spacing:.2em;opacity:.65;padding-top:4px}
 .home4-page .h4-list h4{margin:0;font-size:clamp(17px,1.4vw,22px)!important;letter-spacing:.06em;line-height:1.1}
-.home4-page .h4-list p{margin:0;font-size:clamp(16px,1.15vw,19px)!important;line-height:1.12!important}
+.home4-page .h4-list p{margin:0;font-size:clamp(18px,calc(1.15vw + 2px),21px)!important;line-height:1.2!important}
 .home4-page .h4-bottom .h3-cta{margin-top:24px}
 .home4-page .h4-img{clip-path:none;transform:scale(1.04);transition:transform 1.8s cubic-bezier(.2,.8,.2,1)}
 .home4-page .h4-row.is-in .h4-img{transform:scale(1)}
@@ -1028,3 +1144,342 @@ body.home4-page .hero-slide-button {
 .home4-page .h4-img{top:0!important}
 .home4-page .h4-img{transform:none!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover}
 .home4-page .h3-journal-grid + .h3-cta{display:flex!important;width:fit-content;margin-left:auto!important;margin-right:auto!important}
+
+@media (min-width:1001px){
+  body.home4-page p{line-height:1.2!important}
+}
+
+/* HOME4: consistent Home5-style slab buttons */
+.home4-page .h3-cta,
+.home4-page .h3-banner-btn,
+.home4-page .h3-journal-btn,
+.home4-page .h3-poster-link,
+.home4-page .hero-offers-btn{
+  border:0!important;
+  border-radius:0!important;
+  background:#ff4a3d!important;
+  padding:16px 26px!important;
+  box-shadow:7px 7px 0 rgba(255,255,255,.9);
+  color:#560002!important;
+  -webkit-text-fill-color:#560002!important;
+  font-family:var(--font-title)!important;
+  font-weight:400!important;
+  letter-spacing:.1em!important;
+  text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+}
+
+.home4-page .h3-cta *,
+.home4-page .h3-banner-btn *,
+.home4-page .h3-journal-btn *,
+.home4-page .h3-poster-link *,
+.home4-page .hero-offers-btn *{
+  color:#560002!important;
+  -webkit-text-fill-color:#560002!important;
+  font-family:var(--font-title)!important;
+  font-weight:400!important;
+  letter-spacing:.1em!important;
+}
+
+.home4-page .h3-cta svg,
+.home4-page .h3-poster-link svg{
+  display:none!important;
+}
+
+.home4-page .h3-cta span::before{content:"> "}
+.home4-page .h3-cta span::after{content:"_"}
+
+.home4-page .h3-cta:hover,
+.home4-page .h3-banner-btn:hover,
+.home4-page .h3-journal-btn:hover,
+.home4-page .h3-poster-link:hover,
+.home4-page .hero-offers-btn:hover{
+  transform:translate(7px,7px);
+  box-shadow:0 0 0 #fff;
+}
+
+/* Compact combined Womb & Heart and newsletter section */
+.home4-page #womb-heart{
+  padding-block:clamp(36px,4vw,56px);
+}
+
+.home4-page #womb-heart .h3-head{
+  margin-bottom:clamp(24px,3vw,40px);
+}
+
+.home4-page #womb-heart .h3-head-desc{
+  justify-self:end;
+  text-align:right;
+}
+
+.home4-page #book{
+  padding-block:clamp(32px,3.5vw,48px);
+}
+
+.home4-page #book .h3-shell{
+  width:calc(100% - 48px);
+  max-width:1120px;
+  padding-inline:0;
+}
+
+.home4-page #book .h3-side--left{
+  left:calc(clamp(14px, 2vw, 25px) - 60px);
+}
+
+.home4-page #book .h3-head{
+  margin-bottom:clamp(20px,2vw,28px);
+}
+
+.home4-page #book .h3-split .h3-figure--book{
+  min-height:320px;
+}
+
+.home4-page #book .h3-figure--book{
+  min-width:0;
+  width:100%;
+}
+
+.home4-page #book .h3-figure--book img{
+  object-fit:contain;
+}
+
+@media (max-width:900px){
+  .home4-page #book .h3-split{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+  .home4-page #book .h3-split .h3-figure--book{
+    min-height:0;
+  }
+}
+
+.home4-page .wh-compact-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1fr);
+  gap:clamp(16px,2vw,28px);
+  align-items:stretch;
+}
+
+.home4-page .wh-compact-grid .h3-split{
+  display:contents;
+}
+
+.home4-page .wh-compact-grid .h3-split-text{
+  align-self:center;
+}
+
+.home4-page .wh-compact-grid .h3-figure{
+  min-height:340px;
+}
+
+@media (min-width:1001px){
+  .home4-page #womb-heart .h3-cta-row{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .home4-page #womb-heart .h3-cta-row .h3-cta{
+    width:100%;
+    min-width:0;
+    background:#FF201E!important;
+    color:#fff!important;
+    -webkit-text-fill-color:#fff!important;
+  }
+
+  .home4-page #womb-heart .h3-cta-row .h3-cta *{
+    color:#fff!important;
+    -webkit-text-fill-color:#fff!important;
+  }
+}
+
+.home4-page #newsletter.newsletter--compact{
+  width:auto;
+  padding:0!important;
+  background:transparent;
+  color:#560002;
+}
+
+.home4-page .newsletter--compact .newsletter-panel{
+  min-height:0;
+  height:100%;
+  padding:clamp(22px,3vw,36px);
+  border-radius:0;
+  background:#fff6f2;
+}
+
+.home4-page .newsletter--compact .newsletter-side-meta,
+.home4-page .newsletter--compact .newsletter-title-line,
+.home4-page .newsletter--compact .newsletter-bottom,
+.home4-page .newsletter--compact .newsletter-background-word{
+  display:none;
+}
+
+.home4-page .newsletter--compact .newsletter-layout{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:18px;
+}
+
+.home4-page .newsletter--compact .newsletter-content{
+  padding:0;
+}
+
+.home4-page .newsletter--compact .newsletter-kicker{
+  flex-wrap:wrap;
+  gap:8px;
+  color:#560002;
+}
+
+.home4-page .newsletter--compact .newsletter-kicker > span:last-child{
+  color:#560002;
+}
+
+.home4-page .newsletter--compact .newsletter-content h2{
+  margin-top:12px;
+  color:#fff!important;
+  font-size:clamp(22px,2vw,30px);
+}
+
+.home4-page .newsletter--compact .newsletter-intro{
+  margin-top:10px;
+  color:#fff!important;
+  font-size:17px!important;
+  line-height:1.25!important;
+}
+
+.home4-page .newsletter--compact .newsletter-form-wrap{
+  justify-self:auto;
+}
+
+.home4-page .newsletter--compact .newsletter-form-label{
+  margin-bottom:9px;
+  color:#fff!important;
+  font-size:11px!important;
+  letter-spacing:.12em;
+}
+
+.home4-page .newsletter--compact .newsletter-form{
+  min-height:54px;
+  padding:4px 4px 4px 16px;
+  border:1px solid rgb(86 0 2 / 28%);
+  border-radius:0;
+}
+
+.home4-page .newsletter--compact .newsletter-field input,
+.home4-page .newsletter--compact .newsletter-field input::placeholder{
+  color:#560002!important;
+  font-size:15px;
+}
+
+.home4-page .newsletter--compact .newsletter-submit{
+  min-width:150px;
+  min-height:54px;
+  padding:0 22px!important;
+  background:#560002!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  box-shadow:none;
+  transition:none;
+}
+
+.home4-page .newsletter--compact .newsletter-privacy{
+  margin-top:10px;
+  color:#fff!important;
+  font-size:11px!important;
+  line-height:1.3!important;
+}
+
+@media (max-width:1000px){
+  .home4-page .wh-compact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .home4-page #reviews .reviews-section-heading{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .home4-page .wh-compact-grid .h3-split{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(16px,2vw,28px);
+    align-items:center;
+  }
+
+  .home4-page .wh-compact-grid .h3-split .h3-figure{
+    min-height:0;
+    aspect-ratio:4/3;
+  }
+}
+
+@media (max-width:620px){
+  .home4-page #womb-heart{
+    padding-block:36px;
+  }
+
+  .home4-page .newsletter--compact .newsletter-panel{
+    padding:22px;
+  }
+}
+
+/* Match Home 5's circular statement treatment inside the Two Ways cards. */
+.home4-page #two-ways .h3-poster{
+  height:660px;
+  min-height:0;
+  aspect-ratio:auto;
+}
+
+.home4-page #two-ways .h3-poster p{
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+}
+
+.home4-page #two-ways .h3-poster-ring{
+  position:absolute;
+  z-index:3;
+  left:50%;
+  top:110px;
+  width:min(440px,86%);
+  transform:translateX(-50%);
+  overflow:visible;
+  pointer-events:none;
+}
+
+.home4-page #two-ways .h3-poster-ring text{
+  fill:#fff6f2;
+  font-family:var(--font-title);
+  font-size:23px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.home4-page #two-ways .h3-poster--mama .h3-poster-ring text{
+  fill:#ffc1b9;
+}
+
+.home4-page #two-ways .h3-poster--mama .h3-poster-media{
+  top:212px;
+  width:236px;
+}
+
+.home4-page #two-ways #nidra-intro .h3-poster-orbit-text{
+  position:absolute;
+  z-index:3;
+  top:calc(110px + min(440px, 86%));
+  left:50%;
+  width:86%;
+  transform:translateX(-50%);
+  font-family:var(--font-title);
+  font-size:11px;
+  letter-spacing:.12em;
+  line-height:1.2;
+  text-align:center;
+  text-transform:uppercase;
+  color:#fff6f2;
+}
