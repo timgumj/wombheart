@@ -1,0 +1,22 @@
+.home7-page .h3-head,
+.home7-page #reviews .reviews-section-heading {
+  align-items: start;
+}
+
+.home7-page .section-heading-with-motif {
+  position: relative;
+  padding-left: calc(clamp(64px, 7vw, 96px) + clamp(12px, 1.5vw, 22px));
+}
+
+.home7-page .section-heading-with-motif .section-orbit {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+@media (max-width: 620px) {
+  .home7-page .section-heading-with-motif {
+    padding-left: calc(56px + clamp(12px, 1.5vw, 22px));
+  }
+}

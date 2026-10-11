@@ -896,7 +896,7 @@ body.home4-page .hero-slide-button {
 }
 
 .home4-page .header-nav-cta {
-  border-radius: 0 !important;
+  border-radius: 999px !important;
 }
 
 /* ---------- hero: ANGEBOTE button, bottom right ---------- */
@@ -1078,16 +1078,60 @@ body.home4-page .hero-slide-button {
 .home4-page .h3-poster-orbit{width:190px;top:98px}
 .home4-page .h3-poster--mama .h3-poster-media{width:124px;top:131px}
 
-/* ===== HOME4: Yoga Mama tabbed full-viewport rows ===== */
-.home4-page #yoga-mama{overflow-x:clip;padding-bottom:0}
+/* ===== HOME4: Yoga Mama normal-flow rows with image reveals ===== */
+.home4-page #yoga-mama{overflow-x:clip;padding-bottom:0;background:#560002}
 .home4-page #yoga-mama .h3-side{display:none}
-.home4-page .h4-rows{width:100vw;margin-left:calc(50% - 50vw);margin-top:clamp(40px,5vw,72px)}
-.home4-page .h4-row{position:sticky;top:0;height:100vh;min-height:620px;display:grid;grid-template-columns:42% 58%;background:#560002;box-shadow:0 -30px 60px rgba(0,0,0,.35);border-top:1px solid rgba(255,255,255,.12);overflow:hidden}
+.home4-page #yoga-mama .h3-head-desc strong{font-weight:700!important}
+.home4-page .h4-rows{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:clamp(40px,5vw,72px);padding-bottom:clamp(16px,3.4vw,64px);background:#560002}
+.home4-page .h4-row{position:relative;height:auto;min-height:620px;margin-inline:clamp(16px,3.4vw,64px);display:grid;grid-template-columns:42% 58%;background:#560002;overflow:hidden}
+.home4-page .h4-row:nth-child(odd){background:#60090B}
+.home4-page .h4-row:nth-child(even){background:#6A1214}
 .home4-page .h4-left{display:flex;flex-direction:column;justify-content:space-between;padding:112px clamp(32px,3.4vw,64px) 48px clamp(32px,3.4vw,64px);min-height:0}
-.home4-page .h4-top,.home4-page .h4-bottom{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
-.home4-page .h4-row.is-in .h4-top{opacity:1;transform:none}
-.home4-page .h4-row.is-in .h4-bottom{opacity:1;transform:none;transition-delay:.25s}
+.home4-page .h4-top,.home4-page .h4-bottom{opacity:1;transform:none}
 .home4-page .h4-count{display:block;margin-bottom:22px;font-family:var(--font-title);font-size:13px;letter-spacing:.3em;opacity:.55}
+.home4-page .h4-progress{
+  position:absolute;
+  z-index:2;
+  width:2px;
+  border-radius:2px;
+  background:rgba(255,255,255,.3);
+  pointer-events:none;
+}
+.home4-page .h4-progress-fill{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:calc(var(--progress,0) * 100%);
+  border-radius:2px;
+  background:#FFAAAA;
+}
+.home4-page .h4-progress-stage{
+  position:absolute;
+  left:50%;
+  width:10px;
+  height:10px;
+  border:2px solid #fff;
+  border-radius:50%;
+  background:#560002;
+  transform:translate(-50%,-50%);
+}
+.home4-page .h4-progress-end{
+  position:absolute;
+  top:100%;
+  left:50%;
+  width:10px;
+  height:10px;
+  border:2px solid #fff;
+  border-radius:50%;
+  background:#560002;
+  transform:translate(-50%,-50%);
+}
+.home4-page .h4-progress-stage.is-reached,
+.home4-page .h4-progress-end.is-reached{
+  border-color:#FFAAAA;
+  background:#FFAAAA;
+}
 .home4-page .h4-row-title{margin:0 0 14px;max-width:26ch;font-size:clamp(15px,1.15vw,19px)!important;line-height:1.25!important;letter-spacing:.1em}
 .home4-page .h4-row-intro{margin:0 0 30px;max-width:46ch;font-size:19px!important;line-height:1.2!important;opacity:.75}
 .home4-page .h4-tabs{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-top:26px}
@@ -1106,13 +1150,13 @@ body.home4-page .hero-slide-button {
 @keyframes h4-text-in{from{opacity:0;transform:translateY(24px);filter:blur(6px);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;filter:blur(0);clip-path:inset(0 0 0 0)}}
 .home4-page .h4-bottom .h3-cta{margin-top:30px}
 .home4-page .h4-right{position:relative;padding:92px 28px 28px 0}
-.home4-page .h4-media{position:relative;width:100%;height:100%;overflow:hidden;background:#3b0103;transform:translate(var(--px,0),var(--py,0));transition:transform .8s cubic-bezier(.2,.8,.2,1);clip-path:inset(0 0 0 100%)}
-.home4-page .h4-row.is-in .h4-media{clip-path:inset(0 0 0 0);transition:transform .8s cubic-bezier(.2,.8,.2,1),clip-path 1.3s cubic-bezier(.77,0,.18,1)}
+.home4-page .h4-media{position:relative;width:100%;height:100%;overflow:hidden;background:#3b0103;clip-path:inset(0 0 0 100%);transition:clip-path 1.3s cubic-bezier(.77,0,.18,1)}
+.home4-page .h4-row.is-in .h4-media{clip-path:inset(0)}
 .home4-page .h4-img{position:absolute;inset:-22px;width:calc(100% + 44px);height:calc(100% + 44px);object-fit:cover;clip-path:inset(100% 0 0 0);transform:scale(1.18)}
 .home4-page .h4-img.is-prev{clip-path:inset(0);transform:scale(1)}
 .home4-page .h4-img.is-active{clip-path:inset(0);transform:scale(1);transition:clip-path 1s cubic-bezier(.77,0,.18,1),transform 1.6s cubic-bezier(.2,.8,.2,1)}
 @media (max-width:1000px){
-  .home4-page .h4-row{position:relative;height:auto;grid-template-columns:1fr}
+  .home4-page .h4-row{position:relative;height:auto;min-height:0;grid-template-columns:1fr}
   .home4-page .h4-right{order:-1;height:56vh;padding:80px 20px 0}
   .home4-page .h4-left{padding:28px 24px 48px;gap:28px}
 }
@@ -1149,24 +1193,24 @@ body.home4-page .hero-slide-button {
   body.home4-page p{line-height:1.2!important}
 }
 
-/* HOME4: consistent Home5-style slab buttons */
+/* HOME4: consistent white pill buttons */
 .home4-page .h3-cta,
 .home4-page .h3-banner-btn,
 .home4-page .h3-journal-btn,
 .home4-page .h3-poster-link,
 .home4-page .hero-offers-btn{
   border:0!important;
-  border-radius:0!important;
-  background:#ff4a3d!important;
-  padding:16px 26px!important;
-  box-shadow:7px 7px 0 rgba(255,255,255,.9);
+  border-radius:999px!important;
+  background:#fff!important;
+  min-height:56px;
+  padding:0 28px!important;
+  box-shadow:none!important;
   color:#560002!important;
   -webkit-text-fill-color:#560002!important;
-  font-family:var(--font-title)!important;
-  font-weight:400!important;
-  letter-spacing:.1em!important;
+  font-size:10px;
+  letter-spacing:.16em!important;
   text-decoration:none;
-  transition:transform .2s,box-shadow .2s;
+  transition:transform .22s ease;
 }
 
 .home4-page .h3-cta *,
@@ -1176,26 +1220,46 @@ body.home4-page .hero-slide-button {
 .home4-page .hero-offers-btn *{
   color:#560002!important;
   -webkit-text-fill-color:#560002!important;
-  font-family:var(--font-title)!important;
-  font-weight:400!important;
-  letter-spacing:.1em!important;
+  letter-spacing:.16em!important;
+}
+
+.home4-page .h3-banner-btn,
+.home4-page .h3-journal-btn,
+.home4-page .hero-offers-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
 }
 
 .home4-page .h3-cta svg,
 .home4-page .h3-poster-link svg{
-  display:none!important;
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  fill:none;
+  stroke:#560002;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
-.home4-page .h3-cta span::before{content:"> "}
-.home4-page .h3-cta span::after{content:"_"}
+.home4-page .h3-banner-btn::after,
+.home4-page .h3-journal-btn::after,
+.home4-page .hero-offers-btn::after{
+  content:"";
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23560002' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
 
 .home4-page .h3-cta:hover,
 .home4-page .h3-banner-btn:hover,
 .home4-page .h3-journal-btn:hover,
 .home4-page .h3-poster-link:hover,
 .home4-page .hero-offers-btn:hover{
-  transform:translate(7px,7px);
-  box-shadow:0 0 0 #fff;
+  transform:translateY(-2px);
 }
 
 /* Compact combined Womb & Heart and newsletter section */
@@ -1282,14 +1346,6 @@ body.home4-page .hero-slide-button {
   .home4-page #womb-heart .h3-cta-row .h3-cta{
     width:100%;
     min-width:0;
-    background:#FF201E!important;
-    color:#fff!important;
-    -webkit-text-fill-color:#fff!important;
-  }
-
-  .home4-page #womb-heart .h3-cta-row .h3-cta *{
-    color:#fff!important;
-    -webkit-text-fill-color:#fff!important;
   }
 }
 
