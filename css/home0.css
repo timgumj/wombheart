@@ -1,0 +1,331 @@
+.home0-page .h3-head,
+.home0-page #reviews .reviews-section-heading {
+  align-items: start;
+}
+
+.home0-page .section-heading-with-motif {
+  position: relative;
+  padding-left: calc(clamp(64px, 7vw, 96px) + clamp(12px, 1.5vw, 22px));
+}
+
+.home0-page .section-heading-with-motif .section-orbit {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.home0-page :is(#nadja, #mothering-the-mother, #book) {
+  padding-block: clamp(48px, 6vw, 88px) clamp(72px, 8vw, 120px);
+}
+
+.home0-page :is(#nadja, #mothering-the-mother, #book) .h3-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px 24px;
+}
+
+.home0-page :is(#nadja, #mothering-the-mother, #book) .home0-nadja-heading {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 1200px;
+  margin: clamp(40px, 5vw, 72px) auto clamp(20px, 3vw, 40px);
+  text-align: center;
+}
+
+.home0-page :is(#nadja, #mothering-the-mother, #book) .home0-nadja-heading h2 {
+  line-height: 1.1;
+}
+
+.home0-page :is(#mothering-the-mother, #book) .home0-nadja-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+  gap: clamp(12px, 1.5vw, 22px);
+}
+
+.home0-page :is(#mothering-the-mother, #book) .home0-nadja-heading .section-orbit {
+  position: static;
+  translate: none;
+  flex-shrink: 0;
+}
+
+.home0-page :is(#mothering-the-mother, #book) .home0-nadja-heading h2 {
+  min-width: 0;
+}
+
+.home0-page :is(#nadja, #mothering-the-mother, #book) .h3-nadja-grid {
+  position: relative;
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.home0-page :is(#nadja, #mothering-the-mother, #book) .h3-nadja-grid .h3-side--left {
+  left: -30px;
+}
+
+.home0-page :is(#nadja, #mothering-the-mother, #book) .h3-nadja-grid .h3-side--right {
+  right: -30px;
+}
+
+.home0-page :is(#nadja, #mothering-the-mother, #book) .h3-nadja-grid .h3-figure {
+  min-height: 0;
+  aspect-ratio: 3 / 4;
+  align-self: start;
+}
+
+.home0-page :is(#nadja, #mothering-the-mother, #book) .h3-nadja-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+@media (min-width: 621px) {
+  .home0-page #book .h3-nadja-grid .h3-figure {
+    aspect-ratio: auto;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 620px) {
+  .home0-page :is(#nadja, #mothering-the-mother, #book) .h3-shell,
+  .home0-page :is(#nadja, #mothering-the-mother, #book) .h3-nadja-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home0-page :is(#nadja, #mothering-the-mother, #book) .h3-nadja-grid .h3-figure {
+    width: 100%;
+    max-width: 360px;
+    justify-self: center;
+  }
+
+}
+
+.home0-page #yoga-mama {
+  background-color: #FFBBBB !important;
+  --palette-motif: #FFBBBB;
+}
+
+.home0-page #yoga-mama *,
+.home0-page #yoga-mama p {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+.home0-page #yoga-mama .section-orbit text {
+  fill: #000;
+}
+
+.home0-page #yoga-mama .h4-rows {
+  background: #FFBBBB;
+}
+
+.home0-page #yoga-mama .h4-row:nth-child(odd) {
+  background: #FFC2C2;
+}
+
+.home0-page #yoga-mama .h4-row:nth-child(even) {
+  background: #FFC9C9;
+}
+
+.home0-page #yoga-mama .h4-progress {
+  background: rgb(86 0 2 / 30%);
+}
+
+.home0-page #yoga-mama .h4-progress-fill {
+  background: #560002;
+}
+
+.home0-page #yoga-mama .h4-progress-stage,
+.home0-page #yoga-mama .h4-progress-end {
+  border-color: #560002;
+  background: #FFBBBB;
+}
+
+.home0-page #yoga-mama .h4-progress-stage.is-reached,
+.home0-page #yoga-mama .h4-progress-end.is-reached {
+  background: #560002;
+}
+
+.home0-page #yoga-mama .h4-row {
+  grid-template-columns: clamp(170px, 18vw, 260px) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 24px 0;
+  min-height: 0;
+  padding: clamp(24px, 3vw, 44px) clamp(24px, 3vw, 44px) 48px 0;
+}
+
+.home0-page #yoga-mama .h4-bottom {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  padding: 0;
+  align-self: start;
+}
+
+.home0-page #yoga-mama .h4-top {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  min-width: 0;
+  padding: 0 24px 0 32px;
+  align-self: start;
+}
+
+.home0-page #yoga-mama .h4-count {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  margin: 0;
+  padding-left: 0;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  opacity: 1;
+}
+
+.home0-page #yoga-mama .h4-row-title {
+  max-width: 42ch;
+  margin: 24px 0 0;
+  font-size: clamp(24px, 2vw, 30px) !important;
+  letter-spacing: 0.02em;
+}
+
+.home0-page #yoga-mama .h4-row-intro {
+  opacity: 1;
+}
+
+.home0-page #yoga-mama .h4-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 32px;
+  border-top: 1px solid rgb(86 0 2 / 35%);
+}
+
+.home0-page #yoga-mama .h4-list li {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid rgb(86 0 2 / 35%);
+}
+
+.home0-page #yoga-mama .h4-list li + li {
+  margin-top: 0;
+}
+
+.home0-page #yoga-mama .h4-list h4 {
+  margin-bottom: 5px;
+}
+
+.home0-page #yoga-mama .h4-row-intro,
+.home0-page #yoga-mama .h4-list h4,
+.home0-page #yoga-mama .h4-list p {
+  font-family: var(--font);
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  letter-spacing: normal;
+}
+
+@media (min-width: 1001px) {
+  .home0-page #yoga-mama .h4-row {
+    margin-inline: clamp(22.4px, 4.76vw, 89.6px);
+  }
+
+  .home0-page #yoga-mama .h4-row-intro,
+  .home0-page #yoga-mama .h4-list h4,
+  .home0-page #yoga-mama .h4-list p {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+.home0-page #yoga-mama .h4-right {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+  gap: 16px;
+  grid-column: 2;
+  grid-row: 1;
+  order: 0;
+  height: auto;
+  aspect-ratio: 1.9;
+}
+
+.home0-page #yoga-mama .h4-media {
+  min-height: 100%;
+  border-radius: 0 !important;
+  clip-path: none;
+  transition: none;
+}
+
+.home0-page #yoga-mama .h4-bottom .h3-cta {
+  width: fit-content;
+  height: auto;
+  min-height: 40px;
+  padding: 12px 18px !important;
+  gap: 12px;
+  font-size: 10px;
+}
+
+@media (max-width: 760px) {
+  .home0-page #yoga-mama .h4-row {
+    grid-template-columns: 112px minmax(0, 1fr);
+    padding-right: 20px;
+    gap: 20px 0;
+  }
+
+  .home0-page #yoga-mama .h4-right {
+    aspect-ratio: 4 / 3;
+    gap: 8px;
+  }
+
+  .home0-page #yoga-mama .h4-top {
+    padding-inline: 20px 12px;
+  }
+
+  .home0-page #yoga-mama .h4-count {
+    padding-left: 0;
+    font-size: 12px;
+  }
+
+  @media (max-width: 480px) {
+    .home0-page #yoga-mama .h4-row {
+      grid-template-columns: 32px minmax(0, 1fr);
+      grid-template-rows: auto auto auto;
+    }
+
+    .home0-page #yoga-mama .h4-top {
+      grid-column: 2;
+      grid-row: 1;
+      padding: 0;
+    }
+
+    .home0-page #yoga-mama .h4-right {
+      grid-row: 2;
+    }
+
+    .home0-page #yoga-mama .h4-bottom {
+      grid-row: 3;
+    }
+  }
+
+  .home0-page #yoga-mama .h4-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .home0-page #yoga-mama .h4-row-intro,
+  .home0-page #yoga-mama .h4-list h4,
+  .home0-page #yoga-mama .h4-list p {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+
+  .home0-page .section-heading-with-motif {
+    padding-left: calc(56px + clamp(12px, 1.5vw, 22px));
+  }
+}
